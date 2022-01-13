@@ -1,48 +1,126 @@
 <template>
-  <div class ="portada">
-    inicio
-  </div>
+	
+  	<div id="portada" class="grid">
+    	<div class="rellax-contenido">
+			<div class="txt">Texto 1</div>
+			<div v-rellax="rellax" 
+				v-for="(i) in no_fotos.slice(0,5)" 
+				:key="i" 
+				class="rellax contenedor-img"
+				:data-rellax-speed="parseInt(generadorRandom(-5,1))">
+				<img class="imagen" :style="{width: parseInt(generadorRandom(30,80)) + '%', left: parseInt(generadorRandom(-10,50))+ '%'}"    
+					:src="require(`@/assets/img/portada-rellax/${i.toString().padStart(4,'0000')}.png`)"/>
+			</div>
+    	</div>
+		<div class="rellax-contenido">
+			<div class="txt">Texto 2</div>
+			<div v-rellax="rellax" 
+				v-for="(i) in no_fotos.slice(5,10)" 
+				:key="i" 
+				class="rellax contenedor-img"
+				:data-rellax-speed="parseInt(generadorRandom(-5,1))">
+				<img class="imagen" :style="{width: parseInt(generadorRandom(30,80)) + '%', left: parseInt(generadorRandom(-10,50))+ '%'}"    
+					:src="require(`@/assets/img/portada-rellax/${i.toString().padStart(4,'0000')}.png`)"/>
+			</div>
+    	</div>
+		<div class="rellax-contenido">
+			<div class="txt">texto Texto 3</div>
+			<div v-rellax="rellax" 
+				v-for="(i) in no_fotos.slice(10,15)" 
+				:key="i" 
+				class="rellax contenedor-img"
+				:data-rellax-speed="parseInt(generadorRandom(-5,1))">
+				<img class="imagen" :style="{width: parseInt(generadorRandom(30,80)) + '%', left: parseInt(generadorRandom(-10,50))+ '%'}"    
+					:src="require(`@/assets/img/portada-rellax/${i.toString().padStart(4,'0000')}.png`)"/>
+			</div>
+    	</div>
+		<div class="rellax-contenido">
+			<div class="txt">lorem ipsum texto 4</div>
+			<div v-rellax="rellax" 
+				v-for="(i) in no_fotos.slice(15,19)" 
+				:key="i" 
+				class="rellax contenedor-img"
+				:data-rellax-speed="parseInt(generadorRandom(-5,1))">
+				<img class="imagen" :style="{width: parseInt(generadorRandom(30,80)) + '%', left: parseInt(generadorRandom(-10,50))+ '%'}"    
+					:src="require(`@/assets/img/portada-rellax/${i.toString().padStart(4,'0000')}.png`)"/>
+			</div>
+    	</div>
+  	</div>
 </template>
 
 <script>
+import Vue from "vue"
+import VueRellax from "vue-rellax";
+Vue.use(VueRellax);
 export default {
-  name: 'Portada',
-  props: {
-    msg: String
-  },
-  mounted() {
-  const script = function (p5) {    
-  var speed = 2;    
-  var posX = 0;
-  
-  p5.setup = _ => {      
-   p5.createCanvas(500, 500);      
-   p5.ellipse(p5.width / 2, p5.height / 2, 500, 500);    
-  }
-  p5.draw = _ => {      
-   p5.background(0);
-   const degree = p5.frameCount * 3;      
-   const y = p5.sin(p5.radians(degree)) * 50;
+	name: 'Portada',
+	props: {
+		msg: String
+	},
+	data() {
+		return {
+			rellax: {
+				center: false,
+				horizontal: false,
+				round: true,
+				vertical: true,
+				wrapper: false,
+			},
+			no_fotos: [...Array(20).keys()].slice(1)
 
-   p5.push();
-    p5.translate(0, p5.height / 2);
-    p5.ellipse(posX, y, 50, 50);
-   p5.pop();   posX += speed;
-      
-   if (posX > p5.width || posX < 0) {    
-    speed *= -1;      
-   }
-  }  
- }
- const P5 = require('p5');
- new P5(script)
-  }
+		}
+	},
+	mounted() {
+		console.log(no_fotos)
+		
+	},
+	methods:{
+		generadorRandom(min, max){
+			let rand = Math.random() *  (max - min) + min;
+			return rand
+
+		}
+	},
+	unmounted() {
+		this.rellax.destroy()
+	} 
 }
 </script>
 
 <style scoped lang="scss">
-div.portada{
-  background: #000;
 
+
+#portada {
+	width: 100%;
+	position: relative;
+	
+	div.rellax-contenido{
+		div.txt {
+			mix-blend-mode: difference;
+			color:rgb(87, 0, 109);
+			font-size :89px;
+			font-weight: 700;
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+			//background-color: rgb(228, 228, 228);
+			padding: 50px;
+			z-index: 1;
+		}
+		position: relative;
+		z-index: 0;
+		.contenedor-img{
+			position:relative;
+			img{
+				position:relative;
+				opacity: .9;
+			}
+
+		}
+		
+	}
 }
+	
+
+
 </style>

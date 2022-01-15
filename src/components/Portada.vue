@@ -1,8 +1,10 @@
 <template>
 	
-  	<div id="portada" class="grid">
-    	<div class="rellax-contenido">
-			<div class="txt">Texto 1</div>
+  	<div id="scrolly-portada" class="grid">
+    	<div class="rellax-contenido step" data-step="1">
+			<div class="txt cont-typing">
+				<h1 class="typing">Texto 1</h1>
+			</div>
 			<div v-rellax="rellax" 
 				v-for="(i) in no_fotos.slice(0,5)" 
 				:key="i" 
@@ -12,8 +14,10 @@
 					:src="require(`@/assets/img/portada-rellax/${i.toString().padStart(4,'0000')}.png`)"/>
 			</div>
     	</div>
-		<div class="rellax-contenido">
-			<div class="txt">Texto 2</div>
+		<div class="rellax-contenido step" data-step="2">
+			<div class="txt cont-typing">
+				<h1 class="typing">Texto 2 texto 2</h1>
+			</div>
 			<div v-rellax="rellax" 
 				v-for="(i) in no_fotos.slice(5,10)" 
 				:key="i" 
@@ -23,8 +27,10 @@
 					:src="require(`@/assets/img/portada-rellax/${i.toString().padStart(4,'0000')}.png`)"/>
 			</div>
     	</div>
-		<div class="rellax-contenido">
-			<div class="txt">texto Texto 3</div>
+		<div class="rellax-contenido step" data-step="2">
+			<div class="txt cont-typing">
+				<h1 class="typing">Texto 3 texto 3 lorem ipsum</h1>
+			</div>
 			<div v-rellax="rellax" 
 				v-for="(i) in no_fotos.slice(10,15)" 
 				:key="i" 
@@ -34,7 +40,7 @@
 					:src="require(`@/assets/img/portada-rellax/${i.toString().padStart(4,'0000')}.png`)"/>
 			</div>
     	</div>
-		<div class="rellax-contenido">
+		<div class="rellax-contenido step" data-step="4">
 			<div class="txt">lorem ipsum texto 4</div>
 			<div v-rellax="rellax" 
 				v-for="(i) in no_fotos.slice(15,19)" 
@@ -51,6 +57,9 @@
 <script>
 import Vue from "vue"
 import VueRellax from "vue-rellax";
+
+import scrollama from 'scrollama';
+import * as d3 from "d3";
 Vue.use(VueRellax);
 export default {
 	name: 'Portada',
@@ -71,10 +80,61 @@ export default {
 		}
 	},
 	mounted() {
-		console.log(no_fotos)
+		this.inizializandoScrollama()
 		
 	},
 	methods:{
+		inizializandoScrollama() {
+			this.scrolly = d3.select('#scrolly-portada');
+			this.step = this.scrolly.selectAll('div.rellax-contenido.step');
+
+			this.scroller = scrollama()
+			this.scroller.setup({
+				step: "#scrolly-portada .step",
+				offset: 0.1,
+				debug: false
+				})
+				.onStepEnter(this.cambiandoPaso);;
+
+			this.reescalandoPantalla();
+
+			window.addEventListener("resize", this.reescalandoPantalla);
+
+		},
+		reescalandoPantalla() {
+			var stepH = Math.floor(window.innerHeight * 0.95);
+			this.step.style("min-height", stepH + "px");
+			/*
+			var altura_fondo_portada = window.innerHeight / 2;
+			var margin_top_fondo_portada = (window.innerHeight - altura_fondo_portada) ;
+
+			this.fondo_portada
+				.style("height", altura_fondo_portada + "px")
+				.style("top", margin_top_fondo_portada + "px");
+			*/
+			// 3. tell scrollama to update new element dimensions
+			this.scroller.resize();
+		},
+		cambiandoPaso(response) {
+			this.paso=response.index+1;
+			this.step.classed("activo", function(d, i) {
+				return i === response.index;
+			});
+			if(this.paso==1){
+				d3.select("div#scrolly-portada").transition().duration(200).style("background-color","#fff")
+			}
+			else if(this.paso==2){
+				d3.select("div#scrolly-portada").transition().duration(200).style("background-color","#8a8a8a")
+			}
+			else if(this.paso==3){
+				d3.select("div#scrolly-portada").transition().duration(200).style("background-color","yellow")
+			}
+			else if(this.paso==4){
+				d3.select("div#scrolly-portada").transition().duration(200).style("background-color","#000")
+			}
+
+		},
+
 		generadorRandom(min, max){
 			let rand = Math.random() *  (max - min) + min;
 			return rand
@@ -90,22 +150,31 @@ export default {
 <style scoped lang="scss">
 
 
-#portada {
+#scrolly-portada {
 	width: 100%;
 	position: relative;
 	
-	div.rellax-contenido{
+	div.rellax-contenido.step{
 		div.txt {
 			mix-blend-mode: difference;
 			color:rgb(87, 0, 109);
-			font-size :89px;
+			font-size : 60px;
 			font-weight: 700;
 			position: -webkit-sticky;
 			position: sticky;
 			top: 0;
-			//background-color: rgb(228, 228, 228);
 			padding: 50px;
 			z-index: 1;
+			&.cont-typing{
+				height: 100vh;
+				/*This part is important for centering*/
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			h1.typing{
+				opacity: 0;
+			}			
 		}
 		position: relative;
 		z-index: 0;
@@ -115,6 +184,42 @@ export default {
 				position:relative;
 				opacity: .9;
 			}
+
+		}
+		&.activo{
+			div.txt {
+			&.cont-typing{
+				height: 100vh;
+				/*This part is important for centering*/
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				h1.typing {
+					
+					animation-name: animText;
+					animation-duration: 1.7s;
+					animation-timing-function: ease-in-out;
+					animation-fill-mode: forwards;
+				}
+
+				@keyframes animText {
+					100% {
+						transform: translateY(0);
+						opacity: 1;
+						-webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+						clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+					}
+					0% {
+						transform: translateY(50px);
+						opacity: 0;
+						-webkit-clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+						clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+					}
+				}
+
+			}
+			
+		}
 
 		}
 		

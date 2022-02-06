@@ -1,0 +1,25 @@
+@charset "UTF-8";
+@import "_variables";
+@import "_fonts";
+@import "texto";
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    padding:15px;
+    overflow: hidden;
+    width: calc(100% - #{$gap*2});
+    &.text {
+        max-width: map-get($width, "max-text");
+    }
+    &.vis {
+        max-width: map-get($width, "max-vis");
+    }
+    &.img {
+        max-width: map-get($width, "max-img");
+    }
+    &.main {
+        max-width: map-get($width, "max-main");
+    }
+    
+}

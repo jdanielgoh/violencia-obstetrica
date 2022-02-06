@@ -1,19 +1,56 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <!--<router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>--->
-    </div>
-    <router-view/>
-  </div>
+	<div id="app">
+		<Encabezado/>
+		
+		<router-view class="vista"/>
+	</div>
 </template>
+<script>
+import Encabezado from '@/components/Encabezado.vue'
+import { mapMutations,mapState } from 'vuex'
 
+export default {
+	components:{
+		Encabezado
+	},
+	computed: {
+        ...mapState(["reproduciendo_audios"])
+    },
+	methods:{
+		
+		...mapMutations(["encenderApagarReproduccionAudios","aumentarContadorReproducciones"]),
+		clickBotonReproduccion(){
+			this.encenderApagarReproduccionAudios();
+			this.aumentarContadorReproducciones();
+
+		}
+	},
+	watch:{
+        $route (to, from){
+            console.log(to)
+            if(to.name=="Inicio"){
+                this.reproduciendo_audios = true
+            }
+            else{this.reproduciendo_audios=false}
+        }
+    },
+    mounted(){
+            if(this.$route.name=="Inicio"){
+                this.reproduciendo_audios = true
+            }
+            else{this.reproduciendo_audios=false}
+    }
+}
+</script>
 <style lang="scss">
+@import '@/scss/app.scss';
+body{margin:0}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  font-family: "Raleway";
+  .vista{
+    padding-top:200px;
+  }
+
 }
 
 

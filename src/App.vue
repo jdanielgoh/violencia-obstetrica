@@ -1,32 +1,53 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <!--<router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>--->
-    </div>
-    <router-view/>
-  </div>
+	<div id="app">
+		<Encabezado/>
+		
+		<router-view class="vista"/>
+	</div>
 </template>
+<script>
+import Encabezado from '@/components/Encabezado.vue'
+import { mapMutations,mapState } from 'vuex'
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+export default {
+	components:{
+		Encabezado
+	},
+	
+	watch:{
+        $route (to, from){
+            console.log(to.name)
+            if(to.name == "Inicio"){
+                this.$store.commit("encenderReproduccionAudios");
+            }
+            else{
+                this.$store.commit("apagarReproduccionAudios");
+            }
+            this.$store.commit("aumentarContadorReproducciones");
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+        }
+    },
+    mounted(){
+        if(this.$route.name == "Inicio"){
+            this.$store.commit("encenderReproduccionAudios");
+        }
+        else{
+            this.$store.commit("apagarReproduccionAudios");
+        }
+        this.$store.commit("aumentarContadorReproducciones");
     }
-  }
 }
+</script>
+<style lang="scss">
+@import '@/scss/app.scss';
+body{margin:0}
+#app {
+  font-family: "Raleway";
+  .vista{
+    padding-top:200px;
+  }
+
+}
+
+
 </style>

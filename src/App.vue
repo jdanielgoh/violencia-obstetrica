@@ -13,32 +13,28 @@ export default {
 	components:{
 		Encabezado
 	},
-	computed: {
-        ...mapState(["reproduciendo_audios"])
-    },
-	methods:{
-		
-		...mapMutations(["encenderApagarReproduccionAudios","aumentarContadorReproducciones"]),
-		clickBotonReproduccion(){
-			this.encenderApagarReproduccionAudios();
-			this.aumentarContadorReproducciones();
-
-		}
-	},
+	
 	watch:{
         $route (to, from){
-            console.log(to)
-            if(to.name=="Inicio"){
-                this.reproduciendo_audios = true
+            console.log(to.name)
+            if(to.name == "Inicio"){
+                this.$store.commit("encenderReproduccionAudios");
             }
-            else{this.reproduciendo_audios=false}
+            else{
+                this.$store.commit("apagarReproduccionAudios");
+            }
+            this.$store.commit("aumentarContadorReproducciones");
+
         }
     },
     mounted(){
-            if(this.$route.name=="Inicio"){
-                this.reproduciendo_audios = true
-            }
-            else{this.reproduciendo_audios=false}
+        if(this.$route.name == "Inicio"){
+            this.$store.commit("encenderReproduccionAudios");
+        }
+        else{
+            this.$store.commit("apagarReproduccionAudios");
+        }
+        this.$store.commit("aumentarContadorReproducciones");
     }
 }
 </script>

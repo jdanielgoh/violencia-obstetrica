@@ -27,7 +27,7 @@ export default{
         var audio_actual;
         var contador_audio = 4;
 
-        const script = (p5)=>{
+        this.script = (p5)=>{
             p5.preload = () => {
                 for(var i = 2; i < 11; i++){
                     audios.push(p5.loadSound(require(`@/assets/audios/Audio ${i}.mp3`)))
@@ -67,8 +67,12 @@ export default{
 
             }
         }
-        new p5(script)
+        this.scriptp5 = new p5(this.script)
+    },
+    destroyed(){
+        delete this.scriptp5
     }
+
 
 }
 </script>

@@ -1,8 +1,9 @@
 <template>
-    <div class="testimonios container main">
-        <h2>{{data_testimonio.nombre}}</h2>
-		
-        <div class="paso">
+    <article  class="testimonios-seleccionado container main">
+        <h1 class="blanco">{{data_testimonio.nombre}}
+			<hr/>
+		</h1>
+        <div class="paso" id="scrolly">
 			<div class="imagen">
 				<ImagenPie 
 					:link='`img/testimonios/${data_testimonio.imagen}`'
@@ -11,12 +12,17 @@
 			</div>
 			<div class="texto">
 				<p class="cita">{{data_testimonio.texto.cita}}</p>
-                <p v-for="(parrafo, i) in data_testimonio.texto.parrafos" :key="i">
+                <p class="blanco" v-for="(parrafo, i) in data_testimonio.texto.parrafos" :key="i">
                     {{parrafo}}
                 </p>
 			</div>
 		</div>
-	</div>
+		<div>
+			<button @click="regresarTestimonios()">
+				Regresar a testimonios
+			</button>
+		</div>
+	</article>
 </template>
 
 <script>
@@ -29,15 +35,27 @@ export default {
 	},
     props:{
         data_testimonio: Object
-    }
+    },
+	methods:{
+		regresarTestimonios(){
+			this.$store.commit("ocultarTestimonio")
+		}
+	},
+	
 }
 </script>
 
 <style lang="scss">
-.testimonios{
+.testimonios-seleccionado{
   	background: #4A2582;
+	overflow: inherit;
 	position: relative;
 	display: block;
+	h1{
+		line-height: 0.3;
+		width: fit-content;
+    	margin: auto;
+	}
 	.paso{
 		&:nth-child(1){
 			margin-top: 500px
@@ -48,23 +66,25 @@ export default {
 		gap: 0px 30px; 
 		flex-wrap: nowrap;
 		justify-content: space-between;
+		position: relative;
 		.imagen{
 			z-index: 0;
 			flex: 0 1 50%;
 			.imagen-blend-pie{
 				margin: auto;
+				position: -webkit-sticky;
+				position: sticky;
+				top: 105px;
+				display:inline-block;
 			}
 		}
-		.bullet{
+		.texto{
+			position: relative;
 			z-index: 1;
 			flex: 0 1 50%;
 			mix-blend-mode: screen;
 			
-			&.transicionable{
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
+			
 			p{
 				//opacity: 0;
 			}

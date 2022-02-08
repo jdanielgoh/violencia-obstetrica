@@ -1,23 +1,26 @@
 <template>
-	<div class="testimonios">
-		<div class="container main">
-			<div class="paso" v-for="testimonio in testimonios" :key="testimonio.nombre">
-				<div class="imagen" @click="testimonio_seleccionado = testimonio" >
-					<ImagenPie 
-						:link='`img/testimonios/${testimonio.imagen}`'
-						:pie="testimonio.nombre"
-					/>
-				</div>
-				<div class="bullet  transicionable">
-					
+	<div class="testimonios" :style={}>
+		<div class="testimonios-lista" 			
+			v-if="!visibilidad_testimonio">
+			<div class="container main">
+				<div class="paso" v-for="(testimonio, i) in testimonios" :key="testimonio.nombre">
+					<div class="imagen" @click="clickTestimonio(i)" >
+						<ImagenPie 
+							:link='`img/testimonios/${testimonio.imagen}`'
+							:pie="testimonio.nombre"
+						/>
+					</div>
+					<div class="bullet transicionable">
+						
+					</div>
 				</div>
 			</div>
-			<TestimonioSeleccionado
-				:data_testimonio="testimonio_seleccionado"
-			/>
 		</div>
+		<TestimonioSeleccionado
+			v-if="visibilidad_testimonio"
+			:data_testimonio="testimonio_seleccionado"
+		/>
 	</div>
-	
 </template>
 
 <script>
@@ -25,6 +28,7 @@ import Vue from "vue"
 //import VueRellax from "vue-rellax";
 import ImagenPie from "@/components/ImagenPie.vue"
 import TestimonioSeleccionado from "@/components/testimonios/TestimonioSeleccionado.vue"
+import {mapState} from "vuex"
 
 //Vue.use(VueRellax);
 
@@ -50,10 +54,33 @@ export default {
 				speed: 5
 
 			},
+			visibilidad_testimonio: false
 		}
 	},
 	mounted(){
 		this.testimonios = testimonios
+	},
+	methods: {
+		clickTestimonio(i){
+			this.testimonio_seleccionado = this.testimonios[i];
+			this.$store.commit("mostrarTestimonio")
+		},
+		scrollArriba() {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth',
+			});
+		}
+	},
+	computed: {
+        ...mapState(["testimonio_activo"])
+    },
+	watch: {
+		testimonio_activo(nv){
+			this.visibilidad_testimonio = nv;
+			this.scrollArriba()
+
+		}
 	}
   
 }
@@ -62,6 +89,7 @@ export default {
 <style scoped lang="scss">
 
 .testimonios{
+  	background: #4A2582;
 	position: relative;
 	display: block;
 	.paso{

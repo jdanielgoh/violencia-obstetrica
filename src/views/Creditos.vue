@@ -22,31 +22,31 @@
         </div>
         <div class="equipo-integrantes">
             <ImagenPie 
-				:link='"portada-rellax/0008.png"'
+				:link='"img/creditos/CLAUDIA.jpeg"'
 				:pie="'Claudia Padrón Cueto'"
                 class="ficha"
                 altura="300px"
 			/>
             <ImagenPie 
-				:link='"portada-rellax/0008.png"'
+				:link='"img/creditos/Cynthia.jpg"'
 				:pie="'Cynthia de la Cantera Toranzo'"
                 class="ficha"
                 altura="300px"
 			/>
             <ImagenPie 
-				:link='"portada-rellax/0008.png"'
+				:link='"img/creditos/ISABEL.jpeg"'
 				:pie="'Isabel Milagro Echemendía Pérez'"
                 class="ficha"
                 altura="300px"
 			/>
             <ImagenPie 
-				:link='"portada-rellax/0008.png"'
+				:link='"img/creditos/María Antonieta.jpeg"'
 				:pie="'María Antonieta Colunga Olivera'"
                 class="ficha"
                 altura="300px"
 			/>
             <ImagenPie 
-				:link='"portada-rellax/0008.png"'
+				:link='"img/creditos/Darcy.jpeg"'
 				:pie="'Darcy Borrero Batista'"
                 class="ficha"
                 altura="300px"
@@ -59,7 +59,7 @@
         </div>
         <div class="equipo-integrantes">
             <ImagenPie 
-				:link='"portada-rellax/0008.png"'
+				:link='"img/creditos/datacritica.jpg"'
 				:pie="'Proyecto Data Crítica'"
                 class="ficha"
                 altura="300px"
@@ -72,7 +72,7 @@
         </div>
         <div class="equipo-integrantes">
             <ImagenPie 
-				:link='"portada-rellax/0008.png"'
+				:link='"img/creditos/wipr.jpg"'
 				:pie="'IWPR'"
                 class="ficha"
                 altura="300px"
@@ -85,13 +85,13 @@
         </div>
         <div class="equipo-integrantes">
             <ImagenPie 
-				:link='"portada-rellax/0008.png"'
+				:link='"img/creditos/Andy.jpeg"'
 				:pie="'Andy Ruiz'"
                 class="ficha"
                 altura="300px"
 			/>
             <ImagenPie 
-				:link='"portada-rellax/0008.png"'
+				:link='"img/creditos/Hellman .jpeg"'
 				:pie="'Hellman'"
                 class="ficha"
                 altura="300px"

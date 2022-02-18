@@ -2,10 +2,9 @@
 	<div class="inicio">
 		<button @click="clickBotonReproduccion">{{reproduciendo_audios ? "Pausa": "Reproducir"}}</button>
 
-		<PortadaAudios/>
+		<PortadaAudios2/>
 		<Portada/>
-		<PortadaMapa
-		:id="'mapa-cuba-inicio'"
+		<PortadaScroll
 		/>
 
 		
@@ -15,8 +14,8 @@
 <script>
 // @ is an alias to /src
 import Portada from '@/components/inicio/Portada.vue'
-import PortadaAudios from '@/components/inicio/PortadaAudios.vue'
-import PortadaMapa from '@/components/inicio/PortadaMapa.vue'
+import PortadaAudios2 from '@/components/inicio/PortadaAudios2.vue'
+import PortadaScroll from '@/components/inicio/PortadaScroll.vue'
 
 import { mapMutations,mapState } from 'vuex'
 
@@ -24,8 +23,8 @@ export default {
 	name: 'Inicio',
 	components: {
 		Portada,
-		PortadaAudios,
-		PortadaMapa
+		PortadaAudios2,
+		PortadaScroll
 	},
 	computed: {
         ...mapState(["reproduciendo_audios"])

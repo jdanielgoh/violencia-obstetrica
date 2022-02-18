@@ -41,7 +41,7 @@ export default {
     mounted(){
         //this.fit_option={ paddingTopLeft: [0, 100], paddingBottomRight:[ 0,0],duration:this.duracion_transiciones } 
 
-        this.mapa = L.map(this.id,{scrollWheelZoom:true,zoomSnap:.25})
+        this.mapa = L.map(this.id,{scrollWheelZoom:false,zoomSnap:.25})
             .fitBounds(this.fronteras_cuba)
             .setMaxBounds(this.fronteras_cuba)
         let myFilter = [

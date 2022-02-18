@@ -6,7 +6,8 @@
                 <img class="menu-blanco" src="@/assets/img/iconos/PARTOS ROTOS_01-morado.svg"/>
             </div>
             <div class="botones">
-                <button> Contacto</button>
+                <a class="boton-enlace" href="" target="_blank"> Encuesta </a>
+            
                 <button @click="menu_activo = !menu_activo"> 
                     <img class="menu-morado" src="@/assets/img/iconos/menu.svg"/>
                     <img class="menu-blanco" src="@/assets/img/iconos/menu-morado.svg"/>
@@ -82,10 +83,25 @@ export default {
             }
         }
         .botones{
+            display: inherit;
+            cursor: pointer;
+            .boton-enlace{
+                border: 1px solid #FFFFFF;
+                border-radius: 24px;
+                background: none;
+                color: #FFFFFF;
+                font-size: 14px;
+                padding: 16px 24px;
+                text-decoration: none;
+                line-height: 0;
+                margin-right: 15px;
+            }
             margin: auto 0 auto auto;
             button{
                 background: none;
                 border: none;
+                margin: auto;
+                display: flex;
                 img.menu-blanco{
                     display: inline-block;
                 }

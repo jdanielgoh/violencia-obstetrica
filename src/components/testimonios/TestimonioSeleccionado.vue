@@ -8,7 +8,13 @@
 				<ImagenPie 
 					:link='`img/testimonios/${data_testimonio.imagen}`'
 					:pie="data_testimonio.nombre"
-				/>
+				>
+					<template slot="pie-foto">
+						<button  class="boton-volver" @click="regresarTestimonios()">
+							Regresar a testimonios
+						</button>
+					</template>
+				</ImagenPie>/>
 			</div>
 			<div class="texto">
 				<p class="cita">{{data_testimonio.texto.cita}}</p>
@@ -18,9 +24,7 @@
 			</div>
 		</div>
 		<div>
-			<button @click="regresarTestimonios()">
-				Regresar a testimonios
-			</button>
+			
 		</div>
 	</article>
 </template>
@@ -89,6 +93,17 @@ export default {
 				//opacity: 0;
 			}
 		}
+	}
+	button.boton-volver{
+		border: 1px solid #FFFFFF;
+		border-radius: 24px;
+		background: none;
+		color: #FFFFFF;
+		font-size: 14px;
+		padding: 23px 24px;
+		text-decoration: none;
+		line-height: 0;
+		margin-right: 15px;
 	}
 }
 </style>

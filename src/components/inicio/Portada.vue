@@ -272,7 +272,7 @@ export default {
 	display: block;
 	.paso{
 		&:nth-child(1){
-			margin-top: 500px
+			margin-top: 50px
 		}
 		margin-bottom: 100px;
 		min-height: 90vh;

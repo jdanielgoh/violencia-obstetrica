@@ -6,6 +6,9 @@
         <div class="pie-foto">
             <p>{{pie}}</p>
         </div>
+        <slot name="pie-foto">
+
+        </slot>
     </div>
 </template>
 
@@ -42,7 +45,6 @@ export default {
         transition: background-color .5s;
         &:hover{
             background-color: transparent;
-
         }
     }
     .pie-foto{

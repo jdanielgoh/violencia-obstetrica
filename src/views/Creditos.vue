@@ -85,17 +85,25 @@
         </div>
         <div class="equipo-integrantes">
             <ImagenPie 
-				:link='"img/creditos/Andy.jpeg"'
-				:pie="'Andy Ruiz'"
-                class="ficha"
-                altura="300px"
-			/>
-            <ImagenPie 
 				:link='"img/creditos/Hellman .jpeg"'
 				:pie="'Hellman'"
                 class="ficha"
                 altura="300px"
 			/>
+            <ImagenPie 
+				:link='"img/creditos/Mary Esther.jpg"'
+				:pie="'Andy Ruiz'"
+                class="ficha"
+                altura="300px"
+			/>
+            <ImagenPie 
+				:link='"img/creditos/Andy.jpeg"'
+				:pie="'Mary Esther Lemus'"
+                class="ficha"
+                altura="300px"
+			/>
+            
+            
             
         </div>   
     </div>

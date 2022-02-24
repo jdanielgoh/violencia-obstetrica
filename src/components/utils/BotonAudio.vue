@@ -1,0 +1,77 @@
+<template>
+    <div v-if="es_inicio">
+        <button class="boton-audio" @click="togglePlay()">
+            {{this.esta_reproduciendo ? "DESACTIVAR AUDIO" : "ACTIVAR AUDIO" }}
+        </button>
+        <div id="audio">
+            
+        </div>
+    </div>
+</template>
+<script>
+//import {mapState} from "vuex"
+export default{
+    name: "BotonAudio",
+    data(){
+        return {
+            esta_reproduciendo: false,
+            es_inicio: true
+        }
+    },
+
+    mounted(){
+        this.es_inicio = this.$route.name=="Inicio"? true:false
+        this.audio = new Audio(require(`@/assets/audios/Audio ${6}.mp3`))
+        this.audio.onplaying = ()=> {
+            this.esta_reproduciendo = true;
+        };
+        this.audio.onpause = ()=> {
+            this.esta_reproduciendo = false;
+        };
+    
+       
+    },
+    methods: {
+        togglePlay(){
+            this.esta_reproduciendo ? this.audio.pause() : this.audio.play()
+        }
+    },
+    watch:{
+        $route (to){
+            if(to.name=="Inicio"){
+                this.es_inicio = true
+            }
+            else{
+                this.es_inicio = false
+                this.audio.pause()
+            }
+
+            this.esta_reproduciendo = false;
+            console.log(this.esta_reproduciendo)
+
+        },
+        
+    },
+
+
+
+}
+</script>
+<style lang="scss">
+#audios{
+    position: fixed;
+    width: 0%;
+    height: 0;
+}
+.boton-audio{
+    border: 1px solid #FFFFFF;
+    border-radius: 24px;
+    background: none;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 16px 24px;
+    text-decoration: none;
+    line-height: 0;
+    margin-right: 15px;
+}
+</style>

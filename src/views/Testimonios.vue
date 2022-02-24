@@ -26,7 +26,7 @@
 <script>
 import Vue from "vue"
 //import VueRellax from "vue-rellax";
-import ImagenPie from "@/components/ImagenPie.vue"
+import ImagenPie from "@/components/utils/ImagenPie.vue"
 import TestimonioSeleccionado from "@/components/testimonios/TestimonioSeleccionado.vue"
 import {mapState} from "vuex"
 
@@ -66,10 +66,13 @@ export default {
 			this.$store.commit("mostrarTestimonio")
 		},
 		scrollArriba() {
-			window.scrollTo({
+			setTimeout(()=>{
+				window.scrollTo({
 				top: 0,
 				behavior: 'smooth',
 			});
+			},100)
+			
 		}
 	},
 	computed: {
@@ -79,6 +82,7 @@ export default {
 		testimonio_activo(nv){
 			this.visibilidad_testimonio = nv;
 			this.scrollArriba()
+			
 
 		}
 	}

@@ -14,7 +14,7 @@
 							Regresar a testimonios
 						</button>
 					</template>
-				</ImagenPie>/>
+				</ImagenPie>
 			</div>
 			<div class="texto">
 				<p class="cita">{{data_testimonio.texto.cita}}</p>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import ImagenPie from "@/components/ImagenPie.vue"
+import ImagenPie from "@/components/utils/ImagenPie.vue"
 
 export default {
     name: "TestimonioSeleccionado",

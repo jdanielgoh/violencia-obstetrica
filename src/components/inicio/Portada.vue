@@ -170,7 +170,7 @@
 <script>
 import Vue from "vue"
 import VueRellax from "vue-rellax";
-import ImagenPie from "@/components/ImagenPie.vue"
+import ImagenPie from "@/components/utils/ImagenPie.vue"
 
 import scrollama from 'scrollama';
 import * as d3 from "d3";

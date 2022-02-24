@@ -6,11 +6,14 @@
                 <img class="menu-blanco" src="@/assets/img/iconos/PARTOS ROTOS_01-morado.svg"/>
             </div>
             <div class="botones">
-                <a class="boton-enlace" href="" target="_blank"> Encuesta </a>
-            
-                <button @click="menu_activo = !menu_activo"> 
-                    <img class="menu-morado" src="@/assets/img/iconos/menu.svg"/>
-                    <img class="menu-blanco" src="@/assets/img/iconos/menu-morado.svg"/>
+                <BotonAudio />
+                <a class="boton-enlace" href="" target="_blank"> ENCUESTA </a>
+                
+                <button @click="menu_activo = !menu_activo" class="open"> 
+                    
+                    <img v-if="!menu_activo" class="menu-morado" src="@/assets/img/iconos/menu.svg"/>
+                    <img v-if="!menu_activo" class="menu-blanco" src="@/assets/img/iconos/menu-morado.svg"/>
+                    <img v-if="menu_activo"  src="@/assets/img/iconos/close--filled.svg"/>
                 </button>
             </div>
         </div>
@@ -31,24 +34,29 @@
     </header>
 </template>
 <script>
+import BotonAudio from "@/components/utils/BotonAudio.vue";
 
 export default {
     name: "Encabezado",
+    components:{
+        BotonAudio
+    },
     data(){
         return{
             menu_activo: false,
             fondo_morado: true,
+            es_inicio: true,
             lista_morado:["Inicio","Creditos","Testimonios"]
         }
     },
     watch:{
         $route (to, from){
             this.show = false;
-            console.log(to)
             if(this.lista_morado.includes(to.name)){
                 this.fondo_morado = true
             }
             else{this.fondo_morado=false}
+
         }
     },
     mounted(){
@@ -68,7 +76,7 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 200;
+    z-index: 1001;
     .container{
         display: flex;
         padding: 15px;
@@ -97,7 +105,7 @@ export default {
                 margin-right: 15px;
             }
             margin: auto 0 auto auto;
-            button{
+            button.open{
                 background: none;
                 border: none;
                 margin: auto;

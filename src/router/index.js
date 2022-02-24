@@ -7,6 +7,7 @@ import QuienesSomos from '../views/QuienesSomos.vue'
 import Metodologia from '../views/Metodologia.vue'
 import Creditos from '../views/Creditos.vue'
 import Contacto from '../views/Contacto.vue'
+import ParirenCuba from "../views/reportajes/ParirenCuba.vue"
 
 Vue.use(VueRouter)
 
@@ -47,12 +48,9 @@ const routes = [
     component: Contacto
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: "/reportajes/parir-en-cuba",
+    name: "ParirenCuba",
+    component: ParirenCuba
   }
 ]
 

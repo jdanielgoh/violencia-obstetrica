@@ -21,49 +21,84 @@
             <h5>PERIODISTAS</h5>
         </div>
         <div class="equipo-integrantes">
-            <ImagenPie 
-				:link='"img/creditos/CLAUDIA.jpeg"'
-				:pie="'Claudia Padrón Cueto'"
-                class="ficha"
-                altura="300px"
-			/>
-            <ImagenPie 
+            <a href="https://twitter.com/padroncueto" target="_blank">
+                <ImagenPie 
+                    :link='"img/creditos/CLAUDIA.jpeg"'
+                    :pie="'Claudia Padrón Cueto'"
+                    class="ficha"
+                    altura="300px"
+                />
+            </a>
+            <a href="https://twitter.com/cantera89" target="_blank">
+                <ImagenPie 
 				:link='"img/creditos/Cynthia.jpg"'
 				:pie="'Cynthia de la Cantera Toranzo'"
                 class="ficha"
                 altura="300px"
-			/>
-            <ImagenPie 
+                />
+            </a>
+            <a href="https://twitter.com/Isamila28" target="_blank">
+                <ImagenPie 
 				:link='"img/creditos/ISABEL.jpeg"'
 				:pie="'Isabel Milagro Echemendía Pérez'"
                 class="ficha"
                 altura="300px"
-			/>
-            <ImagenPie 
+                />
+            </a>
+            <a href="https://www.facebook.com/tuniecmg" target="_blank">
+                <ImagenPie 
 				:link='"img/creditos/María Antonieta.jpeg"'
 				:pie="'María Antonieta Colunga Olivera'"
                 class="ficha"
                 altura="300px"
-			/>
-            <ImagenPie 
+                />
+            </a>
+            <a href="https://twitter.com/cabezamestiza" target="_blank">
+                <ImagenPie 
 				:link='"img/creditos/Darcy.jpeg"'
 				:pie="'Darcy Borrero Batista'"
                 class="ficha"
                 altura="300px"
-			/>
+                />
+            </a>
         </div>
     </div>
     <div class="container main equipos">
         <div class="equipo-titulo">
-            <h5>VISUALIZACIÓN</h5>
+            <h5>ANÁLISIS DE DATOS</h5>
         </div>
         <div class="equipo-integrantes">
-            <ImagenPie 
+            <a href="https://datacritica.org/" target="_blank">
+                <ImagenPie 
 				:link='"img/creditos/datacritica.jpg"'
 				:pie="'Proyecto Data Crítica'"
                 class="ficha"
                 altura="300px"
-			/>
+                />
+            </a>
+        </div>
+    </div>
+    <div class="container main equipos">
+        <div class="equipo-titulo">
+            <h5>DISEÑO WEB</h5>
+        </div>
+        <div class="equipo-integrantes">
+            <a href="https://marianalopezo.myportfolio.com" target="_blank">
+                <ImagenPie 
+				:link='"img/creditos/mars_marian.jpeg"'
+				:pie="'Mariana López Ortiz'"
+                class="ficha"
+                altura="300px"
+                />
+            </a>
+            <a href="https://twitter.com/jdanielgoh" target="_blank">
+                <ImagenPie 
+				:link='"img/creditos/dangoh.jpeg"'
+				:pie="'Daniel Gómez Hernández'"
+                class="ficha"
+                altura="300px"
+                />
+            </a>
         </div>
     </div>
     <div class="container main equipos">
@@ -71,12 +106,14 @@
             <h5>IWPR</h5>
         </div>
         <div class="equipo-integrantes">
-            <ImagenPie 
+            <a href="https://twitter.com/IWPR_AL" target="_blank">
+                <ImagenPie 
 				:link='"img/creditos/wipr.jpg"'
 				:pie="'IWPR'"
-                class="ficha"
+                class="ficha iwpr"
                 altura="300px"
-			/>
+                />
+            </a>
         </div>
     </div>
     <div class="container main equipos">
@@ -84,24 +121,30 @@
             <h5>ILUSTRADORES</h5>
         </div>
         <div class="equipo-integrantes">
-            <ImagenPie 
+            <a href="https://www.facebook.com/helman.avelle" target="_blank">
+                <ImagenPie 
 				:link='"img/creditos/Hellman .jpeg"'
 				:pie="'Hellman'"
                 class="ficha"
                 altura="300px"
-			/>
-            <ImagenPie 
+                />
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100006172846620" target="_blank">
+                <ImagenPie 
 				:link='"img/creditos/Mary Esther.jpg"'
 				:pie="'Andy Ruiz'"
                 class="ficha"
                 altura="300px"
-			/>
-            <ImagenPie 
+                />
+            </a>
+            <a href="https://www.facebook.com/hackndy" target="_blank">
+                <ImagenPie 
 				:link='"img/creditos/Andy.jpeg"'
 				:pie="'Mary Esther Lemus'"
                 class="ficha"
                 altura="300px"
-			/>
+                />
+            </a>
             
             
             
@@ -112,7 +155,7 @@
 
 <script>
 // @ is an alias to /src
-import ImagenPie from "@/components/ImagenPie.vue";
+import ImagenPie from "@/components/utils/ImagenPie.vue";
 
 export default {
   name: "Creditos",
@@ -121,7 +164,7 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
+<style  lang="scss">
 .creditos {
     background: #4a2582;
     h1.blanco {
@@ -152,10 +195,16 @@ export default {
             display: flex;
             flex-wrap: wrap;
             gap: 30px 30px; 
-            .ficha{
+            a{
                 flex: 0 1 30%;
+                text-decoration: none;
+            .ficha.iwpr{
+                .cover{
+                    background-color: transparent;
+                }
 
 
+                }
             }
         }
 

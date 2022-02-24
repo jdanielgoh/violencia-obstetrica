@@ -7,11 +7,8 @@
             <p><span>{{cantidad}}</span></p>
         </div>
         <div class="pictos">
-            <span v-for="x in cantidad" :key="x"></span>
-
+            <img v-for="x in cantidad" :key="x" src="img/iconos/picto_mujer.svg">
         </div>
-
-
     </div>
 </template>
 <script >
@@ -29,13 +26,29 @@ export default {
     },
 
     mounted(){
-
+d3.selectAll(`#picto-${this.cardinal} div.pictos img`)
+                    .style("opacity",0)
+                    .interrupt()
+                    .transition()
+                    .delay((d,i) => 10*i)
+                    .style("opacity",1)
     },
     methods: {
         
     },
     watch:{
-        
+        cantidad(){ 
+            setTimeout(()=>{
+                d3.selectAll(`#picto-${this.cardinal} div.pictos img`)
+                    .style("opacity",0)
+                    .interrupt()
+                    .transition()
+                    .delay((d,i) => 10*i)
+                    .style("opacity",1)
+            }, 40)
+            
+                
+        }
     }
 
 }
@@ -45,6 +58,9 @@ export default {
     display: flex;
     margin-top: 40px;
     font-size: 16px;
+    &:nth-child(1){
+		margin-top: 0;
+	}
     div.afeccion{
         width: 40%;
         div{
@@ -87,11 +103,9 @@ export default {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-        span{
-            width: percentage(1/20);
-            background:white;
-            border-radius: 50%;
-            height: 20px;
+        img{
+            margin: 2px;
+            opacity: 0;
         }
     }
 

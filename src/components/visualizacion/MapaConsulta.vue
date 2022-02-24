@@ -21,7 +21,7 @@
         <div class="contenedor-mapa container main" :id="id">
 
         </div>
-        <div class="contenedor-graficos container main">
+        <div class="contenedor-graficos container main" id="contenedores-pictos">
             <GraficosPictos
                 v-for="(col, i) in columnas"
                 :key="i"
@@ -53,7 +53,8 @@ export default {
                 L.latLng(26, -86),
                 L.latLng(16, -73)
             ),
-
+            no_seleccion :0,
+            
             lista_hospitales: [["Todos", 0]],
             hospital_seleccionado:0,
             escala_circulos: 2,
@@ -202,7 +203,16 @@ export default {
             else{
                 this.data_seleccionada_grafica = data_seleccionada_desagregada.filter(d=>d.id == this.hospital_seleccionado)[0]
             }
-            this.seleccionDeAfeccion()
+            this.seleccionDeAfeccion();
+            if(this.no_seleccion != 0){
+                /*setTimeout(()=>{
+                    document.querySelector("#contenedores-pictos").scrollIntoView({
+                    behavior: 'smooth'
+                });
+                },3000)*/
+            }
+            this.no_seleccion += 1
+            
         },
         zoomAHospitales(){
             if(this.hospital_seleccionado!=0){
@@ -297,31 +307,55 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "~leaflet/dist/leaflet.css";
+
+
 .contenedor-vis-consulta{
     margin-top: 200px;
     .contenedor-selectores{
         display: flex;
+        gap:30px;
+        
         
         .selector{
+            flex:1;
             &> *{
                 display: block;
             } 
+            color: #fff;
             select{
-                width: 100px;
-                overflow: hidden;
-                white-space: pre;
-                text-overflow: ellipsis;
-                -webkit-appearance: none;
+                width: 100%;
+                font-size: 20px;
+                font-weight: 700;
+                display: block;
+                font-size: 20px;
+                color: #fff;
+                background-color:#4A2582;
+                font-weight: 600;
+                padding: 7px 30px 7px 0;
+                width: 100%;
+                border:none;
+                margin-bottom: 10px;
+                &:focus, &:hover {
+                    border-color: #eee;
+                }
+                option{
+                    background-color: #4A2582;
+                    font-size: 14px;
+
+                }
             }
         }
     }
     
     div.contenedor-mapa{
-        width:100%;
+        width:calc(100% - 30px);
         height: calc(100vh - 200px);
         max-height: 500px;
         background-color:#4a129c;
         
+    }
+    div.contenedor-graficos{
+        margin-top: 50px;
     }
 }
 

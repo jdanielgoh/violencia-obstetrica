@@ -1,0 +1,62 @@
+<template>
+  <div class="tus-derechos">
+    <div class="container text">
+      <h1 class="blanco">
+        Conoce tus derechos
+        <hr />
+      </h1>
+      <div class="descargables">
+            <DescargaDocumento
+                titulo="Modelos de cuidados humanizados a la mujer durante el trabajo de parto y el parto"
+                autorxs="LIC. LAREISY BORGES DAMAS, MSC"
+                ruta="descargables/Borges Damas.pdf"
+            />
+            <DescargaDocumento
+                titulo="Una concepción integral del parto humanizado en Cuba"
+                autorxs="Lareisy Borges Damas, Rolando Sánchez Machado, Hernández, Arahi Sixto Pérez, Roberto Domínguez"
+                ruta="descargables/cog183e.pdf"
+            />
+            <DescargaDocumento
+                titulo="Dr. C. Dailys García Jordá, Dr. C. Zoe Díaz Bernal, Lic. Marlen Acosta Álamo I"
+                autorxs="El nacimiento en Cuba: análisis de la experiencia del parto medicalizado desde una perspectiva antropológica*"
+                ruta="descargables/partos cuba investigacion antropologica.pdf"
+            />
+            <DescargaDocumento
+                titulo="Representaciones y prácticas sobre el nacimiento: un análisis desde la perspectiva antropológica."
+                autorxs="MSc. Dailys García Jordá"
+                ruta="descargables/tesis garcia jorda.pdf"
+            />
+      </div>
+     
+    </div>
+   
+  </div>
+</template>
+
+<script>
+// @ is an alias to /src
+import DescargaDocumento from "@/components/utils/DescargaDocumento.vue";
+
+export default {
+  name: "TusDerechos",
+  components: {
+    DescargaDocumento,
+  },
+};
+</script>
+<style  lang="scss">
+.tus-derechos {
+    background: #4a2582;
+    h1.blanco {
+        line-height: 1.1;
+        max-width: 400px;
+        position:relative;
+        hr{
+            position: relative;
+            top: -10px;
+        }
+    }
+   
+  
+}
+</style>

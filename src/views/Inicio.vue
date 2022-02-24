@@ -1,7 +1,7 @@
 <template>
 	<div class="inicio">
 
-		<!--<Portada/>-->
+		<Portada/>
 		<section id="especiales" class="container main">
 			<h3 class="blanco">Especiales
 				<hr/>
@@ -75,6 +75,7 @@ $margen-especiales: 70px;
 .inicio{
   	background: #4A2582;
 	#especiales{
+		padding-top: 40px;
 		h3{
 			font-size: 56px;
 			line-height: .3;

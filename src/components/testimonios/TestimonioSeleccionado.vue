@@ -1,6 +1,9 @@
 <template>
     <article  class="testimonios-seleccionado container main">
-        <h1 class="blanco">{{data_testimonio.nombre}}
+        <slot name="paginador">
+
+        </slot>
+		<h1 class="blanco">{{data_testimonio.nombre}}
 			<hr/>
 		</h1>
         <div class="paso" id="scrolly">

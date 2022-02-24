@@ -58,8 +58,18 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
-  scrollBehavior() {
-    return { x: 0, y: 0, behavior: 'smooth' };
+  scrollBehavior(to) {
+    console.log(to.hash)
+    if(to.hash ){
+      return{
+        selector: to.hash,
+      }
+    }
+    else{
+      console.log("nohash")
+      return { x: 0, y: 0, behavior: 'smooth' };
+    }
+      
   },
 
 })

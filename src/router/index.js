@@ -66,7 +66,6 @@ const router = new VueRouter({
       }
     }
     else{
-      console.log("nohash")
       return { x: 0, y: 0, behavior: 'smooth' };
     }
       

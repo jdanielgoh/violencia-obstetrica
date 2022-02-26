@@ -34,7 +34,7 @@
 				</div>
 			</div>
 		</section>
-		<!--<PortadaScroll/>-->
+		<PortadaScroll/>
 		<section class="container">
 			<MapaConsulta
 				:id="'mapa-consulta'"

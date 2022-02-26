@@ -34,6 +34,9 @@
 				</div>
 			</template>
 		</TestimonioSeleccionado>
+		<MapaTestimonios
+			:id="'mapa-testimonios'"
+		/>
 	</div>
 </template>
 
@@ -42,6 +45,8 @@ import Vue from "vue"
 //import VueRellax from "vue-rellax";
 import ImagenPie from "@/components/utils/ImagenPie.vue"
 import TestimonioSeleccionado from "@/components/testimonios/TestimonioSeleccionado.vue"
+import MapaTestimonios from "@/components/testimonios/MapaTestimonios.vue"
+
 import {mapState} from "vuex"
 
 //Vue.use(VueRellax);
@@ -53,7 +58,8 @@ export default {
 	name: 'Testimonios',
 	components: {
 		ImagenPie,
-		TestimonioSeleccionado
+		TestimonioSeleccionado,
+		MapaTestimonios
 	},
 	data(){
 		return {

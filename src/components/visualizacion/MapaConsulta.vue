@@ -111,7 +111,6 @@ export default {
             },
             columnas: Array,
             data_seleccionada_grafica:Array
-
         }
     },
     mounted(){

@@ -21,7 +21,7 @@ export default{
 
     mounted(){
         this.es_inicio = this.$route.name=="Inicio"? true:false
-        this.audio = new Audio(require(`@/assets/audios/Audio ${6}.mp3`))
+        this.audio = new Audio(require(`@/assets/audios/CLIP COMPLETO.mp3`))
         this.audio.onplaying = ()=> {
             this.esta_reproduciendo = true;
         };

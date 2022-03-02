@@ -1,0 +1,24 @@
+[
+
+    {
+        "to": "/testimonios",
+        "img": "img/testimonios/claudia_exposito.JPG",
+        "titulo": "Testimonios",
+        "descripcion": "",
+        "clase":"third",
+        "resumen": "Conoce los testimonios reales de mujeres que sufrieron violencia obstétrica",
+        "texto_boton": "Ir a testimonios"
+
+    },
+    {
+        "to": "/podcasts",
+        "img": "img/stock/podcasts.png",
+        "titulo": "Podcasts",
+        "autorxs": "",
+        "descripcion": "Escucha nuestro contenido semanal, Escúchalo a través de Anchor.",
+        "clase":"third",
+        "resumen": "Escucha nuestro contenido semanal, Escúchalo a través de Anchor.",
+        "texto_boton": "Ir a podcasts"
+
+    }
+]

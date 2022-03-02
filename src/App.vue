@@ -3,15 +3,18 @@
 		<Encabezado/>
 		
 		<router-view class="vista"/>
+        <Pie/>
 	</div>
 </template>
 <script>
 import Encabezado from '@/components/Encabezado.vue'
 import { mapMutations,mapState } from 'vuex'
+import Pie from '@/components/Pie.vue'
 
 export default {
 	components:{
-		Encabezado
+		Encabezado,
+        Pie,
 	},
 	
 	watch:{

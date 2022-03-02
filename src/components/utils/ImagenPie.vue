@@ -3,9 +3,6 @@
         <div class="cover" :style="{
             backgroundImage: `url('${link}')`,
             height: `${altura}`}"></div>
-        <div class="pie-foto">
-            <p>{{pie}}</p>
-        </div>
         <slot name="pie-foto">
 
         </slot>
@@ -41,7 +38,7 @@ export default {
         align-items: flex-end;
         justify-content: center;
         background-color: #4A2582;
-        background-blend-mode: screen;
+        background-blend-mode: luminosity;
         transition: background-color .5s;
         &:hover{
             background-color: transparent;

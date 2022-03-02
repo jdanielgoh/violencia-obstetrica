@@ -1,0 +1,93 @@
+// * * binded style variables * *
+// --options-height --> dynamic options menu height
+// --option-height --> dynamic single option item height
+// --dropdown-width --> dynamic dropdown & options drawer width
+
+// * * * Variables * * *
+$default-border-radius: 4px;
+$default-text-hover-color: black;
+$default-hover-color: transparent;
+$default-text-color: #fff;
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: var(--dropdown-width);
+  height: var(--option-height);
+  padding: 0 5px;
+  position: relative;
+  border: var(--dropdown-border);
+  border-radius: var(--main-el-border-radius);
+  cursor: pointer;
+  color: var(--dropdown-default-text-color);
+  background: var(--dropdown-background-color);
+  user-select: none;
+  .text {
+  }
+  .angle-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid $default-text-color;
+    background: transparent;
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    width: 1px;
+    height: 1px;
+    margin: -3px 5px 0 0;
+    border-color: var(--dropdown-default-text-color);
+    transform: rotate(45deg);
+  }
+  .options {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: calc(-1 * var(--options-height) - 3px);
+    position: absolute;
+    left: -1px;
+    top: calc(var(--option-height));
+    z-index: 1;
+    background: var(--dropdown-background-color);
+    border: var(--dropdown-border);
+    border-radius: var(--main-el-border-radius);
+    .option {
+      display: flex;
+      align-items: center;
+      width: auto;
+      padding: 0 5px;
+      height: 35px;
+    }
+    .option:hover {
+      color: $default-text-hover-color;
+      background: $default-hover-color;
+      transition: all 0.7s;
+    }
+    .option:last-child {
+      border-radius: 0 0 4px 4px;
+    }
+  }
+  .shown {
+    border: var(--dropdown-border);
+    max-height: 999px;
+    transition: all 1s linear;
+  }
+}
+.dropdown:hover {
+  background: var(--dropdown-hover-background-color);
+  transition: 0.7s all;
+  .text,
+  i {
+    color: var(--dropdown-default-text-color);
+  }
+}
+.dropdown-shown {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+// Smartphones - Landscape + Portrait
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+}

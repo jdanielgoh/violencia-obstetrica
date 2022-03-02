@@ -3,7 +3,7 @@
 		<div class="row">
 		<div class="imagen">
 			<ImagenPie
-			:link="'portada-rellax/0004.png'"
+			:link='"img/portada-rellax/0004.jpg"'
 			:pie="'nombre de persona'"
 			:altura="'500px'"
 			/>
@@ -50,7 +50,7 @@
 		</div>
 		<div class="imagen">
 			<ImagenPie
-			:link="'portada-rellax/0008.png'"
+			:link='"img/portada-rellax/0008.jpg"'
 			:pie="'nombre de persona'"
 			:altura="'500px'"
 			/>
@@ -59,7 +59,7 @@
 		<div class="row">
 		<div class="imagen">
 			<ImagenPie
-			:link="'portada-rellax/0010.png'"
+			:link='"img/portada-rellax/0014.jpg"'
 			:pie="'nombre de persona'"
 			:altura="'500px'"
 			/>
@@ -76,7 +76,7 @@
 			A MADRES CUBANAS ENTRE 20 Y 60 AÑOS.
 			</p>
 			<ImagenPie
-			:link="'portada-rellax/0006.png'"
+			:link='"img/portada-rellax/0017.jpg"'
 			:pie="'nombre de persona'"
 			:altura="'500px'"
 			/>

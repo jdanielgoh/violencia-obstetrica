@@ -15,7 +15,7 @@
     },
     {
         "nombre": "Mirita Ramírez",
-        "imagen": "",
+        "imagen": "anonima.png",
         "texto": {
             "cita":"Terminé toda desgarrada, llena de puntos y me desmayé allí",
             "titulo": "Testimonio de Mirita Ramírez",
@@ -30,7 +30,7 @@
     },
     {
         "nombre": "Claudia Expósito",
-        "imagen": "claudia_exposito.JPG",
+        "imagen": "claudia_exposito.jpg",
         "texto": {
             "cita":"¡Atiéndanla, que las que ponemos las muertas somos nosotras!",
             "titulo": "Testimonio de Claudia Expósito",
@@ -67,7 +67,7 @@
     },
     {
         "nombre": "Leydis",
-        "imagen": "",
+        "imagen": "anonima.png",
         "texto": {
             "cita":"Mi hijo nació morado, con la cabeza puntiaguda y sin llorar. No se movía",
             "titulo": "Testimonio de Leydis",
@@ -158,7 +158,7 @@
     },
     {
         "nombre": "Maylín",
-        "imagen": "",
+        "imagen": "anonima.png",
         "texto": {
             "cita":"Me dieron contracciones fuertes, solté el tapón mucoso, comencé a perder líquido, y no me hicieron caso",
             "titulo": "Testimonio de Maylín",
@@ -196,7 +196,7 @@
     },
     {
         "nombre": "Patricia de Cepeda",
-        "imagen": "",
+        "imagen": "anonima.png",
         "texto": {
             "cita":"Yo no tenía fuerzas ni para llorar más",
             "titulo": "Testimonio de Patricia de Cepeda",
@@ -207,7 +207,7 @@
     },
     {
         "nombre": "Rainys María Rodríguez",
-        "imagen": "rainys_maria_rodriguez.JPG",
+        "imagen": "rainys_maria_rodriguez.jpg",
         "texto": {
             "cita":"Mi parto no fue lo que esperábamos",
             "titulo": "Testimonio de Rainys María Rodríguez",

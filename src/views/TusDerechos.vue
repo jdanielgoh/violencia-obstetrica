@@ -5,27 +5,35 @@
         Conoce tus derechos
         <hr />
       </h1>
+    </div>
+      <div class="container main">
+        <img
+          class="ilustracion"
+          :src="require('@/assets/img/tus_derechos/INFIGRAFIA.jpg')"
+        />
+      </div>
+      <div class="container text">
       <div class="descargables">
-            <DescargaDocumento
-                titulo="Modelos de cuidados humanizados a la mujer durante el trabajo de parto y el parto"
-                autorxs="LIC. LAREISY BORGES DAMAS, MSC"
-                ruta="descargables/Borges Damas.pdf"
-            />
-            <DescargaDocumento
-                titulo="Una concepción integral del parto humanizado en Cuba"
-                autorxs="Lareisy Borges Damas, Rolando Sánchez Machado, Hernández, Arahi Sixto Pérez, Roberto Domínguez"
-                ruta="descargables/cog183e.pdf"
-            />
-            <DescargaDocumento
-                titulo="Dr. C. Dailys García Jordá, Dr. C. Zoe Díaz Bernal, Lic. Marlen Acosta Álamo I"
-                autorxs="El nacimiento en Cuba: análisis de la experiencia del parto medicalizado desde una perspectiva antropológica*"
-                ruta="descargables/partos cuba investigacion antropologica.pdf"
-            />
-            <DescargaDocumento
-                titulo="Representaciones y prácticas sobre el nacimiento: un análisis desde la perspectiva antropológica."
-                autorxs="MSc. Dailys García Jordá"
-                ruta="descargables/tesis garcia jorda.pdf"
-            />
+        <DescargaDocumento
+            titulo="Modelos de cuidados humanizados a la mujer durante el trabajo de parto y el parto"
+            autorxs="LIC. LAREISY BORGES DAMAS, MSC"
+            ruta="descargables/Borges Damas.pdf"
+        />
+        <DescargaDocumento
+            titulo="Una concepción integral del parto humanizado en Cuba"
+            autorxs="Lareisy Borges Damas, Rolando Sánchez Machado, Hernández, Arahi Sixto Pérez, Roberto Domínguez"
+            ruta="descargables/cog183e.pdf"
+        />
+        <DescargaDocumento
+            titulo="Dr. C. Dailys García Jordá, Dr. C. Zoe Díaz Bernal, Lic. Marlen Acosta Álamo I"
+            autorxs="El nacimiento en Cuba: análisis de la experiencia del parto medicalizado desde una perspectiva antropológica*"
+            ruta="descargables/partos cuba investigacion antropologica.pdf"
+        />
+        <DescargaDocumento
+            titulo="Representaciones y prácticas sobre el nacimiento: un análisis desde la perspectiva antropológica."
+            autorxs="MSc. Dailys García Jordá"
+            ruta="descargables/tesis garcia jorda.pdf"
+        />
       </div>
      
     </div>
@@ -56,7 +64,9 @@ export default {
             top: -10px;
         }
     }
-   
+  img.ilustracion{
+    width: 100%;
+  }
   
 }
 </style>

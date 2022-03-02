@@ -1,0 +1,244 @@
+<template>
+    <section class="container main grid-secciones">
+        <h3 class="blanco">
+            {{titulo}}
+            <hr/>
+        </h3>
+        <div class="contenedor-escroleable">
+            <div class="contenedor-secciones">
+                <div class="ficha" v-for="(datum, i) in data" :key="i" :class="datum.clase">
+                    <div
+                        class="link-ficha" 
+                        >
+                        <ImagenPie 
+                            :link='datum.img'
+                        >
+                            <template slot="pie-foto">
+								<div class="pie-foto-template">
+									<p class="titulo"><strong>{{datum.titulo}}</strong></p>
+                                	<p class="autorxs">{{datum.autorxs}}</p>
+									<p class="resumen">{{datum.resumen}}</p>
+									<router-link 
+										:to="datum.to" 
+										class="link-ficha" 
+										>
+										<img src="img/iconos/arrow--right.svg"/>
+										<span>{{datum.texto_boton}}</span>
+									</router-link>
+								</div>
+                            </template>
+                        </ImagenPie>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+<script>
+import ImagenPie from "@/components/utils/ImagenPie.vue"
+
+export default {
+    name: "GridSecciones",
+    components: {
+        ImagenPie
+    },
+    props: {
+        titulo: String,
+        data: Array,
+    }
+}
+</script>
+<style lang="scss">
+$margen-grid-secciones: 70px;
+@import "../../scss/_variables";
+
+.grid-secciones{
+		padding-top: 40px;
+		h3{
+			font-size: 56px;
+			line-height: .3;
+			&.blanco{
+				color: #fff
+			}
+		}
+		.contenedor-secciones{
+			display: flex;
+			flex-wrap: wrap;
+			gap: 30px;
+
+			div.ficha{
+				&.third{
+					width: calc(33% - 15px) ;
+					@media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+						width: 100%
+					}
+					div.imagen-blend-pie{
+						
+						.pie-foto-template{
+							margin: auto 0 auto 0;
+							p{
+								color: #fff;
+								&.titulo{
+									strong{
+										font-size: 24px;
+										line-height: 1.1;
+										font-weight: 700;
+									}
+									margin-bottom:0;
+								}
+								&.autorxs{
+									font-size: 14px;
+									margin-top: 5px;
+									text-transform: uppercase;
+									letter-spacing: 0.7px;
+									opacity: .7;
+								}
+								&.resumen{
+									font-size: 16px;
+									margin-top: 5px;
+									opacity: .7;
+								}
+							}
+							a.link-ficha{
+								text-decoration: none;
+								color: #FDA1C9;
+								border: 1px solid #FDA1C9;
+								border-radius: 24px;
+								padding: 10px;
+								font-size: 14px;
+								text-transform: uppercase;
+								font-weight: 700;
+								img{
+									height: 24px;
+									position: relative;
+									top: 6px;
+									margin-right: 10px;
+								}
+							}
+						}
+						.cover{
+							height: 360px!important;
+							background-color: transparent !important;
+						}
+					}
+				}
+				&.full{
+					width: 100%;
+					div.imagen-blend-pie{
+						display: flex;
+						flex-wrap: nowrap;
+						gap: 30px;
+						.pie-foto-template{
+							margin: auto 0 auto 0;
+							width: calc(50% - 15px);
+							p{
+								color: #fff;
+								&.titulo{
+									strong{
+										font-size: 32px;
+										line-height: 1.1;
+										font-weight: 700;
+									}
+									margin-bottom:0;
+								}
+								&.autorxs{
+									font-size: 14px;
+									margin-top: 5px;
+									text-transform: uppercase;
+									letter-spacing: 0.7px;
+									opacity: .7;
+								}
+								&.resumen{
+									font-size: 16px;
+									margin-top: 5px;
+									opacity: .7;
+								}
+							}
+							a.link-ficha{
+								text-decoration: none;
+								color: #FDA1C9;
+								border: 1px solid #FDA1C9;
+								border-radius: 24px;
+								padding: 10px;
+								font-size: 14px;
+								text-transform: uppercase;
+								font-weight: 700;
+								img{
+									height: 24px;
+									position: relative;
+									top: 6px;
+									margin-right: 10px;
+								}
+							}
+						}
+						.cover{
+							width: calc(50% - 15px);
+							height: 480px!important;
+							background-color: transparent;
+
+
+						}
+					}
+					
+				}
+				&.third, &.full{
+					@media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+						width: 100%;
+						div.imagen-blend-pie{
+							display: flex;
+							flex-wrap: wrap;
+							.pie-foto-template{
+								margin: auto 0 auto 0;
+								width: 100%;
+								p{
+									color: #fff;
+									&.titulo{
+										strong{
+											font-size: 24px;
+											line-height: 1.1;
+											font-weight: 700;
+										}
+										margin-bottom:0;
+									}
+									&.autorxs{
+										font-size: 14px;
+										margin-top: 5px;
+										text-transform: uppercase;
+										letter-spacing: 0.7px;
+										opacity: .7;
+									}
+									&.resumen{
+										font-size: 16px;
+										margin-top: 5px;
+										opacity: .7;
+									}
+								}
+								a.link-ficha{
+									text-decoration: none;
+									color: #FDA1C9;
+									border: 1px solid #FDA1C9;
+									border-radius: 24px;
+									padding: 10px;
+									font-size: 14px;
+									text-transform: uppercase;
+									font-weight: 700;
+									img{
+										height: 24px;
+										position: relative;
+										top: 6px;
+										margin-right: 10px;
+									}
+								}
+							}
+							.cover{
+								height: 360px!important;
+								width: 100%;
+								background-color: transparent !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+</style>

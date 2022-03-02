@@ -1,14 +1,17 @@
 <template>
-    <header class="header" :class="{'fondo-morado': fondo_morado}">
-        <div class="container main">
+    <header class="header" :class="{'fondo-morado': fondo_morado,'menu-activo': menu_activo}">
+        <div class="container main encabezado">
             <div class="logo">
-                <img class="menu-morado" src="@/assets/img/iconos/PARTOS ROTOS_01.svg"/>
-                <img class="menu-blanco" src="@/assets/img/iconos/PARTOS ROTOS_01-morado.svg"/>
+                <router-link to="/" >
+                    <img class="menu-morado" src="@/assets/img/iconos/PARTOS ROTOS_01.svg"/>
+                    <img class="menu-blanco" src="@/assets/img/iconos/PARTOS ROTOS_01-morado.svg"/>
+                </router-link>
             </div>
             <div class="botones">
                 <BotonAudio />
-                <a class="boton-enlace" href="" target="_blank"> ENCUESTA </a>
-                
+                <DropDown 
+                    :config="config"
+                ></DropDown>
                 <button @click="menu_activo = !menu_activo" class="open"> 
                     
                     <img v-if="!menu_activo" class="menu-morado" src="@/assets/img/iconos/menu.svg"/>
@@ -20,14 +23,15 @@
         <nav :class="{'activo': menu_activo}" >
             <div class="container main">
                 <div class="opciones">
-                    <router-link to="/" @click.native="menu_activo = !menu_activo">INICIO</router-link>
-                    <router-link to="/testimonios" @click.native="menu_activo = !menu_activo">TESTIMONIOS</router-link>
-                    <router-link to="/tus_derechos" @click.native="menu_activo = !menu_activo">TUS DERECHOS</router-link>
-                    <router-link to="/quienes_somos" @click.native="menu_activo = !menu_activo">¿QUIÉNES SOMOS?</router-link>
-                    <router-link :to="{name:'Metodologia'}" @click.native="menu_activo = !menu_activo">METODOLOGÍA</router-link>
                     <router-link :to="{name:'Inicio', hash:'#especiales'}" @click.native="menu_activo = !menu_activo">ESPECIALES</router-link>
+                    <router-link :to="{name:'Inicio', hash:'#visualizaciones'}" @click.native="menu_activo = !menu_activo">VISUALIZACIONES</router-link>
+                    <router-link :to="{name: 'Testimonios'}" @click.native="menu_activo = !menu_activo">TESTIMONIOS</router-link>
+                    <router-link :to="{name: 'Podcasts'}" @click.native="menu_activo = !menu_activo">PODCASTS</router-link>
+                    <router-link :to="{name: 'TusDerechos'}" @click.native="menu_activo = !menu_activo">TUS DERECHOS</router-link>
+                    <router-link :to="{name: 'QuienesSomos'}" @click.native="menu_activo = !menu_activo">¿QUIÉNES SOMOS?</router-link>
+                    <router-link :to="{name: 'Metodologia'}" @click.native="menu_activo = !menu_activo">METODOLOGÍA</router-link>
 
-                    <router-link to="/creditos" @click.native="menu_activo = !menu_activo">CRÉDITOS</router-link>
+                    <router-link :to="{name:'Creditos'}" @click.native="menu_activo = !menu_activo">CRÉDITOS</router-link>
                     <!--<router-link to="/contacto" @click.native="menu_activo = !menu_activo">CONTACTO</router-link>-->
                 </div>
             </div>
@@ -36,25 +40,46 @@
     </header>
 </template>
 <script>
+import DropDown from "@/components/utils/drop-down/DropDown.vue";
+
 import BotonAudio from "@/components/utils/BotonAudio.vue";
 
 export default {
     name: "Encabezado",
     components:{
-        BotonAudio
+        BotonAudio,
+        DropDown
     },
     data(){
         return{
+            config: {
+                options: [
+                {
+                    value: '<a class="boton-enlace" href="https://capir.limequery.org/571399" target="_blank"> PARTO PROPIO </a>'
+                },
+                {
+                    value: '<a class="boton-enlace" href="https://capir.limequery.org/145636" target="_blank"> MUERTE MATERNA </a>'
+                },
+                
+                ],
+                placeholder: "ENCUESTAS",
+                backgroundColor: "#4A2582",
+                textColor: "#FFF",
+                borderRadius: "20px",
+                border: "1px solid #fff",
+                width: 150
+            },
             menu_activo: false,
             fondo_morado: true,
             es_inicio: true,
-            lista_morado:["Inicio","Creditos","Testimonios","TusDerechos"]
+            lista_morado:["Inicio","Creditos","Testimonios","TusDerechos", "Podcasts"]
         }
     },
     watch:{
         $route (to, from){
+
             this.show = false;
-            if(this.lista_morado.includes(to.name)){
+            if(this.lista_morado.includes(to.name) || to.fullPath.includes("visualizaciones")){
                 this.fondo_morado = true
             }
             else{this.fondo_morado=false}
@@ -62,7 +87,7 @@ export default {
         }
     },
     mounted(){
-            if(this.lista_morado.includes(this.$route.name)){
+            if(this.lista_morado.includes(this.$route.name) || this.$route.fullPath.includes("visualizaciones") ){
                 this.fondo_morado = true
             }
             else{this.fondo_morado=false}
@@ -78,8 +103,24 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1001;
+    z-index: 1002;
     .container{
+        &.encabezado{
+            overflow: inherit;
+            div.dropdown{
+                
+                font-size: 14px;
+                padding: 0 10px;
+
+                .options{
+                    border: none;
+                }
+                .option{
+                    
+                    min-width: 200px;   
+                }
+            }
+        }
         display: flex;
         padding: 15px;
         flex-wrap: nowrap;
@@ -143,7 +184,7 @@ export default {
         }
 
     }
-    &.fondo-morado{
+    &.fondo-morado, &.menu-activo{
         background: #4A2582;
         .container{
             .botones{

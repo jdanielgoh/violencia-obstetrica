@@ -2,7 +2,7 @@
 
     {
         "to": "/testimonios",
-        "img": "img/testimonios/claudia_exposito.JPG",
+        "img": "img/testimonios/claudia_exposito.jpg",
         "titulo": "Testimonios",
         "descripcion": "",
         "clase":"third",

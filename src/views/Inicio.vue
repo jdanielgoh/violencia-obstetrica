@@ -35,6 +35,7 @@ import visualizaciones from "@/assets/data/visualizaciones.json"
 import especiales from "@/assets/data/especiales.json"
 
 import te_puede_interesar from "@/assets/data/te_puede_interesar.json"
+
 export default {
 	name: 'Inicio',
 	components: {
@@ -42,12 +43,21 @@ export default {
 		ImagenPie,
 		GridSeccion
 	},
+	beforeMount(){
+		this.te_puede_interesar.forEach(d => {
+			d.img = require(`@/assets/${d.img}`)
+			
+		});
+	},
 	data(){
 		return {
 			especiales: especiales,
 			visualizaciones : visualizaciones,
 			te_puede_interesar: te_puede_interesar
 		}
+	},
+	mounted(){
+		
 	},
 	
 	methods:{

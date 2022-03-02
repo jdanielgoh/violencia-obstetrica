@@ -1,7 +1,7 @@
 <template>
     <div id="audios">
         <audio
-            :src="require(`@/assets/audios/Audio ${6}.mp3`)"
+            :src="require(`@/assets/audios/CLIP COMPLETO.mp3`)"
             id="my_audio" 
             loop="loop" 
             autoplay="autoplay"

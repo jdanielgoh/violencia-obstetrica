@@ -2,65 +2,52 @@
 	<div class="inicio">
 
 		<Portada/>
-		<section id="especiales" class="container main">
-			<h3 class="blanco">Especiales
-				<hr/>
-			</h3>
-			<div class="contenedor-escroleable">
-				<div class="contenedor-secciones">
-					<div class="ficha">
-						<router-link to="/reportajes/parir-en-cuba" class="link-ficha">
-							<ImagenPie 
-								:link='`img/testimonios/claudia_exposito.JPG`'
-							>
-								<template slot="pie-foto">
-									<p class="titulo"><strong>Parir en Cuba, un sistema también vertical</strong></p>
-									<p class="autorxs">CYNTHIA DE LA CANTERA TORANZO</p>
-								</template>
-							</ImagenPie>
-							</router-link>
-					</div>
-					<div class="ficha">
-						<router-link to="/testimonios" class="link-ficha">
-							<ImagenPie 
-								:link='`img/testimonios/claudia_exposito.JPG`'
-							>
-								<template slot="pie-foto">
-									<p class="titulo"><strong>Testimonios</strong></p>
-								</template>
-							</ImagenPie>
-							</router-link>
-					</div>
-				</div>
-			</div>
-		</section>
-		<PortadaScroll/>
-		<section class="container">
-			<MapaConsulta
-				:id="'mapa-consulta'"
-			/>
-		</section>
+		<GridSeccion
+			id="especiales"
+			titulo="Especiales"
+			:data="especiales"
+		/>
+		<GridSeccion
+			id="visualizaciones"
+			titulo="Visualizaciones"
+			:data="visualizaciones"
+		/>
+		<GridSeccion
+			id="podcast-testimonios"
+			titulo="Te puede insteresar"
+			:data="te_puede_interesar"
+		/>
 
-		
+
 	</div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Portada from '@/components/inicio/Portada.vue'
-import PortadaScroll from '@/components/inicio/PortadaScroll.vue'
 
 import ImagenPie from "@/components/utils/ImagenPie.vue"
-import MapaConsulta from "@/components/visualizacion/MapaConsulta.vue"
+import GridSeccion from "@/components/inicio/GridSeccion.vue"
 
 
+import visualizaciones from "@/assets/data/visualizaciones.json"
+
+import especiales from "@/assets/data/especiales.json"
+
+import te_puede_interesar from "@/assets/data/te_puede_interesar.json"
 export default {
 	name: 'Inicio',
 	components: {
 		Portada,
-		PortadaScroll,
 		ImagenPie,
-		MapaConsulta
+		GridSeccion
+	},
+	data(){
+		return {
+			especiales: especiales,
+			visualizaciones : visualizaciones,
+			te_puede_interesar: te_puede_interesar
+		}
 	},
 	
 	methods:{

@@ -1,0 +1,20 @@
+[
+    {
+        "to": "/visualizaciones/violencia-cuba",
+        "img": "img/vis-violencias.png",
+        "titulo": "Cientos de mujeres confirman haber vivido violencia obstétrica en Cuba",
+        "descripcion": "",
+        "clase":"third",
+        "resumen": "",
+        "texto_boton": "Historia con datos"
+    },
+    {
+        "to": "/visualizaciones/mapa-testimonios",
+        "img": "img/vis-testimonios.png",
+        "titulo": "Mapa de testimonios",
+        "descripcion": "",
+        "clase":"third",
+        "resumen": "Conoce los testimonios de mujeres encuestadas en Cuba",
+        "texto_boton": "Consulta aquí"
+    }
+]

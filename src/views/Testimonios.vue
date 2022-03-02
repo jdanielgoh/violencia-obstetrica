@@ -1,25 +1,51 @@
 <template>
 	<div class="testimonios">
-		<div class="testimonios-lista" 			
-			v-if="!visibilidad_testimonio">
+		<div class="testimonios-lista" >
+			<div class="container main">
+			
+				<img
+				class="ilustracion"
+				:src="require('@/assets/img/testimonios/COMIC-NANCY.jpg')"
+				/>
+				<img
+				class="ilustracion"
+				:src="require('@/assets/img/testimonios/COMIC-YARI.jpg')"
+				/>
+			</div>
 			<div class="container main">
 				<div class="paso">
-					<div class="imagen" @click="clickTestimonio(i)" 
+					<button class="imagen" @click="clickTestimonio(i)" 
 					v-for="(testimonio, i) in testimonios" 
 						:key="testimonio.nombre">
 						<ImagenPie 
-							:link='`img/testimonios/${testimonio.imagen}`'
-							:pie="testimonio.nombre"
-						/>
-					</div>
+							:link='testimonio.imagen'
+							>
+							<template slot="pie-foto">
+								<div class="pie-foto-template">
+									<p class="autorxs">{{testimonio.nombre}}</p> 
+								</div>
+							</template>
+						</ImagenPie>
+					</button>
 					<div class="bullet transicionable">
 						
 					</div>
 				</div>
 			</div>
+			<div class="container main">
+				<img
+				class="ilustracion"
+				:src="require('@/assets/img/testimonios/COMIC-LISANDRA.jpg')"
+				/>
+				<img
+				class="ilustracion"
+				:src="require('@/assets/img/testimonios/COMIC-MAYLI.jpg')"
+				/>
+			</div>
 		</div>
 		<TestimonioSeleccionado
 			v-if="visibilidad_testimonio"
+			:class="{visible: visibilidad_testimonio}"
 			:data_testimonio="testimonio_seleccionado"
 		>
 			<template slot="paginador">
@@ -34,18 +60,14 @@
 				</div>
 			</template>
 		</TestimonioSeleccionado>
-		<MapaTestimonios
-			:id="'mapa-testimonios'"
-		/>
+
 	</div>
 </template>
 
 <script>
-import Vue from "vue"
 //import VueRellax from "vue-rellax";
 import ImagenPie from "@/components/utils/ImagenPie.vue"
 import TestimonioSeleccionado from "@/components/testimonios/TestimonioSeleccionado.vue"
-import MapaTestimonios from "@/components/testimonios/MapaTestimonios.vue"
 
 import {mapState} from "vuex"
 
@@ -53,13 +75,11 @@ import {mapState} from "vuex"
 
 import testimonios from "@/assets/data/testimonios.json"
 
-
 export default {
 	name: 'Testimonios',
 	components: {
 		ImagenPie,
 		TestimonioSeleccionado,
-		MapaTestimonios
 	},
 	data(){
 		return {
@@ -79,7 +99,10 @@ export default {
 		}
 	},
 	mounted(){
-		this.testimonios = testimonios
+		this.testimonios = testimonios;
+		this.testimonios.forEach((d) => {
+			d.imagen = require(`@/assets/img/testimonios/${d.imagen}`)
+		})
 	},
 	methods: {
 		clickTestimonio(i){
@@ -114,7 +137,8 @@ export default {
 	watch: {
 		testimonio_activo(nv){
 			this.visibilidad_testimonio = nv;
-			this.scrollArriba()
+
+			if(nv){document.body.style.overflow = "hidden" }
 		},
 		no_testimonio(nv){
 			this.testimonio_seleccionado = this.testimonios[nv];
@@ -131,6 +155,10 @@ export default {
   	background: #4A2582;
 	position: relative;
 	display: block;
+	img.ilustracion{
+		width: 100%;
+		margin-bottom: 50px;
+	}
 	.paginador{
 		width: 300px;
 		margin: 20px auto 100px auto;
@@ -160,9 +188,16 @@ export default {
 		.imagen{
 			z-index: 0;
 			flex: 0 1 40%;
+			background: transparent;
+			border: none;
+			text-align: left;
+			cursor: pointer;
 			
 			.imagen-blend-pie{
 				margin: auto;
+			}
+			.autorxs{
+				color:#fff;
 			}
 		}
 		.bullet{
@@ -181,5 +216,13 @@ export default {
 			}
 		}
 	}
+	article.testimonios-seleccionado.visible{
+		position: fixed;
+		top:82px;
+		z-index: 1004;
+		overflow: scroll;
+		height: calc(100vh - 82px);
+	}
+	
 }
 </style>

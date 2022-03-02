@@ -9,10 +9,11 @@
         <div class="paso" id="scrolly">
 			<div class="imagen">
 				<ImagenPie 
-					:link='`img/testimonios/${data_testimonio.imagen}`'
+					:link='data_testimonio.imagen'
 					:pie="data_testimonio.nombre"
 				>
 					<template slot="pie-foto">
+						<p class="autorxs">{{data_testimonio.nombre}}</p> 
 						<button  class="boton-volver" @click="regresarTestimonios()">
 							Regresar a testimonios
 						</button>
@@ -41,11 +42,14 @@ export default {
 		ImagenPie
 	},
     props:{
-        data_testimonio: Object
+        data_testimonio: Object,
+		estado_testimonio: Boolean
     },
 	methods:{
 		regresarTestimonios(){
-			this.$store.commit("ocultarTestimonio")
+			this.$store.commit("ocultarTestimonio");
+			document.body.style.overflow = "scroll" 
+
 		}
 	},
 	
@@ -77,6 +81,10 @@ export default {
 		.imagen{
 			z-index: 0;
 			flex: 0 1 50%;
+			.cover{
+				background-color: transparent;
+				
+			}
 			.imagen-blend-pie{
 				margin: auto;
 				position: -webkit-sticky;
@@ -96,6 +104,9 @@ export default {
 				//opacity: 0;
 			}
 		}
+	}
+	p.autorxs{
+		color: #fff;
 	}
 	button.boton-volver{
 		border: 1px solid #FFFFFF;

@@ -7,8 +7,8 @@
 				data-rellax-percentage="0."
 			>
 				<ImagenPie 
-					:link='"portada-rellax/0002.png"'
-					:pie="'nombre de persona'"
+					:link='"img/portada-rellax/0003.jpg"'
+					:pie="''"
 				/>
 			</div>
 			<div class="bullet  transicionable">
@@ -23,8 +23,8 @@
 				data-rellax-speed="4"
 				data-rellax-percentage="-.5">
 				<ImagenPie 
-					:link='"portada-rellax/0003.png"'
-					:pie="'nombre de persona'"
+					:link='"img/portada-rellax/0009.jpg"'
+					:pie="''"
 				/>
 			</div>
 		</div>
@@ -33,8 +33,8 @@
 				data-rellax-speed="-5"
 				data-rellax-percentage="0.">
 				<ImagenPie 
-					:link='"portada-rellax/0004.png"'
-					:pie="'nombre de persona'"
+					:link='"img/portada-rellax/0014.jpg"'
+					:pie="''"
 				/>
 			</div>
 			<div class="bullet transicionable">
@@ -49,8 +49,8 @@
 				data-rellax-speed="-5"
 				data-rellax-percentage="0.">
 				<ImagenPie 
-					:link='"portada-rellax/0005.png"'
-					:pie="'nombre de persona'"
+					:link='"img/portada-rellax/0004.jpg"'
+					:pie="''"
 					:altura="'600px'"
 				/>
 			</div>
@@ -62,108 +62,15 @@
 				data-rellax-percentage="0."
 			>
 				<ImagenPie 
-					:link='"portada-rellax/0006.png"'
-					:pie="'nombre de persona'"
+					:link='"img/portada-rellax/0008.jpg"'
+					:pie="''"
 				/>
 			</div>
 			<div class="bullet  transicionable">
 				<p class="cita">Con tan solo 19 años estuve 12 horas en una inducción de parto.  Si no es por una amistad que encontró mi mamá, me muero. Mi niño se hizo caca en el vientre. </p>
 			</div>
 		</div>
-		<div class="paso" data-step="6">
-			<div class="bullet transicionable">
-				<p class="cita">Tuve que tener a mi hija y por poco me muero. Estuve un mes en terapia, y en el cuarto no había, ni ventanas ,ni puertas, ni baño.</p>
-			</div>
-			<div class="imagen" v-rellax="rellax" 
-				data-rellax-speed="9"
-				data-rellax-percentage="-.5">
-				<ImagenPie 
-					:link='"portada-rellax/0007.png"'
-					:pie="'nombre de persona'"
-				/>
-			</div>
-		</div>
-		<div class="paso" data-step="7">
-			<div class="imagen" v-rellax="rellax" 
-				data-rellax-speed="-5"
-				data-rellax-percentage="0."
-			>
-				<ImagenPie 
-					:link='"portada-rellax/0008.png"'
-					:pie="'nombre de persona'"
-				/>
-			</div>
-			<div class="bullet  transicionable">
-				<p class="cita">Fui primeriza y pasé muchas horas sin dilatar hasta que me hicieron la cesárea. Mi hija tuvo sufrimiento fetal y como no lloró, la tuvieron que entubar, cogió una bacteria en la incubación.</p>
-			</div>
-		</div>
-		<div class="paso" data-step="8">
-			<div class="bullet transicionable">
-				<p class="cita">El médico se fue a dormir la noche entera y por la mañana no le dio tiempo de hacerme la cesárea . Tuve que parir a mi hijo que venía pelviano. </p>
-			</div>
-			<div class="imagen" v-rellax="rellax" 
-				data-rellax-speed="-9"
-				data-rellax-percentage="-.5">
-				<ImagenPie 
-					:link='"portada-rellax/0009.png"'
-					:pie="'nombre de persona'"
-				/>
-			</div>
-		</div>
-		<div class="paso" data-step="9">
-			<div class="imagen" v-rellax="rellax" 
-				data-rellax-speed="-10"
-				data-rellax-percentage="-0.3"
-			>
-				<ImagenPie 
-					:link='"portada-rellax/0010.png"'
-					:pie="'nombre de persona'"
-				/>
-			</div>
-			<div class="bullet  transicionable">
-				<p class="cita">Me tocó un doctor grosero. Estuve 16horas con dolores porque me indujeron el parto. Soy diabética y allí estuve sola, en aquel salón, muriendo de dolores. Todos fueron a dormir. Creía que iba a morir allí sola.</p>
-			</div>
-		</div>
-		<div class="paso" data-step="10">
-			<div class="bullet transicionable">
-				<p class="cita">Aún no me recupero de mi experiencia en el parto. Es penoso que un momento tan importante y hermoso se pueda convertir en algo traumático.</p>
-			</div>
-			<div class="imagen" v-rellax="rellax" 
-				data-rellax-speed="-8"
-				data-rellax-percentage="0">
-				<ImagenPie 
-					:link='"portada-rellax/0011.png"'
-					:pie="'nombre de persona'"
-				/>
-			</div>
-		</div>
-		<div class="paso" data-step="11">
-			<div class="imagen" v-rellax="rellax" 
-				data-rellax-speed="8"
-				data-rellax-percentage="0.3"
-			>
-				<ImagenPie 
-					:link='"portada-rellax/0012.png"'
-					:pie="'nombre de persona'"
-				/>
-			</div>
-			<div class="bullet  transicionable">
-				<p class="cita">Mi niña producto del mal trabajo de parto y el sufrimiento fetal padeció por años de epilepsia.</p>
-			</div>
-		</div>
-		<div class="paso" data-step="12">
-			<div class="bullet transicionable">
-				<p class="cita">Soy enfermera y testigo de esto cuando pari a mi hija. Tuve que rogarle a los médicos para que no se fueran a comer y me atendieran.  Tuve que sujetar mis piernas y parir sola. Por el tiempo que estuvo mi hija en el canal del parto sin que me atendieran, nació con un cefalohematoma.</p>
-			</div>
-			<div class="imagen" v-rellax="rellax" 
-				data-rellax-speed="5"
-				data-rellax-percentage="-.5">
-				<ImagenPie 
-					:link='"portada-rellax/0013.png"'
-					:pie="'nombre de persona'"
-				/>
-			</div>
-		</div>
+		
   	</div>
 </template>
 
@@ -172,8 +79,7 @@ import Vue from "vue"
 import VueRellax from "vue-rellax";
 import ImagenPie from "@/components/utils/ImagenPie.vue"
 
-import scrollama from 'scrollama';
-import * as d3 from "d3";
+
 Vue.use(VueRellax);
 export default {
 	name: 'Portada',
@@ -197,66 +103,10 @@ export default {
 		}
 	},
 	mounted() {
-		this.inizializandoScrollama()
 		
 	},
 	methods:{
-		inizializandoScrollama() {
-			this.scrolly = d3.select('#scrolly-portada');
-			this.step = this.scrolly.selectAll('div.paso');
-
-			this.scroller = scrollama()
-			this.scroller.setup({
-				step: "#scrolly-portada .paso",
-				offset: 0.5,
-				debug: false
-				})
-				.onStepEnter(this.cambiandoPaso);;
-
-			this.reescalandoPantalla();
-
-			window.addEventListener("resize", this.reescalandoPantalla);
-
-		},
-		reescalandoPantalla() {
-			var stepH = Math.floor(window.innerHeight * 0.95);
-			//this.step.style("min-height", stepH + "px");
-			/*
-			var altura_fondo_portada = window.innerHeight / 2;
-			var margin_top_fondo_portada = (window.innerHeight - altura_fondo_portada) ;
-
-			this.fondo_portada
-				.style("height", altura_fondo_portada + "px")
-				.style("top", margin_top_fondo_portada + "px");
-			*/
-			// 3. tell scrollama to update new element dimensions
-			this.scroller.resize();
-		},
-		cambiandoPaso(response) {
-			this.paso=response.index+1;
-			this.step.classed("activo", function(d, i) {
-				return i === response.index;
-			});
-			if(this.paso==1){
-				//d3.select("div#scrolly-portada").transition().duration(200).style("background-color","#fff")
-			}
-			else if(this.paso==2){
-				//d3.select("div#scrolly-portada").transition().duration(200).style("background-color","#8a8a8a")
-			}
-			else if(this.paso==3){
-				//d3.select("div#scrolly-portada").transition().duration(200).style("background-color","yellow")
-			}
-			else if(this.paso==4){
-				//d3.select("div#scrolly-portada").transition().duration(200).style("background-color","#000")
-			}
-
-		},
-
-		generadorRandom(min, max){
-			let rand = Math.random() *  (max - min) + min;
-			return rand
-
-		}
+	
 	},
 	unmounted() {
 		this.rellax.destroy()

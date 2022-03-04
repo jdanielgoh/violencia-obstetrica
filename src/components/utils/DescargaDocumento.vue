@@ -42,7 +42,7 @@ export default {
         font-size: 14px;
         text-decoration: none;
     }
-    padding-bottom: 10px;
+    padding-bottom: 24px;
     border-bottom: 1px solid #FFFFFF80;
     margin-bottom:30px;
 }

@@ -45,7 +45,7 @@
             <div class="contacto">
                 <p><strong>Contacto</strong></p>
                 <a href = "mailto: mujeres@partoscuba.info">mujeres@partoscuba.info</a>
-                <p>Copyright © Partos Rotos. Todos los derechos reservados</p>
+                <p class="copy">Copyright © Partos Rotos. Todos los derechos reservados</p>
             </div>
 
         </div>
@@ -88,7 +88,7 @@ export default {
 
 <style lang="scss" >
 footer{
-    padding-top:100px;
+    padding-top: 180px;
     padding-bottom:100px;
     background: #fff;
     width: 100%;
@@ -98,11 +98,11 @@ footer{
     z-index: 1001;
     .container.main{
         display: flex;
-        padding: 15px;
+        padding: 48px 15px;
         border-top: 1px solid #4A258280;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin: 0 auto;
+        margin: auto auto;
         gap: 30px;
         .logo{
                 img.menu-blanco{
@@ -117,7 +117,7 @@ footer{
             flex-wrap: wrap;
 
             div.lista-enlaces {
-                width:250px;
+                width:150px;
                 color:#4A2582;
                 flex: 1;
                 &.segunda-columna{
@@ -188,6 +188,9 @@ footer{
                 }
                 color:#4A2582!important;
             }
+            p.copy{
+                margin-top:20px;
+            }
 
         }
         
@@ -197,7 +200,7 @@ footer{
         background: #4A2582;
         .container.main{
             display: flex;
-            padding: 15px;
+            padding: 48px 15px;
             border-top: 1px solid #FFFFFF80;
             flex-wrap: nowrap;
             justify-content: space-between;
@@ -223,7 +226,7 @@ footer{
                     }
                     &> *{
                         display: block;
-                        margin: 5px 0 0 0px;
+                        margin: 0px 0 0 0px;
                         a{
                             color:#fff!important;
                             text-decoration: none;
@@ -277,7 +280,7 @@ footer{
                 flex: 1;
                 &> *{
                     display: block;
-                    margin: 5px 0 0 0px;
+                    margin: 0px 0 0 0px;
 
                     a{
                         color:#fff!important;

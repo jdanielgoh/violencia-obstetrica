@@ -1,35 +1,38 @@
 <template>
-    <article  class="testimonios-seleccionado container main">
-        <slot name="paginador">
+    <article  class="testimonios-seleccionado ">
+		<div class="container main">
+			<slot name="paginador">
 
-        </slot>
-		<h1 class="blanco">{{data_testimonio.nombre}}
-			<hr/>
-		</h1>
-        <div class="paso" id="scrolly">
-			<div class="imagen">
-				<ImagenPie 
-					:link='data_testimonio.imagen'
-					:pie="data_testimonio.nombre"
-				>
-					<template slot="pie-foto">
-						<p class="autorxs">{{data_testimonio.nombre}}</p> 
-						<button  class="boton-volver" @click="regresarTestimonios()">
-							Regresar a testimonios
-						</button>
-					</template>
-				</ImagenPie>
+			</slot>
+			<h1 class="blanco">{{data_testimonio.nombre}}
+				<hr/>
+			</h1>
+			<div class="paso" id="scrolly">
+				<div class="imagen">
+					<ImagenPie 
+						:link='data_testimonio.imagen'
+						:pie="data_testimonio.nombre"
+					>
+						<template slot="pie-foto">
+							<p class="autorxs">{{data_testimonio.nombre}}</p> 
+							<button  class="boton-volver" @click="regresarTestimonios()">
+								Regresar a testimonios
+							</button>
+						</template>
+					</ImagenPie>
+				</div>
+				<div class="texto">
+					<p class="cita">{{data_testimonio.texto.cita}}</p>
+					<p class="blanco" v-for="(parrafo, i) in data_testimonio.texto.parrafos" :key="i">
+						{{parrafo}}
+					</p>
+				</div>
 			</div>
-			<div class="texto">
-				<p class="cita">{{data_testimonio.texto.cita}}</p>
-                <p class="blanco" v-for="(parrafo, i) in data_testimonio.texto.parrafos" :key="i">
-                    {{parrafo}}
-                </p>
+			<div>
+				
 			</div>
 		</div>
-		<div>
-			
-		</div>
+        
 	</article>
 </template>
 
@@ -58,14 +61,17 @@ export default {
 
 <style lang="scss">
 .testimonios-seleccionado{
+	width:100%;
   	background: #4A2582;
 	overflow: inherit;
 	position: relative;
 	display: block;
+	overflow-x: hidden;
 	h1{
 		line-height: 0.3;
 		width: fit-content;
     	margin: auto;
+		margin-bottom: 48px;
 	}
 	.paso{
 		&:nth-child(1){

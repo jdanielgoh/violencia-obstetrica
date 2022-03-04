@@ -55,16 +55,15 @@ export default {
             config: {
                 options: [
                 {
-                    value: '<a class="boton-enlace" href="https://capir.limequery.org/571399" target="_blank"> PARTO PROPIO </a>'
+                    value: '<a class="enlace" href="https://capir.limequery.org/571399" target="_blank"> PARTO PROPIO </a>'
                 },
                 {
-                    value: '<a class="boton-enlace" href="https://capir.limequery.org/145636" target="_blank"> MUERTE MATERNA </a>'
+                    value: '<a class="enlace" href="https://capir.limequery.org/145636" target="_blank"> MUERTE MATERNA </a>'
                 },
                 
                 ],
                 placeholder: "ENCUESTAS",
-                backgroundColor: "#4A2582",
-                textColor: "#FFF",
+                
                 borderRadius: "20px",
                 border: "1px solid #fff",
                 width: 150
@@ -107,19 +106,7 @@ export default {
     .container{
         &.encabezado{
             overflow: inherit;
-            div.dropdown{
-                
-                font-size: 14px;
-                padding: 0 10px;
-
-                .options{
-                    border: none;
-                }
-                .option{
-                    
-                    min-width: 200px;   
-                }
-            }
+           
         }
         display: flex;
         padding: 15px;
@@ -134,16 +121,35 @@ export default {
             }
         }
         .botones{
+            & > *{
+                margin-right: 10px;;
+            }
+             div.dropdown{
+                 span.text{margin-left: 19px;}
+                background: #fff;
+                height: 31px;
+                font-size: 14px;
+                padding: 0 10px;
+                color: #4A2582;
+                &:hover{
+                    background: #4A2582!important;
+                }
+                .options{
+                    border: none;
+                    background: #fff;
+                }
+                .option{
+                    
+                    min-width: 200px;   
+                }
+            }
             display: inherit;
             cursor: pointer;
-            .boton-enlace{
-                border: 1px solid #FFFFFF;
-                border-radius: 24px;
+            .enlace{
                 background: none;
-                color: #FFFFFF;
+                color: #4A2582;
                 font-size: 14px;
-                padding: 16px 24px;
-                text-decoration: none;
+                padding: 16px 4px;
                 line-height: 0;
                 margin-right: 15px;
             }
@@ -176,10 +182,11 @@ export default {
             font-size: 32px;
             font-weight: 700;
             margin:auto 100px auto auto;
-            a{
+            a{  
                 text-decoration: none;
                 color:#FFFFFF;
                 display: block;
+                margin-top: 16px;
             }  
         }
 
@@ -187,7 +194,27 @@ export default {
     &.fondo-morado, &.menu-activo{
         background: #4A2582;
         .container{
+            
             .botones{
+                & > *{
+                    margin-right: 10px;;
+                }
+                div.dropdown{
+                    background: #4A2582;
+                    color: #fff;
+                    font-size: 14px;
+                    padding: 0 10px;
+                    span.text{margin-left: 19px;}
+
+                    .options{
+                        border: none;
+                        background: #4A2582;
+                    }
+                    .option{
+                        
+                        min-width: 200px;   
+                    }
+                }
                 button{
                     img.menu-blanco{
                         display: none;
@@ -195,6 +222,14 @@ export default {
                     img.menu-morado{
                         display: inline-block;
                     }
+                }
+                .enlace{
+                    background: none;
+                    color: #fff;
+                    font-size: 14px;
+                    padding: 16px 4px;
+                    line-height: 0;
+                    margin-right: 15px;
                 }
             }
             .logo{

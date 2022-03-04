@@ -1,17 +1,7 @@
 <template>
 	<div class="testimonios">
 		<div class="testimonios-lista" >
-			<div class="container main">
 			
-				<img
-				class="ilustracion"
-				:src="require('@/assets/img/testimonios/COMIC-NANCY.jpg')"
-				/>
-				<img
-				class="ilustracion"
-				:src="require('@/assets/img/testimonios/COMIC-YARI.jpg')"
-				/>
-			</div>
 			<div class="container main">
 				<div class="paso">
 					<button class="imagen" @click="clickTestimonio(i)" 
@@ -33,6 +23,22 @@
 				</div>
 			</div>
 			<div class="container main">
+				<h3 class="blanco">
+					Comics
+					<hr/>
+				</h3>
+			</div>
+			<div class="container main ilustraciones">
+				
+				<img
+				class="ilustracion"
+				:src="require('@/assets/img/testimonios/COMIC-NANCY.jpg')"
+				/>
+				<img
+				class="ilustracion"
+				:src="require('@/assets/img/testimonios/COMIC-YARI.jpg')"
+				/>
+
 				<img
 				class="ilustracion"
 				:src="require('@/assets/img/testimonios/COMIC-LISANDRA.jpg')"
@@ -150,18 +156,25 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+h3{
+	font-size: 56px;
+	line-height: 1;
+	&.blanco{
+		color: #fff
+	}
+}
 .testimonios{
   	background: #4A2582;
 	position: relative;
 	display: block;
 	img.ilustracion{
-		width: 100%;
+		height: calc(100vh - 80px);
 		margin-bottom: 50px;
+		
 	}
 	.paginador{
-		width: 300px;
-		margin: 20px auto 100px auto;
+		width: 210px;
+		margin: 48px auto 48px auto;
 		color: #fff;
 		display: flex;
 		span{
@@ -184,10 +197,10 @@ export default {
 		display: flex;
 		gap: 30px 30px; 
 		flex-wrap: wrap;
-		justify-content: space-between;
+		justify-content: space-around;
 		.imagen{
 			z-index: 0;
-			flex: 0 1 40%;
+			flex: 0 1 45%;
 			background: transparent;
 			border: none;
 			text-align: left;
@@ -222,6 +235,13 @@ export default {
 		z-index: 1004;
 		overflow: scroll;
 		height: calc(100vh - 82px);
+	}
+	div.ilustraciones{
+		display: flex;
+		flex-wrap: wrap;
+		img{
+			margin: 20px auto;
+		}
 	}
 	
 }

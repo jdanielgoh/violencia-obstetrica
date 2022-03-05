@@ -15,7 +15,7 @@
     },
     {
         "nombre": "Mirita Ramírez",
-        "imagen": "anonima.png",
+        "imagen": "mirita.png",
         "texto": {
             "cita":"Terminé toda desgarrada, llena de puntos y me desmayé allí",
             "titulo": "Testimonio de Mirita Ramírez",
@@ -67,7 +67,7 @@
     },
     {
         "nombre": "Leydis",
-        "imagen": "anonima.png",
+        "imagen": "Leydis.jpg",
         "texto": {
             "cita":"Mi hijo nació morado, con la cabeza puntiaguda y sin llorar. No se movía",
             "titulo": "Testimonio de Leydis",
@@ -158,7 +158,7 @@
     },
     {
         "nombre": "Maylín",
-        "imagen": "anonima.png",
+        "imagen": "Maylin.jpg",
         "texto": {
             "cita":"Me dieron contracciones fuertes, solté el tapón mucoso, comencé a perder líquido, y no me hicieron caso",
             "titulo": "Testimonio de Maylín",
@@ -196,7 +196,7 @@
     },
     {
         "nombre": "Patricia de Cepeda",
-        "imagen": "anonima.png",
+        "imagen": "Patricia-Zepeda.jpg",
         "texto": {
             "cita":"Yo no tenía fuerzas ni para llorar más",
             "titulo": "Testimonio de Patricia de Cepeda",

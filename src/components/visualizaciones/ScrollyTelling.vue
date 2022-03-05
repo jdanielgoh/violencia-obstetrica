@@ -620,6 +620,7 @@ export default {
       height: 100vh;
       top: 80px;
       left: 0;
+      max-width: 900px;
       & > * {
         position: absolute;
         top: 0;
@@ -660,7 +661,8 @@ export default {
         }
         cite {
           font-style: normal;
-          font-size: 34px;
+          font-weight: 700;
+          font-size: 28px;
         }
 
         position: relative;

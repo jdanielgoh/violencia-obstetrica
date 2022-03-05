@@ -8,7 +8,6 @@
             <div class="contenedor-secciones">
                 <div class="ficha" v-for="(datum, i) in data" :key="i" :class="datum.clase">
                     <div
-                        class="link-ficha" 
                         >
                         <ImagenPie 
                             :link='datum.img'
@@ -56,7 +55,7 @@ $margen-grid-secciones: 70px;
 		padding-top: 40px;
 		h3{
 			font-size: 56px;
-			line-height: .3;
+			line-height: 1;
 			&.blanco{
 				color: #fff
 			}
@@ -76,7 +75,8 @@ $margen-grid-secciones: 70px;
 						
 						.pie-foto-template{
 							margin: auto 0 auto 0;
-							p{
+							p{	
+								margin-bottom: 24px;
 								color: #fff;
 								&.titulo{
 									strong{
@@ -100,11 +100,12 @@ $margen-grid-secciones: 70px;
 								}
 							}
 							a.link-ficha{
+								display: inline-block;
 								text-decoration: none;
 								color: #FDA1C9;
 								border: 1px solid #FDA1C9;
 								border-radius: 24px;
-								padding: 10px;
+								padding: 5px 24px 14px 24px;
 								font-size: 14px;
 								text-transform: uppercase;
 								font-weight: 700;
@@ -131,7 +132,7 @@ $margen-grid-secciones: 70px;
 						.pie-foto-template{
 							margin: auto 0 auto 0;
 							width: calc(50% - 15px);
-							p{
+							p{	margin-bottom: 24px;
 								color: #fff;
 								&.titulo{
 									strong{
@@ -155,11 +156,14 @@ $margen-grid-secciones: 70px;
 								}
 							}
 							a.link-ficha{
+								display: inline-block;
+
+								margin-top: 48px;
 								text-decoration: none;
 								color: #FDA1C9;
 								border: 1px solid #FDA1C9;
 								border-radius: 24px;
-								padding: 10px;
+								padding: 5px 24px 14px 24px;
 								font-size: 14px;
 								text-transform: uppercase;
 								font-weight: 700;
@@ -188,6 +192,7 @@ $margen-grid-secciones: 70px;
 							display: flex;
 							flex-wrap: wrap;
 							.pie-foto-template{
+								margin-bottom: 24px;
 								margin: auto 0 auto 0;
 								width: 100%;
 								p{
@@ -214,11 +219,14 @@ $margen-grid-secciones: 70px;
 									}
 								}
 								a.link-ficha{
+									display: inline-block;
+
+									margin-top:48px;
 									text-decoration: none;
 									color: #FDA1C9;
 									border: 1px solid #FDA1C9;
 									border-radius: 24px;
-									padding: 10px;
+									padding: 5px 24px 14px 24px;
 									font-size: 14px;
 									text-transform: uppercase;
 									font-weight: 700;

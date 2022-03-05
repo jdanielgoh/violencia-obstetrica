@@ -6,7 +6,7 @@
         <hr />
       </h1>
     </div>
-      <div class="container main">
+      <div class="container text">
         <img
           class="ilustracion"
           :src="require('@/assets/img/tus_derechos/INFIGRAFIA.jpg')"
@@ -57,15 +57,18 @@ export default {
     background: #4a2582;
     h1.blanco {
         line-height: 1.1;
-        max-width: 400px;
         position:relative;
         hr{
             position: relative;
             top: -10px;
         }
     }
+
   img.ilustracion{
-    width: 100%;
+    max-width: 100%;
+  }
+  .descargables{
+    margin-top: 120px;
   }
   
 }

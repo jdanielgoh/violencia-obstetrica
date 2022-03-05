@@ -75,7 +75,7 @@ $margen-especiales: 70px;
 		padding-top: 40px;
 		h3{
 			font-size: 56px;
-			line-height: .3;
+			line-height: 1;
 			&.blanco{
 				color: #fff
 			}

@@ -6,22 +6,26 @@
                 <img class="menu-blanco" src="@/assets/img/iconos/PARTOS ROTOS_01-morado.svg"/>
             </div>
             <div class="contenidos">
+                <p class="footer-titulo">Contenido</p>
                 <div class="lista-enlaces">
-                    <p><strong>Contenido</strong></p>
-                    <p><router-link :to="{name:'Inicio', hash:'#especiales'}">Especiales</router-link></p>
-                    <p><router-link :to="{name:'Inicio', hash:'#visualizaciones'}">Visualizaciones</router-link></p>
-                    <p><router-link :to="{name: 'Testimonios'}">Testimonios</router-link></p>
-                    <p><router-link :to="{name: 'Podcasts'}">Podcast</router-link></p>
+                    <div class="columna-enlaces">
+                        
+                        <p><router-link :to="{name:'Inicio', hash:'#especiales'}">Especiales</router-link></p>
+                        <p><router-link :to="{name:'Inicio', hash:'#visualizaciones'}">Visualizaciones</router-link></p>
+                        <p><router-link :to="{name: 'Testimonios'}">Testimonios</router-link></p>
+                        <p><router-link :to="{name: 'Podcasts'}">Podcast</router-link></p>
+                    </div>
+                    <div class="columna-enlaces segunda-columna">
+                        <p><router-link :to="{name: 'TusDerechos'}">Tus derechos</router-link></p>
+                        <p><router-link :to="{name: 'QuienesSomos'}">¿Quiénes somos?</router-link></p>
+                        <p><router-link :to="{name: 'Metodologia'}">Metodología</router-link></p>
+                        <p><router-link :to="{name:'Creditos'}">Créditos</router-link></p>
+                    </div>
                 </div>
-                <div class="lista-enlaces segunda-columna">
-                    <p><router-link :to="{name: 'TusDerechos'}">Tus derechos</router-link></p>
-                    <p><router-link :to="{name: 'QuienesSomos'}">¿Quiénes somos?</router-link></p>
-                    <p><router-link :to="{name: 'Metodologia'}">Metodología</router-link></p>
-                    <p><router-link :to="{name:'Creditos'}">Créditos</router-link></p>
-                </div>
+                
             </div>
             <div class="multimedia">
-                <p><strong>Multimedia</strong></p>
+                <p class="footer-titulo">Multimedia</p>
                 <div class="enlaces-multimedia">
                     <div>
                         <a href="">
@@ -38,14 +42,14 @@
                         </a>
                     </div>
                 </div>
-                <p><strong>Encuesta</strong></p>
-                <p><a>Encuesta</a></p>
-                <p><a>Encuesta</a></p>
+                <p class="footer-titulo">Encuesta</p>
+                <p><a href="https://capir.limequery.org/571399">Parto propio</a></p>
+                <p><a href="https://capir.limequery.org/145636">Muerte materna</a></p>
             </div>
             <div class="contacto">
-                <p><strong>Contacto</strong></p>
+                <p class="footer-titulo">Contacto</p>
                 <a href = "mailto: mujeres@partoscuba.info">mujeres@partoscuba.info</a>
-                <p>Copyright © Partos Rotos. Todos los derechos reservados</p>
+                <p class="copy">Copyright © Partos Rotos. Todos los derechos reservados</p>
             </div>
 
         </div>
@@ -88,7 +92,7 @@ export default {
 
 <style lang="scss" >
 footer{
-    padding-top:100px;
+    padding-top: 180px;
     padding-bottom:100px;
     background: #fff;
     width: 100%;
@@ -98,12 +102,17 @@ footer{
     z-index: 1001;
     .container.main{
         display: flex;
-        padding: 15px;
+        padding: 48px 15px;
         border-top: 1px solid #4A258280;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin: 0 auto;
+        margin: auto auto;
         gap: 30px;
+        p.footer-titulo{
+            color: #4A2582;
+            margin: 10px 0;
+            font-weight: 700;
+        }
         .logo{
                 img.menu-blanco{
                     display: inline-block;
@@ -113,44 +122,41 @@ footer{
                 }
             }
         .contenidos{
-            display: flex;
-            flex-wrap: wrap;
-
+            display: block;
+    
             div.lista-enlaces {
-                width:250px;
+                display: flex;
+                flex-wrap: wrap;
+                
                 color:#4A2582;
-                flex: 1;
-                &.segunda-columna{
-                    margin-top: 33px;
-                }
-                &> *{
+                div.columna-enlaces{
                     display: block;
                     margin: 5px 0 0 0px;
+                    width:150px;
+                    margin-top: 0;
                     a{
                         color:#4A2582!important;
                         text-decoration: none;
                     }
+                    p{
+                        margin: 0 0 10px 0;
+                    }
                     color:#4A2582!important;
-                }
-                
+                } 
             }
-
         }
         .multimedia{
             p{
-                display: block;
-                    margin: 5px 0 0 0px;
-            }
-            p strong{
-                color: #4A2582;
-                margin-bottom:10px;
-            }
+                        margin: 0 0 10px 0;
+                    }
+            
             .enlaces-multimedia{
                 display: flex;
+                margin: 14px 0 10px 0;
                 flex-wrap: nowrap;
                 gap:10px;
                 a{
-                    color: #4A2582!important;
+                    color: #4A2582;
                     display: flex;
                     text-decoration: none;
                     img.img-youtube{
@@ -167,11 +173,13 @@ footer{
                     img.icono-morado{
                         display: inline-block;
                     }
-                
                 }
-                
-
             }
+            p{
+                a{
+                    color: #4A2582;
+                }
+            } 
 
         }
         .contacto{
@@ -183,10 +191,13 @@ footer{
                 margin: 5px 0 0 0px;
 
                 a{
-                    color:#4A2582!important;
+                    color:#4A2582;
                     text-decoration: none;
                 }
-                color:#4A2582!important;
+                color:#4A2582;
+            }
+            p.copy{
+                margin-top:20px;
             }
 
         }
@@ -196,94 +207,63 @@ footer{
     &.fondo-morado{
         background: #4A2582;
         .container.main{
-            display: flex;
-            padding: 15px;
+     
             border-top: 1px solid #FFFFFF80;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            margin: 0 auto;
-            gap: 30px;
+            p.footer-titulo{
+                color: #fff;
+                margin: 10px 0;
+                font-weight: 700;
+            }
             .logo{
-                    img.menu-blanco{
-                        display: none;
-                    }
-                    img.menu-morado{
-                        display: inline-block;
-                    }
+                img.menu-blanco{
+                    display: none;
                 }
+                img.menu-morado{
+                    display: inline-block;
+                }
+            }
             .contenidos{
-                display: flex;
-                flex-wrap: nowrap;
-
                 div.lista-enlaces {
                     color:#fff;
-                    flex: 1;
-                    &.segunda-columna{
-                        margin-top: 33px;
-                    }
-                    &> *{
-                        display: block;
-                        margin: 5px 0 0 0px;
+                    div.columna-enlaces{
                         a{
                             color:#fff!important;
-                            text-decoration: none;
                         }
                         color:#fff!important;
-                    }
-                    
+                    } 
                 }
-
             }
             .multimedia{
-                p{
-                    display: block;
-                        margin: 5px 0 0 0px;
-                }
                 p strong{
                     color: #fff;
-                    margin-bottom:10px;
                 }
                 .enlaces-multimedia{
-                    display: flex;
-                    flex-wrap: nowrap;
-                    gap:10px;
                     a{
                         color: #fff!important;
-                        display: flex;
-                        text-decoration: none;
-                        img.img-youtube{
-                            margin-right: 10px;
-                            height: 20px
-                        }
-                        img.img-anchor{
-                            margin-right: 10px;
-                            height: 20px
-                        }
                         img.icono-blanco{
-                        display: inline-block;
+                            display: inline-block;
                         }
                         img.icono-morado{
                             display: none;
                         }
                     }
-                    
-
                 }
+                p{
+                    a{
+                        color: #fff;
+                    }
+                } 
 
             }
             .contacto{
-                max-width: 230px;
-                color:#fff;
-                flex: 1;
                 &> *{
-                    display: block;
-                    margin: 5px 0 0 0px;
-
                     a{
-                        color:#fff!important;
-                        text-decoration: none;
+                        color:#FDA1C9;
                     }
-                    color:#fff!important;
+                    color:#FDA1C9;
+                }
+                p.copy{
+                    color: #fff;
                 }
 
             }

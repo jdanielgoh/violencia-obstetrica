@@ -157,7 +157,7 @@ div.mapa-testimonio{
         p{
             &.provincia{
                 color: #FDA1C9;
-                font-size: 24px;
+                font-size: 32px;
                 font-weight: 600;
             }
             &.hospital{

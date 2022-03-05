@@ -21,6 +21,7 @@
         <div class="contenedor-mapa container main" :id="id">
 
         </div>
+        <h2>{{lista_hospitales[hospital_seleccionado][0]}}</h2>
         <div class="contenedor-graficos container main" id="contenedores-pictos">
             <GraficosPictos
                 v-for="(col, i) in columnas"
@@ -64,7 +65,7 @@ export default {
                 ["Maltratos","maltratos", "#F792CC"],
                 ["Secuelas","secuelas", "#B987FF"],
                 ["Consentimiento","consentimiento", "#78ACFF"],
-                ["Dilatación Manual","dilatacion_manual", "# "],
+                ["Dilatación Manual","dilatacion_manual", "#7FD3EA"],
                 ["Episiotomía","episiotomia", "#F2CA8F"],
                 ["Maniobra de Kristeller","kristeller","#FFA78F"],
                 
@@ -318,7 +319,9 @@ export default {
 .contenedor-vis-consulta{
     margin-top: 200px;
     position: relative;
-   
+    h2{
+        color: #fff;
+    }
     .contenedor-selectores{
         position: -webkit-sticky;
         position: sticky;
@@ -328,11 +331,17 @@ export default {
         z-index: 1001;  
         background: #4A2582;      
         .selector{
+            border-bottom: 1px solid #FFFFFF;
             flex:1;
             &> *{
                 display: block;
             } 
             color: #fff;
+            label{
+                color: #FDA1C9;
+                font-weight: 600;
+                font-size: 16px;
+            }
             select{
                 width: 100%;
                 font-size: 20px;

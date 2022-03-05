@@ -1,7 +1,9 @@
 <template>
     <div v-if="es_inicio">
-        <button class="boton-audio" @click="togglePlay()">
-            {{this.esta_reproduciendo ? "DESACTIVAR AUDIO" : "ACTIVAR AUDIO" }}
+        <button class="boton-audio" @click="togglePlay()" :class="{encendido:esta_reproduciendo}">
+            <img v-if="!esta_reproduciendo" :src="require('@/assets/img/iconos/encendido.svg')"/>
+            <img v-if="esta_reproduciendo" :src="require('@/assets/img/iconos/apagado.svg')"/>
+
         </button>
         <div id="audio">
             
@@ -69,9 +71,17 @@ export default{
     background: none;
     color: #FFFFFF;
     font-size: 14px;
-    padding: 16px 24px;
+    padding:12px 24px;
     text-decoration: none;
     line-height: 0;
     margin-right: 15px;
+    &.encendido{
+         background:#fff;
+
+    }
+    img{
+            width: 20px;
+
+    }
 }
 </style>

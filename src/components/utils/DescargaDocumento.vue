@@ -2,7 +2,7 @@
     <div class="descarga-documento">
         <h5>{{titulo}}</h5>
         <p>{{autorxs}}</p>
-        <a :href="ruta" > Descarga</a>
+        <a :href="ruta" ><img :src='require("@/assets/img/iconos/descargar.svg")'/><span>Descarga</span></a>
         
     </div>
 </template>
@@ -41,8 +41,16 @@ export default {
         font-weight: 800;
         font-size: 14px;
         text-decoration: none;
+        display: flex;
+        img{
+            margin-right: 10px;
+            width: 18px;
+        }
+        span{
+            line-height: 18px;
+        }
     }
-    padding-bottom: 10px;
+    padding-bottom: 24px;
     border-bottom: 1px solid #FFFFFF80;
     margin-bottom:30px;
 }

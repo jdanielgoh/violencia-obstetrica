@@ -2,12 +2,11 @@
     <article  class="testimonios-seleccionado ">
 		<div class="container main">
 			<slot name="paginador">
-
 			</slot>
 			<h1 class="blanco">{{data_testimonio.nombre}}
 				<hr/>
 			</h1>
-			<div class="paso" id="scrolly">
+			<div class="paso">
 				<div class="imagen">
 					<ImagenPie 
 						:link='data_testimonio.imagen'
@@ -16,7 +15,8 @@
 						<template slot="pie-foto">
 							<p class="autorxs">{{data_testimonio.nombre}}</p> 
 							<button  class="boton-volver" @click="regresarTestimonios()">
-								Regresar a testimonios
+								<img :src="require('@/assets/img/iconos/volver.svg')"/> 
+								<span>Regresar a testimonios</span>
 							</button>
 						</template>
 					</ImagenPie>
@@ -28,9 +28,7 @@
 					</p>
 				</div>
 			</div>
-			<div>
-				
-			</div>
+			
 		</div>
         
 	</article>
@@ -61,18 +59,24 @@ export default {
 
 <style lang="scss">
 .testimonios-seleccionado{
+	&.visible{
+		overflow-x: hidden!important;
+	}
+	.container.main{
+		overflow: initial;
+	}
 	width:100%;
-  	background: #4A2582;
+	background: #4A2582;
 	overflow: inherit;
 	position: relative;
 	display: block;
-	overflow-x: hidden;
+	
 	h1{
-		line-height: 0.3;
 		width: fit-content;
     	margin: auto;
 		margin-bottom: 48px;
 	}
+
 	.paso{
 		&:nth-child(1){
 			margin-top: 500px
@@ -83,7 +87,10 @@ export default {
 		gap: 0px 30px; 
 		flex-wrap: nowrap;
 		justify-content: space-between;
-		position: relative;
+		position: -webkit-sticky;
+        position: sticky;
+        display: flex;
+        top: 0px;
 		.imagen{
 			z-index: 0;
 			flex: 0 1 50%;
@@ -95,7 +102,7 @@ export default {
 				margin: auto;
 				position: -webkit-sticky;
 				position: sticky;
-				top: 105px;
+				top: 50px;
 				display:inline-block;
 			}
 		}
@@ -105,25 +112,28 @@ export default {
 			flex: 0 1 50%;
 			mix-blend-mode: screen;
 			
-			
-			p{
-				//opacity: 0;
-			}
 		}
 	}
 	p.autorxs{
 		color: #fff;
 	}
 	button.boton-volver{
-		border: 1px solid #FFFFFF;
+		border: 1px solid #FDA1C9;
 		border-radius: 24px;
 		background: none;
-		color: #FFFFFF;
 		font-size: 14px;
-		padding: 23px 24px;
+		padding: 12px 24px;
 		text-decoration: none;
-		line-height: 0;
 		margin-right: 15px;
+		display: flex;
+		color:#FDA1C9;
+		text-transform: uppercase;
+		img{
+			width: 30px;
+		}
+		span{
+			margin: auto
+		}
 	}
 }
 </style>

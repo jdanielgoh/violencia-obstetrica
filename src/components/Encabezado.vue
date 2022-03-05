@@ -65,7 +65,6 @@ export default {
                 placeholder: "ENCUESTAS",
                 
                 borderRadius: "20px",
-                border: "1px solid #fff",
                 width: 150
             },
             menu_activo: false,
@@ -125,12 +124,18 @@ export default {
                 margin-right: 10px;;
             }
              div.dropdown{
-                 span.text{margin-left: 19px;}
+                span.text{margin-left: 19px;}
                 background: #fff;
                 height: 31px;
                 font-size: 14px;
-                padding: 0 10px;
+                padding: 6px 10px;
+                border-radius: 24px;
                 color: #4A2582;
+                border: 1px solid #4A2582;
+                i.angle-down{
+                    border-bottom: solid #4A2582;
+                    border-right: solid #4A2582;
+                }
                 &:hover{
                     background: #4A2582!important;
                 }
@@ -203,7 +208,12 @@ export default {
                     background: #4A2582;
                     color: #fff;
                     font-size: 14px;
-                    padding: 0 10px;
+                    padding: 6px 10px;
+                    border: 1px solid #fff;
+                    i.angle-down{
+                    border-bottom: solid #fff;
+                    border-right: solid #fff;
+                }
                     span.text{margin-left: 19px;}
 
                     .options{

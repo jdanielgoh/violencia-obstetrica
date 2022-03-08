@@ -104,10 +104,10 @@ export default {
   name: "Metodologia",
   components: {
   },
-};
+}
 </script>
 <style scoped lang="scss">
-div.container.text-cita{
+  .text-cita{
     max-width: 896px;
     p{
         text-align: left;
@@ -116,5 +116,5 @@ div.container.text-cita{
         letter-spacing: 1.2px;
         color: #FDA1C9;
     }
-}
+  };
 </style>

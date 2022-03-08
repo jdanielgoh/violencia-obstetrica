@@ -57,7 +57,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
+@import "../../scss/_variables";
+
 .testimonios-seleccionado{
 	&.visible{
 		overflow-x: hidden!important;
@@ -86,6 +88,9 @@ export default {
 		display: flex;
 		gap: 0px 30px; 
 		flex-wrap: nowrap;
+		@media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+			flex-wrap: wrap;
+		}
 		justify-content: space-between;
 		position: -webkit-sticky;
         position: sticky;
@@ -94,22 +99,33 @@ export default {
 		.imagen{
 			z-index: 0;
 			flex: 0 1 50%;
-			.cover{
-				background-color: transparent;
-				
+			@media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+				flex: 0 1 100%;
 			}
+			
 			.imagen-blend-pie{
 				margin: auto;
 				position: -webkit-sticky;
 				position: sticky;
 				top: 50px;
 				display:inline-block;
+				.cover{
+				background-color: transparent;
+				height: 400px;
+				@media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+					height: 280px;
+				}
+				
+			}
 			}
 		}
 		.texto{
 			position: relative;
 			z-index: 1;
 			flex: 0 1 50%;
+			@media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+				flex: 0 1 100%;
+			}
 			mix-blend-mode: screen;
 			
 		}

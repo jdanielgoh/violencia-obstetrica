@@ -3,7 +3,7 @@
   	<div id="scrolly-portada" class="container main">
 		<div class="paso" data-step="1">
 			<div class="imagen" v-rellax="rellax" 
-				data-rellax-speed="-10"
+				data-rellax-speed="-8"
 				data-rellax-percentage="0."
 			>
 				<ImagenPie 
@@ -21,7 +21,7 @@
 			</div>
 			<div class="imagen" v-rellax="rellax" 
 				data-rellax-speed="4"
-				data-rellax-percentage="-.5">
+				data-rellax-percentage=".0">
 				<ImagenPie 
 					:link='"img/portada-rellax/0009.jpg"'
 					:pie="''"
@@ -114,8 +114,9 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style  lang="scss">
 
+@import "../../scss/_variables";
 
 #scrolly-portada {
 	position: relative;
@@ -135,6 +136,12 @@ export default {
 			flex: 0 1 50%;
 			.imagen-blend-pie{
 				margin: auto;
+				.cover{
+					height: 400px;
+					@media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+						max-height: 300px;
+					}
+				}
 			}
 		}
 		.bullet{
@@ -152,30 +159,7 @@ export default {
 				//opacity: 0;
 			}
 		}
-		/*&.activo{
-			.bullet{
-				p{
-					animation-name: animText;
-					animation-duration: .5s;
-					animation-timing-function: ease-in-out;
-					animation-fill-mode: forwards;
-				}
-				@keyframes animText {
-					100% {
-						transform: translateY(0);
-						opacity: 1;
-						-webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0%);
-						clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0%);
-					}
-					0% {
-						transform: translateY(50px);
-						opacity: 0;
-						-webkit-clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
-						clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
-					}
-				}
-			}
-		}*/
+		
 	}
 }
 	

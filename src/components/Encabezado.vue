@@ -65,7 +65,6 @@ export default {
                 placeholder: "ENCUESTAS",
                 
                 borderRadius: "20px",
-                width: 150
             },
             menu_activo: false,
             fondo_morado: true,
@@ -95,6 +94,8 @@ export default {
 </script>
 
 <style lang="scss" >
+@import "../scss/_variables";
+
 .header{
     background: #fff;
     width: 100%;
@@ -120,11 +121,9 @@ export default {
             }
         }
         .botones{
-            & > *{
-                margin-right: 10px;;
-            }
+           
              div.dropdown{
-                span.text{margin-left: 19px;}
+                span.text{margin: 0 10px;}
                 background: #fff;
                 height: 31px;
                 font-size: 14px;
@@ -192,7 +191,15 @@ export default {
                 color:#FFFFFF;
                 display: block;
                 margin-top: 16px;
-            }  
+            }
+            @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+                font-size: 24px;
+                margin: 50px 100px auto auto;
+                a{  
+
+                    margin-top: 8px;
+                }
+            }
         }
 
     }
@@ -201,9 +208,7 @@ export default {
         .container{
             
             .botones{
-                & > *{
-                    margin-right: 10px;;
-                }
+                
                 div.dropdown{
                     background: #4A2582;
                     color: #fff;
@@ -214,7 +219,7 @@ export default {
                     border-bottom: solid #fff;
                     border-right: solid #fff;
                 }
-                    span.text{margin-left: 19px;}
+                   
 
                     .options{
                         border: none;

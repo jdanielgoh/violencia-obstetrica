@@ -14,6 +14,9 @@ h1{
     &.blanco{
         color: #FFFFFF;
     }
+    @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+        font-size: 48px;
+    }
 }
 .cita{
     color:#FDA1C9;
@@ -22,6 +25,9 @@ h1{
     opacity: 1;
     font-weight: 800;
     text-transform: capitalize;
+    @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+        font-size: 24px;
+    }
 }
 hr{
     border-top: 3px solid #FFFFFF;

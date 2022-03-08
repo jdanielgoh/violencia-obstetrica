@@ -59,7 +59,9 @@ export default{
 
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+@import "../../scss/_variables";
+
 #audios{
     position: fixed;
     width: 0%;
@@ -72,6 +74,9 @@ export default{
     color: #FFFFFF;
     font-size: 14px;
     padding:12px 24px;
+    @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+		padding: 12px 12px;
+	}
     text-decoration: none;
     line-height: 0;
     margin-right: 15px;

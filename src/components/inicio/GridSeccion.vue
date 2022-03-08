@@ -59,6 +59,9 @@ $margen-grid-secciones: 70px;
 			&.blanco{
 				color: #fff
 			}
+			@media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+				font-size: 48px;
+			}
 		}
 		.contenedor-secciones{
 			display: flex;

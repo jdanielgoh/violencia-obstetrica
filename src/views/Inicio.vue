@@ -1,6 +1,5 @@
 <template>
 	<div class="inicio">
-
 		<Portada/>
 		<GridSeccion
 			id="especiales"

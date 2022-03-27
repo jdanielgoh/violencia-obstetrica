@@ -38,6 +38,12 @@ import te_puede_interesar from "@/assets/data/te_puede_interesar.json"
 
 export default {
 	name: 'Inicio',
+	metaInfo: {
+      // if no subcomponents specify a metaInfo.title, this title will be used
+      title: 'Inicio',
+      // all titles will be injected into this template
+      titleTemplate: '%s | Partos Rotos'
+    },
 	components: {
 		Portada,
 		ImagenPie,

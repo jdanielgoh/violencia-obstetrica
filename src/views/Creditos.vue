@@ -222,6 +222,12 @@ export default {
   components: {
     ImagenPie,
   },
+  metaInfo: {
+      // if no subcomponents specify a metaInfo.title, this title will be used
+      title: 'Créditos',
+      // all titles will be injected into this template
+      titleTemplate: '%s | Partos Rotos'
+    },
 };
 </script>
 <style  lang="scss">

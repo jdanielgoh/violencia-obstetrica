@@ -102,8 +102,12 @@
 
 export default {
   name: "Metodologia",
-  components: {
-  },
+  metaInfo: {
+      // if no subcomponents specify a metaInfo.title, this title will be used
+      title: 'Metodología',
+      // all titles will be injected into this template
+      titleTemplate: '%s | Partos Rotos'
+    },
 }
 </script>
 <style scoped lang="scss">

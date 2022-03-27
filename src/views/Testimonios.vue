@@ -155,13 +155,19 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style  lang="scss">
+@import "../scss/_variables";
+
 h3{
 	font-size: 56px;
 	line-height: 1;
+	@media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+		font-size: 48px;
+	}
 	&.blanco{
 		color: #fff
 	}
+	
 }
 .testimonios{
   	background: #4A2582;
@@ -208,10 +214,18 @@ h3{
 			
 			.imagen-blend-pie{
 				margin: auto;
+				
+				.cover{
+					height: 400px;
+					@media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+						height: 280px!important;
+					}
+				}
 			}
 			.autorxs{
 				color:#fff;
 			}
+			
 		}
 		.bullet{
 			z-index: 1;
@@ -232,7 +246,7 @@ h3{
 	article.testimonios-seleccionado.visible{
 		position: fixed;
 		top:82px;
-		z-index: 1004;
+		z-index: 1001;
 		overflow: scroll;
 		height: calc(100vh - 82px);
 	}

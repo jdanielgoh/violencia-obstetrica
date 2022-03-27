@@ -10,7 +10,7 @@
             <p class="hospital">
                 {{hospital_seleccionado}}
             </p>
-            <p class="anio">
+            <p v-if="anio_seleccionado" class="anio">
                 {{anio_seleccionado!="No puso el año "?parseInt(anio_seleccionado):""}}
             </p>
             <p class="testimonio">
@@ -42,7 +42,7 @@ export default {
             escala_circulos: .2,
             testimonio_seleccionado:"",
             provincia_seleccionada: "",
-            hospital_seleccionado:"",
+            hospital_seleccionado:"Selecciona un testimonio en el mapa para para conocer los detalles",
             anio_seleccionado:""
 
         }
@@ -140,16 +140,27 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "~leaflet/dist/leaflet.css";
+@import "../../scss/_variables";
+
 div.mapa-testimonio{
     display: flex;
     flex-wrap: nowrap;
+    @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+		flex-wrap: wrap;
+	}
     > *{
         flex:1;
+        @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+            flex: 1 1 100%;
+        }
         padding: 15px;
     }
     div.contenedor-mapa-testimonios{
         width: calc(100% - 30px);
         height: calc(100vh - 200px);
+        @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+            max-height: 400px;
+        }
         background-color:#4a129c;
         z-index: 0;
     }

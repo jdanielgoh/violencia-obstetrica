@@ -5,7 +5,7 @@ module.exports = {
   outputDir: 'dist',
   publicPath: '/',
   filenameHashing: true,
-
+  
   configureWebpack: {
     plugins: [
       new CopyPlugin([

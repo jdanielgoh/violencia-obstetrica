@@ -18,49 +18,70 @@
       </div>
       <div class="mapa-texto">
         <div id="fondo-portada">
-          <StoryTellingMapa :paso_inicial="paso" :id="'contenedor-mapa'" />
-          <iframe
-            :src="'../graficas/informacion_atencion.html'"
-            id="iframe_informacion_atencion"
-            frameborder="0"
-            width="100%"
-          ></iframe>
-		      <iframe
-            src="../graficas/consentimiento_parto.html"
-            id="iframe_consentimiento_parto"
-            frameborder="0"
-            width="100%"
-          ></iframe>
-          <iframe
-            src="../graficas/count_maltratos.html"
-            id="iframe_count_maltratos"
-            frameborder="0"
-            width="100%"
-          ></iframe>
-          <iframe
-            src="../graficas/maltratos_naturalizados.html"
-            id="iframe_maltratos_naturalizados"
-            frameborder="0"
-            width="100%"
-          ></iframe>
-          <iframe
-            src="../graficas/kristeller_fecha.html"
-            id="iframe_kristeller_fecha"
-            frameborder="0"
-            width="100%"
-          ></iframe>
-          <iframe
-            src="../graficas/episiotomia_parto.html"
-            id="iframe_epistomia_parto"
-            frameborder="0"
-            width="100%"
-          ></iframe>
-          <iframe
+          <StoryTellingMapa v-if="pantalla_grande" :paso_inicial="paso" :id="'contenedor-mapa'" />
+          <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_informacion_atencion">
+            <h3>Recibió información por parte del personal médico sobre su estado de salud antes del parto</h3>
+            <iframe
+              :src="'../graficas/informacion_atencion.html'"
+              frameborder="0"
+              width="100%"
+            ></iframe>
+            <p class="elaboracion-por">Elaborado por Datacrítica</p>
+          </div>
+          <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_consentimiento_parto">
+            <h3>Solicitaron consentimiento para los procedimientos practicados</h3>
+            <iframe
+              src="../graficas/consentimiento_parto.html"
+              frameborder="0"
+              width="100%"
+            ></iframe>
+            <p class="elaboracion-por">Elaborado por Datacrítica</p>
+          </div>
+          <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_count_maltratos">
+            <h3>Encuestadas que negaron haber sufrido maltrato pero que después marcaron algún tipo</h3>
+            <iframe
+              src="../graficas/maltratos_naturalizados.html"
+              frameborder="0"
+              width="100%"
+            ></iframe>
+            <p class="elaboracion-por">Elaborado por Datacrítica</p>
+          </div>
+          <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_maltratos_naturalizados">
+            <h3>Cantidad total de tipo de maltratos físico y/o verbal que sufireron las mujeres</h3>
+            <iframe
+              src="../graficas/count_maltratos.html"
+              frameborder="0"
+              width="100%"
+            ></iframe>
+            <p class="elaboracion-por">Elaborado por Datacrítica</p>
+          </div>
+          <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_kristeller_fecha">
+            <h3>Practicaron la maniobra de Kristeller</h3>
+            <iframe
+              src="../graficas/kristeller_fecha.html"
+              frameborder="0"
+              width="100%"
+            ></iframe>
+            <p class="elaboracion-por">Elaborado por Datacrítica</p>
+          </div>
+          <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_epistomia_parto">
+            <h3>Practicaron episiotomía</h3>
+            <iframe
+              src="../graficas/episiotomia_parto.html"
+              frameborder="0"
+              width="100%"
+            ></iframe>
+            <p class="elaboracion-por">Elaborado por Datacrítica</p>
+          </div>
+          <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_acompanadas_hospital2">
+            <h3>Cuantas mujeres estuvieron acompañadas por alguien durante el parto/cesárea</h3>
+            <iframe
             src="../graficas/acompanadas_hospital2.html"
-            id="iframe_acompanadas_hospital2"
             frameborder="0"
             width="100%"
           ></iframe>
+          <p class="elaboracion-por">Elaborado por Datacrítica</p>
+          </div>
         </div>
         <article class="container text">
            <div class="step step--1" data-step="-1">
@@ -79,6 +100,7 @@
               Camagüey y Pinar del Río.
             </p>
             <!--.( Ampliar el mapa y que se enfoque primero en La Habana, haga Zoom y luego lo mismo en Camaguey y Pinar). -->
+             <StoryTellingMapa v-if="!pantalla_grande" :paso_inicial="paso" :id="'contenedor-mapa'" />
           </div>
           <div class="step step-1" data-step="1">
             <!--ACÁ pueden hacer un gráfico de pastel, con los siguientes datos: Cesárea de urgencia(59), cesárea luego de fallar la inducción del parto(72), cesárea programada(61), parto vaginal (322).-->
@@ -156,7 +178,15 @@
               80% de los cuestionarios recopilados apuntan a que las madres no
               fueron informadas sobre su estado de salud durante el parto.
             </p>
-            <!--INSERTAR GRÁFICO DE FALTA DE INFORMACIÓN-->
+            <div class="contenedor-iframe" v-if="!pantalla_grande" >
+              <h3>Recibió información por parte del personal médico sobre su estado de salud antes del parto</h3>
+              <iframe
+                :src="'../graficas/informacion_atencion.html'"
+                frameborder="0"
+                width="100%"
+              ></iframe>
+              <p class="elaboracion-por">Elaborado por Datacrítica</p>
+            </div>
           </div>
           <div class="step step-3" data-step="3">
             <p>
@@ -164,6 +194,15 @@
               procedimientos que realizaron a ellas y a sus bebés durante el
               parto.
             </p>
+            <div class="contenedor-iframe" v-if="!pantalla_grande" >
+              <h3>Solicitaron consentimiento para los procedimientos practicados</h3>
+              <iframe
+                src="../graficas/consentimiento_parto.html"
+                frameborder="0"
+                width="100%"
+              ></iframe>
+              <p class="elaboracion-por">Elaborado por Datacrítica</p>
+            </div>
             <!--INSERTAR GRÁFICO DE CONSENTIMIENTO SEGÚN TIPO DE  PARTO
 					Podemos probar darle una visibilidad distinta al resto del texto, los fragmentos de los testimonios de las madres. Cambiar el formato, poner dentro de un recuadro, etc. lo dejo a su consideración
 					-->
@@ -192,6 +231,15 @@
               obstétrica no solo es una de las violencias más invisibilizadas,
               sino también una de las más naturalizadas.
             </p>
+            <div class="contenedor-iframe" v-if="!pantalla_grande" >
+              <h3>Encuestadas que negaron haber sufrido maltrato pero que después marcaron algún tipo</h3>
+              <iframe
+                src="../graficas/maltratos_naturalizados.html"
+                frameborder="0"
+                width="100%"
+              ></iframe>
+              <p class="elaboracion-por">Elaborado por Datacrítica</p>
+            </div>
             <!--AGREGAR GRÁFICA DE MALTRATOS NATURALIZADOS-->
           </div>
           <div class="step step-5" data-step="5">
@@ -204,6 +252,15 @@
               etc). Gritarles, culparlas por algún inconveniente y hablarles de
               modo grosero también son episodios frecuentes.
             </p>
+            <div class="contenedor-iframe" v-if="!pantalla_grande" >
+              <h3>Cantidad total de tipo de maltratos físico y/o verbal que sufireron las mujeres</h3>
+              <iframe
+                src="../graficas/count_maltratos.html"
+                frameborder="0"
+                width="100%"
+              ></iframe>
+              <p class="elaboracion-por">Elaborado por Datacrítica</p>
+            </div>
             <!--Agregar gráfico de maltratos frecuentes .-->
           </div>
           <div class="step step-6" data-step="6">
@@ -231,6 +288,15 @@
               pidieron consentimiento y al 73% no le aplicaron anestesia para
               cortarlas.
             </p>
+            <div class="contenedor-iframe" v-if="!pantalla_grande">
+              <h3>Practicaron episiotomía</h3>
+              <iframe
+                src="../graficas/episiotomia_parto.html"
+                frameborder="0"
+                width="100%"
+              ></iframe>
+              <p class="elaboracion-por">Elaborado por Datacrítica</p>
+            </div>
             <!--Agregar gráfico de episiotomía pero solo en partos vaginales. No incluir cesáreas-->
           </div>
           <div class="step step-7" data-step="7">
@@ -242,6 +308,15 @@
               desaconsejada por la OMS desde 2014, pero en Cuba se sigue
               practicando.
             </p>
+            <div class="contenedor-iframe" v-if="!pantalla_grande" >
+              <h3>Practicaron la maniobra de Kristeller</h3>
+              <iframe
+                src="../graficas/kristeller_fecha.html"
+                frameborder="0"
+                width="100%"
+              ></iframe>
+              <p class="elaboracion-por">Elaborado por Datacrítica</p>
+            </div>
             <!--AGREGAR GRÁFICO-->
           </div>
           <div class="step step-8" data-step="8">
@@ -259,6 +334,15 @@
               caminar para facilitar su labor de parto. Esto también es
               violencia obstétrica.
             </p>
+            <div class="contenedor-iframe" v-if="!pantalla_grande" >
+              <h3>Cuantas mujeres estuvieron acompañadas por alguien durante el parto/cesárea</h3>
+              <iframe
+              src="../graficas/acompanadas_hospital2.html"
+              frameborder="0"
+              width="100%"
+            ></iframe>
+            <p class="elaboracion-por">Elaborado por Datacrítica</p>
+            </div>
             <!--AGREGAR gráfico por hospital de acompañamiento durante parto o cesárea-->
           </div>
           <div class="step step-9" data-step="9">
@@ -359,7 +443,8 @@
               relataron con más detalle sus experiencias durante el parto y el
               embarazo. Algunos fragmentos fueron utilizados en esta
               visualización. Si quieres leer los testimonios completos puedes
-              pinchar en este enlace.
+              pinchar en <router-link class="link-text" :to="{name: 'Testimonios'}" >este enlace</router-link> o en 
+              <router-link class="link-text" to="/visualizaciones/mapa-testimonios" >este </router-link> para consultar el mapa de testimonios
             </p>
             <p>
               ** Si has dado a luz Cuba y quieres compartirnos tu experiencia,
@@ -382,12 +467,17 @@ export default {
   data() {
     return {
       paso: -1,
-      informados: String
+      informados: String,
+
     };
+  },
+  beforeMount(){
+    this.pantalla_grande = parseInt(window.innerWidth) > 769
   },
   mounted() {
     this.informados= "graficas/informacion_atencion.html"
     this.inizializandoScrollama();
+
   },
   methods: {
     inizializandoScrollama() {
@@ -409,8 +499,9 @@ export default {
       window.addEventListener("resize", this.reescalandoPantalla);
     },
     reescalandoPantalla() {
+      this.pantalla_grande = parseInt(window.innerWidth) > 769
       var stepH = Math.floor(window.innerHeight * 0.95);
-      this.step.style("min-height", stepH + "px");
+      if(this.pantalla_grande){this.step.style("min-height", stepH + "px");}
 
       this.scroller.resize();
     },
@@ -419,8 +510,6 @@ export default {
       this.step.classed("activo", (d, i) => {
         return i === response.index;
       });
-      console.log(this.paso);
-      this.fondo_portada.select("p").text(response.index + 1);
       if (this.paso == 0) {
         d3.selectAll("div#fondo-portada > * ")
 			.style("z-index", "-1")
@@ -593,12 +682,22 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../../scss/_variables";
+p.elaboracion-por{
+  font-style: italic
+}
 #scrolly-portada {
   position: relative;
   background-color: #4a2582;
   color: #fff;
   p {
     color: #fff;
+    a.link-text{
+        color: #FDA1C9;
+        &:visited, &:hover{
+          color: #FDA1C9 !important;;
+        }
+      }
   }
   div.mapa-texto {
     position: relative;
@@ -611,6 +710,9 @@ export default {
       flex: 1;
     }
     div#fondo-portada {
+      @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+        display: none;
+      }
       position: -webkit-sticky;
       position: sticky;
       -webkit-transform: translate3d(0, 0, 0);
@@ -625,15 +727,26 @@ export default {
         position: absolute;
         top: 0;
       }
+      div.contenedor-iframe{
+        width: 100%;
+        opacity: 0;
+        p{
+          padding: 0 15px;
+        }
+      }
+      h3{
+        padding: 15px;
+      }
       iframe {
         width: 100%;
-        height: calc(100vh - 200px);
+        height: calc(100vh - 250px);
       }
       p {
         margin: 0;
       }
     }
     article {
+      
       padding: 0;
       color: #fff;
       max-width: 500px;
@@ -649,15 +762,25 @@ export default {
       }
       div.step {
         margin-top: 300px;
+        @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+          margin-top: 30px
+        }
         &.step--1{
           margin-top:0;
           height: 50vh;
+          @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+            height: 0px;
+          }
         }
         &.step-0{
           margin-top:100px;
+          @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+            margin-top:30px;
+          }
         }
         p {
           color: #fff;
+          
         }
         cite {
           font-style: normal;
@@ -667,13 +790,21 @@ export default {
 
         position: relative;
         display: block;
-
+        @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+          .contenedor-iframe{
+            iframe{
+              height: 400px;
+            }
+            
+          }
+        }
         &.portada,
         &.portada.activo {
           height: 100vh;
           position: relative;
           display: block;
         }
+        
       }
     }
   }

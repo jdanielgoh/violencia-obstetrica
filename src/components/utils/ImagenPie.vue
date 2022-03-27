@@ -1,8 +1,7 @@
 <template>
     <div class="imagen-blend-pie">
         <div class="cover" :style="{
-            backgroundImage: `url('${link}')`,
-            height: `${altura}`}"></div>
+            backgroundImage: `url('${link}')`}"></div>
         <slot name="pie-foto">
 
         </slot>
@@ -15,10 +14,7 @@ export default {
     props:{
         link: String,
         pie: String,
-        altura: {
-            type: String,
-            default: "400px"
-        }
+        
     }
 }
 </script>
@@ -28,9 +24,10 @@ export default {
     width:100%;
     
     .cover{
-        min-height: 300px;
+        min-height: 200px;
         width: 100%;
         background-size: cover;
+        height: 400px;
         background-position: 50%;
         width: 100%;
         text-align: center;

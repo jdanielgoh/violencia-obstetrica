@@ -83,6 +83,12 @@ import testimonios from "@/assets/data/testimonios.json"
 
 export default {
 	name: 'Testimonios',
+	metaInfo: {
+      // if no subcomponents specify a metaInfo.title, this title will be used
+      title: 'Testimonios',
+      // all titles will be injected into this template
+      titleTemplate: '%s | Partos Rotos'
+    },
 	components: {
 		ImagenPie,
 		TestimonioSeleccionado,

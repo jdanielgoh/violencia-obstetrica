@@ -1,12 +1,18 @@
 <template>
   <div>
-    <h1>404</h1>
+    <h1>No encontrado</h1>
   </div>
 </template>
 
 <script>
 export default {
   name: '404',
+  metaInfo: {
+      // if no subcomponents specify a metaInfo.title, this title will be used
+      title: '404',
+      // all titles will be injected into this template
+      titleTemplate: '%s | Partos Rotos'
+    },
   mounted() {
     if (document.getElementById("initial-loader")) {
       document.getElementById("initial-loader").remove();

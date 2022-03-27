@@ -12,7 +12,10 @@ import ParirenCuba from "../views/reportajes/ParirenCuba.vue"
 import VisualizacionViolencias from "../views/visualizaciones/VisualizacionViolencias.vue"
 import VisualizacionMapaTestimonios from "../views/visualizaciones/VisualizacionMapaTestimonios.vue"
 
+
+import Meta from 'vue-meta'
 Vue.use(VueRouter)
+Vue.use(Meta)
 
 const routes = [
   {

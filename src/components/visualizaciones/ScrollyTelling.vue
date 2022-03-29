@@ -18,69 +18,40 @@
       </div>
       <div class="mapa-texto">
         <div id="fondo-portada">
+
           <StoryTellingMapa v-if="pantalla_grande" :paso_inicial="paso" :id="'contenedor-mapa'" />
+          
           <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_informacion_atencion">
-            <h3>Recibió información por parte del personal médico sobre su estado de salud antes del parto</h3>
-            <iframe
-              :src="'../graficas/informacion_atencion.html'"
-              frameborder="0"
-              width="100%"
-            ></iframe>
-            <p class="elaboracion-por">Elaborado por Datacrítica</p>
-          </div>
-          <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_consentimiento_parto">
-            <h3>Solicitaron consentimiento para los procedimientos practicados</h3>
-            <iframe
-              src="../graficas/consentimiento_parto.html"
-              frameborder="0"
-              width="100%"
-            ></iframe>
-            <p class="elaboracion-por">Elaborado por Datacrítica</p>
-          </div>
-          <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_count_maltratos">
-            <h3>Encuestadas que negaron haber sufrido maltrato pero que después marcaron algún tipo</h3>
-            <iframe
-              src="../graficas/maltratos_naturalizados.html"
-              frameborder="0"
-              width="100%"
-            ></iframe>
-            <p class="elaboracion-por">Elaborado por Datacrítica</p>
-          </div>
-          <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_maltratos_naturalizados">
-            <h3>Cantidad total de tipo de maltratos físico y/o verbal que sufireron las mujeres</h3>
-            <iframe
-              src="../graficas/count_maltratos.html"
-              frameborder="0"
-              width="100%"
-            ></iframe>
-            <p class="elaboracion-por">Elaborado por Datacrítica</p>
-          </div>
-          <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_kristeller_fecha">
-            <h3>Practicaron la maniobra de Kristeller</h3>
-            <iframe
-              src="../graficas/kristeller_fecha.html"
-              frameborder="0"
-              width="100%"
-            ></iframe>
-            <p class="elaboracion-por">Elaborado por Datacrítica</p>
-          </div>
-          <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_epistomia_parto">
-            <h3>Practicaron episiotomía</h3>
-            <iframe
-              src="../graficas/episiotomia_parto.html"
-              frameborder="0"
-              width="100%"
-            ></iframe>
-            <p class="elaboracion-por">Elaborado por Datacrítica</p>
-          </div>
-          <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_acompanadas_hospital2">
-            <h3>Cuantas mujeres estuvieron acompañadas por alguien durante el parto/cesárea</h3>
-            <iframe
-            src="../graficas/acompanadas_hospital2.html"
-            frameborder="0"
-            width="100%"
-          ></iframe>
-          <p class="elaboracion-por">Elaborado por Datacrítica</p>
+            <BarrasApiladas
+              :barras_apiladas_id="'bar-apiladas'" 
+              :datos="datos_barras.datos"
+              :nombre_barra="datos_barras.nombre_barra"
+              :nombre_color="datos_barras.nombre_color"
+              :variables='datos_barras.variables'
+              :margen="datos_barras.margen"
+              :alto_vis="datos_barras.alto_vis"
+              :ancho_tooltip="180"
+              :titulo_eje_x ="datos_barras.titulo_eje_x"
+              :titulo_eje_y ="datos_barras.titulo_eje_y"
+              ref='bar-apiladas'
+              class="contenedor-barras-apiladas-elaboradas"
+              >
+              <template slot="encabezado">
+                <div class="encabezado">
+                  <h5 class="titulo-visualizacion">{{datos_barras.titulo}}</h5>
+                </div>
+              </template>
+              <template slot="pie" >
+                <div class="pie"> 
+                  <div class="nomenclatura">
+                    <div class="nombre-categoria" v-for="(variable) in datos_barras.variables" :key="variable.id">
+                      <span class="color" v-bind:style="{background: variable.color}"></span>
+                      <span class="nombre">{{variable.nombre_subcategoria}}</span>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </BarrasApiladas>
           </div>
         </div>
         <article class="container text">
@@ -458,17 +429,314 @@
 import scrollama from "scrollama";
 import StoryTellingMapa from "@/components/visualizaciones/StoryTellingMapa.vue";
 import * as d3 from "d3";
-
+import BarrasApiladas from "@/components/visualizaciones/GraficaBarras.vue"
 export default {
   name: "ScrollyTelling",
   components: {
     StoryTellingMapa,
+    BarrasApiladas
   },
   data() {
     return {
       paso: -1,
       informados: String,
-
+      datos_barras:{
+        margen: {arriba:20,abajo:70,izquierda:40,derecha:20},
+        alto_vis: 400,
+        datos:[
+          {nombre: 'Alto riesgo', si: 120, no: 32}, 
+          {nombre: 'Bajo riesgo', si: 249, no: 78},
+          {nombre: 'Otro', si: 26, no: 9}
+        ],
+        variables:[
+          {"id":"si", "nombre_subcategoria":"Sí", "color":"#B987FF"}, 
+          {"id": "no","nombre_subcategoria": "No", "color":"#F792CC"}
+        ],
+        nombre_barra: "nombre",
+        nombre_color: "nombre_subcategoria",
+        titulo_eje_x: "Atención materna",
+        titulo_eje_y: "Encuestadas",
+        titulo: "Recibió información por parte del personal médico sobre su estado de salud antes del parto"
+      },
+      data_informacion_atencion: {
+        margen: {arriba:20,abajo:70,izquierda:40,derecha:20},
+        alto_vis: 400,
+        datos:[
+          {nombre: 'Alto riesgo', si: 120, no: 32}, 
+          {nombre: 'Bajo riesgo', si: 249, no: 78},
+          {nombre: 'Otro', si: 26, no: 9}
+        ],
+        variables:[
+          {"id":"si", "nombre_subcategoria":"Sí", "color":"#B987FF"}, 
+          {"id": "no","nombre_subcategoria": "No", "color":"#F792CC"}
+        ],
+        nombre_barra: "nombre",
+        nombre_color: "nombre_subcategoria",
+        titulo_eje_x: "Atención materna",
+        titulo_eje_y: "Encuestadas",
+        titulo: "Recibió información por parte del personal médico sobre su estado de salud antes del parto"
+      },
+      data_consentimiento: {
+        margen: {arriba:20,abajo:170,izquierda:30,derecha:20},
+        alto_vis: 400,
+        datos:[
+          {nombre: 'Cesárea de urgencia',
+            'no_ninguno': 28.0,
+            'si_algunos': 4.0,
+            'si_todos': 27.0},
+          {nombre:'Cesárea después de fallar parto',
+            'no_ninguno': 21.0,
+            'si_algunos': 0,
+            'si_todos': 51.0},
+          {nombre: 'Cesárea programada',
+            'no_ninguno': 10.0,
+            'si_algunos': 5.0,
+            'si_todos': 46.0},
+          {nombre: 'Parto vaginal',
+            'no_ninguno': 174.0,
+            'si_algunos': 26.0,
+            'si_todos': 122.0}
+        ],
+        variables:[
+          {"id":"no_ninguno", "nombre_subcategoria":'No, para ninguno', "color":"#78ACFF"}, 
+          {"id": "si_algunos","nombre_subcategoria": 'Sí, para algunos', "color":"#B987FF"},
+          {"id":"si_todos", "nombre_subcategoria": 'Sí, para todos', "color":"#F792CC"}, 
+        ],
+        nombre_barra: "nombre",
+        nombre_color: "nombre_subcategoria",
+        titulo_eje_x: "Tipo de parto",
+        titulo_eje_y: "Encuestadas",
+        titulo: "Solicitaron consentimiento para los procedimientos practicados"
+      },
+      data_maltratos_count: {
+        margen: {arriba:20,abajo:70,izquierda:30,derecha:20},
+        alto_vis: 400,
+        datos:[
+          {
+            nombre: 'Maltrato 1',
+            cantidad: 104
+          },
+          {
+            nombre: 'Maltrato 2',
+            cantidad: 42
+          },
+          {
+            nombre: 'Maltrato 3',
+            cantidad: 987
+          },
+          {
+            nombre: 'Maltrato 4',
+            cantidad: 133
+          },
+          {
+            nombre: 'Maltrato 5',
+            cantidad: 101
+          },
+          {
+            nombre: 'Maltrato 6',
+            cantidad: 13
+          },
+          {
+            nombre: 'Maltrato 7',
+            cantidad: 69
+          },
+          {
+            nombre: 'Maltrato 8',
+            cantidad: 19
+          },
+          {
+            nombre: 'Maltrato 9',
+            cantidad: 13
+          },
+          {
+            nombre: 'Maltrato 10',
+            cantidad: 70
+          }
+        ],
+        variables:[
+          {"id":"cantidad", "nombre_subcategoria":'Maltrato', "color":"#FDA1C9"}, 
+        ],
+        nombre_barra: "nombre",
+        nombre_color: "nombre_subcategoria",
+        titulo_eje_x: "Tipo de maltrato",
+        titulo_eje_y: "Encuestadas",
+        titulo: "Cantidad total de tipo de maltratos físico y/o verbal que sufireron las mujeres"
+      },
+      data_maltratos_naturalizados: {
+        margen: {arriba:20,abajo:70,izquierda:30,derecha:20},
+        alto_vis: 400,
+        datos:[
+          {
+            nombre: 'Maltrato 1',
+            cantidad: 43
+          },
+          {
+            nombre: 'Maltrato 2',
+            cantidad: 1
+          },
+          {
+            nombre: 'Maltrato 3',
+            cantidad: 11
+          },
+          {
+            nombre: 'Maltrato 4',
+            cantidad: 44
+          },
+          {
+            nombre: 'Maltrato 5',
+            cantidad: 27
+          },
+          {
+            nombre: 'Maltrato 6',
+            cantidad: 0
+          },
+          {
+            nombre: 'Maltrato 7',
+            cantidad: 17
+          },
+          {
+            nombre: 'Maltrato 8',
+            cantidad: 4
+          },
+          {
+            nombre: 'Maltrato 9',
+            cantidad: 1
+          },
+          {
+            nombre: 'Maltrato 10',
+            cantidad: 16
+          }
+        ],
+        variables:[
+          {"id":"cantidad", "nombre_subcategoria":'Maltrato', "color":"#FDA1C9"}, 
+        ],
+        nombre_barra: "nombre",
+        nombre_color: "nombre_subcategoria",
+        titulo_eje_x: "Tipo de maltrato",
+        titulo_eje_y: "Encuestadas",
+        titulo: "Encuestadas que negaron haber sufrido maltrato pero que después marcaron algún tipo"
+      },
+      data_episiotomia: {
+        margen: {arriba:20,abajo:170,izquierda:30,derecha:20},
+        alto_vis: 400,
+        datos:[
+          {nombre: 'Cesárea de urgencia', 'no': 58,'si': 1},
+          {nombre: 'Cesárea después de fallar parto', 'no': 71, 'si': 1},
+          {nombre: 'Cesárea programada', 'no': 60, 'si': 1},
+          {nombre: 'Parto vaginal', 'no': 81, 'si': 241}
+        ],
+        variables:[
+          {"id":"si", "nombre_subcategoria":"Sí", "color":"#B987FF"}, 
+          {"id": "no","nombre_subcategoria": "No", "color":"#F792CC"}
+        ],
+        nombre_barra: "nombre",
+        nombre_color: "nombre_subcategoria",
+        titulo_eje_x: "Tipo de parto",
+        titulo_eje_y: "Encuestadas",
+        titulo: "Practicaron episiotomía"
+      },
+      data_kristeller: {
+        margen: {arriba:20,abajo:40,izquierda:30,derecha:20},
+        alto_vis: 400,
+        datos:[{'fecha': '1952', 'si': 1.0, 'no': 0.0},
+          {'fecha': '1953', 'si': 1.0, 'no': 0.0},
+          {'fecha': '1954', 'si': 0.0, 'no': 0.0},
+          {'fecha': '1955', 'si': 0.0, 'no': 3.0},
+          {'fecha': '1956', 'si': 1.0, 'no': 0.0},
+          {'fecha': '1957', 'si': 1.0, 'no': 1.0},
+          {'fecha': '1958', 'si': 0.0, 'no': 0.0},
+          {'fecha': '1959', 'si': 1.0, 'no': 1.0},
+          {'fecha': '1960', 'si': 0.0, 'no': 3.0},
+          {'fecha': '1961', 'si': 3.0, 'no': 3.0},
+          {'fecha': '1962', 'si': 1.0, 'no': 3.0},
+          {'fecha': '1963', 'si': 3.0, 'no': 6.0},
+          {'fecha': '1964', 'si': 3.0, 'no': 2.0},
+          {'fecha': '1965', 'si': 3.0, 'no': 6.0},
+          {'fecha': '1966', 'si': 3.0, 'no': 3.0},
+          {'fecha': '1967', 'si': 2.0, 'no': 4.0},
+          {'fecha': '1968', 'si': 3.0, 'no': 1.0},
+          {'fecha': '1969', 'si': 2.0, 'no': 9.0},
+          {'fecha': '1970', 'si': 2.0, 'no': 4.0},
+          {'fecha': '1971', 'si': 4.0, 'no': 11.0},
+          {'fecha': '1972', 'si': 1.0, 'no': 5.0},
+          {'fecha': '1973', 'si': 2.0, 'no': 4.0},
+          {'fecha': '1974', 'si': 7.0, 'no': 7.0},
+          {'fecha': '1975', 'si': 6.0, 'no': 7.0},
+          {'fecha': '1976', 'si': 2.0, 'no': 7.0},
+          {'fecha': '1977', 'si': 5.0, 'no': 5.0},
+          {'fecha': '1978', 'si': 5.0, 'no': 12.0},
+          {'fecha': '1979', 'si': 5.0, 'no': 5.0},
+          {'fecha': '1980', 'si': 4.0, 'no': 8.0},
+          {'fecha': '1981', 'si': 2.0, 'no': 5.0},
+          {'fecha': '1982', 'si': 6.0, 'no': 17.0},
+          {'fecha': '1983', 'si': 13.0, 'no': 14.0},
+          {'fecha': '1984', 'si': 8.0, 'no': 10.0},
+          {'fecha': '1985', 'si': 9.0, 'no': 13.0},
+          {'fecha': '1986', 'si': 3.0, 'no': 8.0},
+          {'fecha': '1987', 'si': 13.0, 'no': 11.0},
+          {'fecha': '1988', 'si': 18.0, 'no': 10.0},
+          {'fecha': '1989', 'si': 13.0, 'no': 16.0},
+          {'fecha': '1990', 'si': 12.0, 'no': 11.0},
+          {'fecha': '1991', 'si': 10.0, 'no': 8.0},
+          {'fecha': '1992', 'si': 10.0, 'no': 10.0},
+          {'fecha': '1993', 'si': 14.0, 'no': 9.0},
+          {'fecha': '1994', 'si': 2.0, 'no': 3.0},
+          {'fecha': '1995', 'si': 7.0, 'no': 2.0},
+          {'fecha': '1996', 'si': 1.0, 'no': 3.0},
+          {'fecha': '1997', 'si': 0.0, 'no': 1.0},
+          {'fecha': '1998', 'si': 3.0, 'no': 3.0},
+          {'fecha': '1999', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2000', 'si': 2.0, 'no': 1.0},
+          {'fecha': '2001', 'si': 0.0, 'no': 1.0},
+          {'fecha': '2002', 'si': 0.0, 'no': 1.0},
+          {'fecha': '2003', 'si': 0.0, 'no': 1.0},
+          {'fecha': '2004', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2005', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2006', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2007', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2008', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2009', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2010', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2011', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2012', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2013', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2014', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2015', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2016', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2017', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2018', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2019', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2020', 'si': 0.0, 'no': 0.0},
+          {'fecha': '2021', 'si': 3.0, 'no': 1.0}],
+        variables:[
+          {"id":"si", "nombre_subcategoria":"Sí", "color":"#B987FF"}, 
+          {"id": "no","nombre_subcategoria": "No", "color":"#F792CC"}
+        ],
+        nombre_barra: "fecha",
+        nombre_color: "nombre_subcategoria",
+        titulo_eje_x: "Año del parto",
+        titulo_eje_y: "Encuestadas",
+        titulo: "Practicaron la maniobra de Kristeller"
+      },
+      data_acompaniadas: {
+        margen: {arriba:20,abajo:0,izquierda:30,derecha:20},
+        alto_vis: 400,
+        datos:[{'nombre': 'Hospital Clínico Quirúrgico Amalia Simoni ', 'si': 0.0, 'no': 1.0}, {'nombre': 'Hospital Clínico Quirúrgico Docente Julio Trigo López', 'si': 1.0, 'no': 0.0}, {'nombre': 'Hospital Clínico Quirúrgico Dr. Luis Aldama Palomino', 'si': 0.0, 'no': 2.0}, {'nombre': 'Hospital Clínico Quirúrgico Hermanos Ameijeiras (La Habana)', 'si': 0.0, 'no': 1.0}, {'nombre': 'Hospital Clínico Quirúrgico Juan Bruno Zayas', 'si': 0.0, 'no': 2.0}, {'nombre': 'Hospital Clínico Quirúrgico León Cuervo Rubío', 'si': 2.0, 'no': 2.0}, {'nombre': 'Hospital Docente Ginecobstétrico Justo Legón Padilla', 'si': 1.0, 'no': 0.0}, 
+        {'nombre': 'Hospital Docente Ginecobstétrico de Guanabacoa (La Fátima)', 'si': 1.0, 'no': 8.0}, {'nombre': 'Hospital General Docente 26 de Diciembre de Remedios', 'si': 0.0, 'no': 1.0}, {'nombre': 'Hospital General Docente Comandante Ciro Redondo García', 'si': 1.0, 'no': 0.0}, {'nombre': 'Hospital General Docente Comandante Pinares', 'si': 0.0, 'no': 4.0}, {'nombre': 'Hospital General Docente Dr. Agostinho Neto', 'si': 1.0, 'no': 1.0}, {'nombre': 'Hospital General Docente Dr. Antonio Luaces Iraola (Hospital General Provincial Docente de Ciego de Avila)', 'si': 0.0, 'no': 2.0}, {'nombre': 'Hospital General Docente Enrique Cabrera (Nacional)', 'si': 1.0, 'no': 17.0}, 
+        {'nombre': 'Hospital General Docente Héroes de Baire', 'si': 0.0, 'no': 4.0}, {'nombre': 'Hospital General Docente Iván Portuondo', 'si': 1.0, 'no': 3.0}, {'nombre': 'Hospital General Docente Julio Aristegui Villamil (Cárdenas, Matanzas)', 'si': 3.0, 'no': 7.0}, {'nombre': 'Hospital General Docente Leopoldito Martínez', 'si': 0.0, 'no': 1.0}, {'nombre': 'Hospital General Docente Mártires de Mayarí', 'si': 0.0, 'no': 1.0}, {'nombre': 'Hospital General Docente Provincial\xa0Roberto Rodríguez', 'si': 1.0, 'no': 1.0}, {'nombre': 'Hospital General Docente Universitario\xa0Martin Chang Puga', 'si': 1.0, 'no': 2.0}, {'nombre': 'Hospital General Docente Vladimir Ilich Lenin', 'si': 0.0, 'no': 2.0}, 
+        {'nombre': 'Hospital General Municipal 27 de Noviembre', 'si': 0.0, 'no': 6.0}, {'nombre': 'Hospital General Universitario Dr. Gustavo Aldereguía Lima (Cienfuegos)', 'si': 0.0, 'no': 3.0}, {'nombre': 'Hospital Ginecobstétrico América Arias (Maternidad de Línea)', 'si': 3.0, 'no': 23.0}, {'nombre': 'Hospital Ginecobstétrico Clodomira Acosta', 'si': 1.0, 'no': 4.0}, {'nombre': 'Hospital Ginecobstétrico Docente Dra. Nelia I. Delfín Ripoll', 'si': 0.0, 'no': 2.0}, {'nombre': 'Hospital Ginecobstétrico Materno Sur Mariana Grajales (Clínica Los Ángeles)', 'si': 2.0, 'no': 18.0}, {'nombre': 'Hospital Ginecobstétrico Ramón González Coro', 'si': 3.0, 'no': 73.0}, {'nombre': 'Hospital Guillermo Domínguez (Puerto Padre)', 'si': 1.0, 'no': 1.0},
+        {'nombre': 'Hospital Materno Hijas de Galicia (Hospital Materno Infantil Diez de Octubre)', 'si': 0.0, 'no': 30.0}, {'nombre': 'Hospital Materno Infantil Dr. Ángel Arturo Aballí (Arroyo Naranjo, La Habana)', 'si': 1.0, 'no': 6.0}, {'nombre': 'Hospital Materno Infantil Lebredo (Arroyo Naranjo, La Habana)', 'si': 0.0, 'no': 3.0}, {'nombre': 'Hospital Materno Infantil Manuel Piti Fajardo', 'si': 0.0, 'no': 2.0}, {'nombre': 'Hospital Materno Infantil provincial Isabel María de Valdivia y Salas ', 'si': 1.0, 'no': 2.0}, {'nombre': 'Hospital Materno Norte Tamara Bunke', 'si': 0.0, 'no': 2.0}, {'nombre': 'Hospital Materno Sur (Clínica Los Ángeles)', 'si': 1.0, 'no': 2.0}, {'nombre': 'Hospital Militar Luis Díaz Soto (Naval)', 'si': 2.0, 'no': 6.0}, 
+        {'nombre': 'Hospital Pediátrico Provincial Docente Pepé Portilla', 'si': 0.0, 'no': 1.0}, {'nombre': 'Hospital Provincial Docente Ginecobstétrico José Ramón López Tabranes', 'si': 0.0, 'no': 1.0}, {'nombre': 'Hospital Provincial Ginecobstétrico Julio Rafael Alfonso Medina (Antiguo Hospital Materno de Matanzas)', 'si': 1.0, 'no': 8.0}, {'nombre': 'Hospital Provincial Universitario Camilo Cienfuegos Gorriarán (Sancti Spíritus)', 'si': 0.0, 'no': 3.0}, {'nombre': 'Hospital Rural Isidro de Armas', 'si': 0.0, 'no': 1.0}, {'nombre': 'Hospital Universitario Abel Santamaría Cuadrado', 'si': 4.0, 'no': 31.0}, {'nombre': 'Hospital Universitario Ginecobstétrico Eusebio Hernández Pérez (Maternidad obrera)', 'si': 29.0, 'no': 91.0}, {'nombre': 'Hospital\xa0Ginecobstétrico Provincial\xa0Ana Betancourt\xa0de Mora', 'si': 20.0, 'no': 46.0}, {'nombre': 'Materno Celia Sánchez ', 'si': 0.0, 'no': 1.0}],
+        variables:[
+          {"id":"si", "nombre_subcategoria":"Sí", "color":"#B987FF"}, 
+          {"id": "no","nombre_subcategoria": "No", "color":"#F792CC"}
+        ],
+        nombre_barra: "nombre",
+        nombre_color: "nombre_subcategoria",
+        titulo_eje_x: "Hospital",
+        titulo_eje_y: "Encuestadas",
+        titulo: "Recibió información por parte del personal médico sobre su estado de salud antes del parto"
+      },
     };
   },
   beforeMount(){
@@ -548,119 +816,64 @@ export default {
 			"1"
 			);
 	  } else if (this.paso == 2) {
-        d3.selectAll("div#fondo-portada > * ")
-			.style("z-index", "-1")
-			.transition()
-			.duration(199)
-			.style("opacity","0");
-        d3.select("div#fondo-portada #iframe_informacion_atencion")
-		.transition()
-		.duration(200)
-		.style("opacity", "1")
-		.transition()
-		.delay(201)
-		.style(
-          "z-index",
-          "1"
-        );
+      d3.selectAll("div#fondo-portada > * ")
+        .style("z-index", "-1")
+        .transition()
+        .duration(199)
+        .style("opacity","0");
+      d3.select("div#fondo-portada #iframe_informacion_atencion")
+        .transition()
+        .duration(200)
+        .style("opacity", "1")
+        .transition()
+        .delay(201)
+        .style(
+              "z-index",
+              "1"
+            );
+        this.datos_barras = this.data_informacion_atencion
+
       } else if (this.paso == 3) {
-        d3.selectAll("div#fondo-portada > * ")
-			.style("z-index", "-1")
-			.transition()
-			.duration(199)
-			.style("opacity","0");
-        d3.select("div#fondo-portada #iframe_consentimiento_parto")
-		.transition()
-		.duration(200)
-		.style("opacity", "1")
-		.transition()
-		.delay(201)
-		.style(
-          "z-index",
-          "1"
-        );
+        this.datos_barras = this.data_consentimiento
+        
       }else if (this.paso == 4) {
-        d3.selectAll("div#fondo-portada > * ")
-			.style("z-index", "-1")
-			.transition()
-			.duration(199)
-			.style("opacity","0");
-        d3.select("div#fondo-portada #iframe_maltratos_naturalizados").transition()
-		.duration(200)
-		.style("opacity", "1")
-		.transition()
-		.delay(201)
-		.style(
-          "z-index",
-          "1"
-        );
+        this.datos_barras = this.data_maltratos_count
+        
       } else if (this.paso == 5) {
-        d3.selectAll("div#fondo-portada > * ")
-			.style("z-index", "-1")
-			.transition()
-			.duration(199)
-			.style("opacity","0");
-        d3.select("div#fondo-portada #iframe_count_maltratos").transition()
-		.duration(200)
-		.style("opacity", "1")
-		.transition()
-		.delay(201)
-		.style(
-          "z-index",
-          "1"
-        );
+        this.datos_barras = this.data_maltratos_naturalizados
+        
       } else if (this.paso == 6) {
-        d3.selectAll("div#fondo-portada > * ")
-			.style("z-index", "-1")
-			.transition()
-			.duration(199)
-			.style("opacity","0");
-        d3.select("div#fondo-portada #iframe_epistomia_parto").transition()
-		.duration(200)
-		.style("opacity", "1")
-		.transition()
-		.delay(201)
-		.style(
-          "z-index",
-          "1"
-        );
+        this.datos_barras = this.data_episiotomia
+        
       } else if (this.paso == 7) {
-        d3.selectAll("div#fondo-portada > * ")
-			.style("z-index", "-1")
-			.transition()
-			.duration(199)
-			.style("opacity","0");
-        d3.select("div#fondo-portada #iframe_kristeller_fecha").transition()
-		.duration(200)
-		.style("opacity", "1")
-		.transition()
-		.delay(201)
-		.style(
-          "z-index",
-          "1"
-        );
+        this.datos_barras = this.data_kristeller
+
       } else if (this.paso == 8) {
+        this.datos_barras = this.data_acompaniadas
         d3.selectAll("div#fondo-portada > * ")
-			.style("z-index", "-1")
-			.transition()
-			.duration(199)
-			.style("opacity","0");
-        d3.select("div#fondo-portada #iframe_acompanadas_hospital2").transition()
-		.duration(200)
-		.style("opacity", "1")
-		.transition()
-		.delay(201)
-		.style(
-          "z-index",
-          "1"
-        );
+        .style("z-index", "-1")
+        .transition()
+        .duration(199)
+        .style("opacity","0");
+      d3.select("div#fondo-portada #iframe_informacion_atencion")
+        .transition()
+        .duration(200)
+        .style("opacity", "1")
+        .transition()
+        .delay(201)
+        .style(
+              "z-index",
+              "1"
+            );
+
       } else if (this.paso == 9) {
        d3.selectAll("div#fondo-portada > * ")
 			.style("z-index", "-1")
 			.transition()
 			.duration(199)
 			.style("opacity","0")
-        d3.select("div#fondo-portada .contenedor-mapa ")
+        
+      d3.select("div#fondo-portada .contenedor-mapa ")
 			.transition()
 			.duration(200)
 			.style("opacity", "1")
@@ -693,9 +906,9 @@ p.elaboracion-por{
   p {
     color: #fff;
     a.link-text{
-        color: #FDA1C9;
+        color: #B987FF;
         &:visited, &:hover{
-          color: #FDA1C9 !important;;
+          color: #B987FF !important;;
         }
       }
   }
@@ -736,6 +949,7 @@ p.elaboracion-por{
       }
       h3{
         padding: 15px;
+        font-size: 16px;
       }
       iframe {
         width: 100%;

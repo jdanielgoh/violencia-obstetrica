@@ -11,6 +11,7 @@ import Encabezado from '@/components/Encabezado.vue'
 import Pie from '@/components/Pie.vue'
 
 export default {
+    name:"App",
 	components:{
 		Encabezado,
         Pie,

@@ -10,7 +10,7 @@
                 <div class="lista-enlaces">
                     <div class="columna-enlaces">
                         
-                        <p><router-link :to="{name:'Inicio', hash:'#especiales'}">Especiales</router-link></p>
+                        <p><router-link :to="{name:'Inicio', hash:'#especiales'}">Reportajes</router-link></p>
                         <p><router-link :to="{name:'Inicio', hash:'#visualizaciones'}">Visualizaciones</router-link></p>
                         <p><router-link :to="{name: 'Testimonios'}">Testimonios</router-link></p>
                         <p><router-link :to="{name: 'Podcasts'}">Podcast</router-link></p>
@@ -28,21 +28,21 @@
                 <p class="footer-titulo">Multimedia</p>
                 <div class="enlaces-multimedia">
                     <div>
-                        <a href="">
+                        <a href="https://www.youtube.com/channel/UCcEgnE14zwefuZtaroPx9Yw" target="_blank">
                             <img class="img-youtube icono-blanco" :src="require('@/assets/img/iconos/youtube.svg')"/>
                             <img class="img-youtube icono-morado" :src="require('@/assets/img/iconos/youtube_mor.svg')"/>
                             <span>YouTube</span>
                         </a>
                     </div>
                     <div>
-                        <a href="">
+                        <a href="https://anchor.fm/isla-violeta/" target="_blank">
                             <img class="img-anchor icono-blanco" :src="require('@/assets/img/iconos/anchor.svg')"/>
                             <img class="img-anchor icono-morado" :src="require('@/assets/img/iconos/anchor_mor.svg')"/>
                             <span>Podcast</span>
                         </a>
                     </div>
                 </div>
-                <p class="footer-titulo">Encuesta</p>
+                <p class="footer-titulo">Encuestas</p>
                 <p><a href="https://capir.limequery.org/571399">Parto propio</a></p>
                 <p><a href="https://capir.limequery.org/145636">Muerte materna</a></p>
             </div>

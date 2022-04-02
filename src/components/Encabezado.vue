@@ -23,7 +23,7 @@
         <nav :class="{'activo': menu_activo}" >
             <div class="container main">
                 <div class="opciones">
-                    <router-link :to="{name:'Inicio', hash:'#especiales'}" @click.native="menu_activo = !menu_activo">ESPECIALES</router-link>
+                    <router-link :to="{name:'Inicio', hash:'#especiales'}" @click.native="menu_activo = !menu_activo">REPORTAJES</router-link>
                     <router-link :to="{name:'Inicio', hash:'#visualizaciones'}" @click.native="menu_activo = !menu_activo">VISUALIZACIONES</router-link>
                     <router-link :to="{name: 'Testimonios'}" @click.native="menu_activo = !menu_activo">TESTIMONIOS</router-link>
                     <router-link :to="{name: 'Podcasts'}" @click.native="menu_activo = !menu_activo">PODCASTS</router-link>

@@ -7,27 +7,29 @@
         <div class="contenedor-escroleable">
             <div class="contenedor-secciones">
                 <div class="ficha" v-for="(datum, i) in data" :key="i" :class="datum.clase">
-                    <div
-                        >
-                        <ImagenPie 
-                            :link='datum.img'
-                        >
-                            <template slot="pie-foto">
-								<div class="pie-foto-template">
-									<p class="titulo"><strong>{{datum.titulo}}</strong></p>
-                                	<p class="autorxs">{{datum.autorxs}}</p>
-									<p class="resumen">{{datum.resumen}}</p>
-									<router-link 
-										:to="datum.to" 
-										class="link-ficha" 
-										>
-										<img src="img/iconos/arrow--right.svg"/>
-										<span>{{datum.texto_boton}}</span>
-									</router-link>
-								</div>
-                            </template>
-                        </ImagenPie>
-                    </div>
+                    <router-link :to="datum.to" >
+						<div
+							>
+							<ImagenPie 
+								:link='datum.img'
+							>
+								<template slot="pie-foto">
+									<div class="pie-foto-template">
+										<p class="titulo"><strong>{{datum.titulo}}</strong></p>
+										<p class="autorxs">{{datum.autorxs}}</p>
+										<p class="resumen">{{datum.resumen}}</p>
+										<router-link 
+											:to="datum.to" 
+											class="link-ficha" 
+											>
+											<img src="img/iconos/arrow--right.svg"/>
+											<span>{{datum.texto_boton}}</span>
+										</router-link>
+									</div>
+								</template>
+							</ImagenPie>
+						</div>
+					</router-link>
                 </div>
             </div>
         </div>
@@ -69,6 +71,11 @@ $margen-grid-secciones: 70px;
 			gap: 30px;
 
 			div.ficha{
+				a{
+					&:hover, &:active{
+						text-decoration: none;
+					}
+				}
 				&.third{
 					width: calc(33% - 15px) ;
 					@media screen and (max-width: map-get($media-queries-limit, "mobile")) {

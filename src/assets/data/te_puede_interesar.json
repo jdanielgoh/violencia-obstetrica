@@ -6,8 +6,8 @@
         "titulo": "Testimonios",
         "descripcion": "",
         "clase":"third",
-        "resumen": "Conoce los testimonios reales de mujeres que sufrieron violencia obstétrica",
-        "texto_boton": "Ir a testimonios"
+        "resumen": "Conoce los testimonios de mujeres que sufrieron violencia obstétrica.",
+        "texto_boton": "Consulta aquí"
 
     },
     {
@@ -17,8 +17,8 @@
         "autorxs": "",
         "descripcion": "Escucha nuestro contenido semanal, Escúchalo a través de Anchor.",
         "clase":"third",
-        "resumen": "Escucha nuestro contenido semanal, Escúchalo a través de Anchor.",
-        "texto_boton": "Ir a podcasts"
+        "resumen": "Escucha cada episodio a través de Anchor.",
+        "texto_boton": "Consulta aquí"
 
     }
 ]

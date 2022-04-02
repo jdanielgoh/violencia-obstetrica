@@ -83,7 +83,7 @@
 						</p>` )
 					})
 
-					return `<p>${this.tooltip_categoria}</p> 
+					return `<p>${this.tooltip_categoria.split(" ")[0] == "Maltrato" ? this.dict_maltratos[this.tooltip_categoria]: this.tooltip_categoria }</p> 
 						${txt.reverse().join(" ")}`
 				}
 			}
@@ -134,7 +134,19 @@
 				orden_inicial:true,
 				zoom_activo:"hidden",
 				width:200,
-                ancho_leyenda_y:0
+                ancho_leyenda_y:0,
+				dict_maltratos : {
+					"Maltrato 1": 'Te llamaron por sobrenombres o diminutivos', 
+            		"Maltrato 2": 'Se burlaron de ti', 
+            		"Maltrato 3": 'Te hablaron en voz alta de modo grosero',
+            		"Maltrato 4": 'Ignoraron algo que les pediste',
+            		"Maltrato 5":'Te dijeron que no explícitamente a algo que pediste',  
+            		"Maltrato 6": 'Te dieron golpes, sacudidas, empujones', 
+            		"Maltrato 7": 'Te dijeron que estabas poniendo en riesgo a tu hijo/a', 
+            		"Maltrato 8": 'Te culparon por situaciones ocurridas en el nacimiento', 
+            		"Maltrato 9": 'Te amenazaron', 
+            		"Maltrato 10": 'Otro tipo de maltrato'
+				}
 			}
 		},
 		mounted(){
@@ -300,15 +312,15 @@
 				// Colores a barras
 				
 				this.barras_individuales
-					.style("fill","#767676")
+					.style("fill-opacity",".3")
 				this.barras_individuales
 					.filter(d => d.data[this.nombre_barra] == this.tooltip_categoria)
-					.style("fill","")
+					.style("fill-opacity","1")
 			},
 			cerrarTooltip() {
 				this.tooltip.style('visibility', 'hidden')
 				this.barras_individuales
-					.style("fill","")
+					.style("fill-opacity","1")
 			},
 			reestablecerVista(){
 				this.tooltip.style("visibility","hidden");
@@ -370,6 +382,7 @@
                 p{
                     margin: 3px;
                     color:#fff;
+					font-size: 14px;
                     span.nomenclatura-tooltip{
                         width: 10px;
                         height: 10px;
@@ -422,7 +435,7 @@ div.contenedor-grafica, div.contenedor-barras-apiladas-elaboradas {
       display: flex;
 	  flex-wrap: wrap;
       
-      justify-content: flex-start;
+      justify-content: center;
       div.nombre-categoria{
         margin: 0;
         padding: 5px 10px;

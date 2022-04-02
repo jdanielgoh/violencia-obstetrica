@@ -20,7 +20,20 @@
         <div id="fondo-portada">
 
           <StoryTellingMapa v-if="pantalla_grande" :paso_inicial="paso" :id="'contenedor-mapa'" />
-          
+          <div class="contenedor-iframe" v-if="pantalla_grande" id="contenedor-dona">
+            <Dona
+ 
+                :dona_id="'dona_desk'"
+                :datos="[
+                  {nombre:'Partos naturales', cantidad:60, color:'#B987FF'},
+                  {nombre:'Cesáreas', cantidad:40, color:'#F792CC'}
+                  ]"
+                  :radio_interno=".23"
+                  :radio_externo=".39"
+                  :radio_texto=".40"
+                  :titulo="'Por centaje de partos naturales y por cesárea'"
+              ></Dona>
+          </div>
           <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_informacion_atencion">
             <BarrasApiladas
               :barras_apiladas_id="'bar-apiladas'" 
@@ -43,7 +56,7 @@
               </template>
               <template slot="pie" >
                 <div class="pie"> 
-                  <div class="nomenclatura">
+                  <div class="nomenclatura" v-if="datos_barras.variables.length>1">
                     <div class="nombre-categoria" v-for="(variable) in datos_barras.variables" :key="variable.id">
                       <span class="color" v-bind:style="{background: variable.color}"></span>
                       <span class="nombre">{{variable.nombre_subcategoria}}</span>
@@ -76,6 +89,20 @@
           <div class="step step-1" data-step="1">
             <!--ACÁ pueden hacer un gráfico de pastel, con los siguientes datos: Cesárea de urgencia(59), cesárea luego de fallar la inducción del parto(72), cesárea programada(61), parto vaginal (322).-->
             <p>De los 514 partos, el 60% fueron naturales y el 40% cesáreas.</p>
+            <div class="contenedor-iframe" v-if="!pantalla_grande" >
+              <Dona
+ 
+                :dona_id="'dona_mov'"
+                :datos="[
+                  {nombre:'Partos naturales', cantidad:60, color:'#B987FF'},
+                  {nombre:'Cesáreas', cantidad:40, color:'#F792CC'}
+                  ]"
+                  :radio_interno=".23"
+                  :radio_externo=".39"
+                  :radio_texto=".40"
+                  :titulo="'Por centaje de partos naturales y por cesárea'"
+              ></Dona>
+            </div>
           </div>
           <div class="step step-2" data-step="2">
             <p>
@@ -150,13 +177,36 @@
               fueron informadas sobre su estado de salud durante el parto.
             </p>
             <div class="contenedor-iframe" v-if="!pantalla_grande" >
-              <h3>Recibió información por parte del personal médico sobre su estado de salud antes del parto</h3>
-              <iframe
-                :src="'../graficas/informacion_atencion.html'"
-                frameborder="0"
-                width="100%"
-              ></iframe>
-              <p class="elaboracion-por">Elaborado por Datacrítica</p>
+              <BarrasApiladas
+              :barras_apiladas_id="'bar-apiladas'" 
+              :datos="data_informacion_atencion.datos"
+              :nombre_barra="data_informacion_atencion.nombre_barra"
+              :nombre_color="data_informacion_atencion.nombre_color"
+              :variables='data_informacion_atencion.variables'
+              :margen="data_informacion_atencion.margen"
+              :alto_vis="data_informacion_atencion.alto_vis"
+              :ancho_tooltip="180"
+              :titulo_eje_x ="data_informacion_atencion.titulo_eje_x"
+              :titulo_eje_y ="data_informacion_atencion.titulo_eje_y"
+              ref='bar-apiladas'
+              class="contenedor-barras-apiladas-elaboradas"
+              >
+              <template slot="encabezado">
+                <div class="encabezado">
+                  <h5 class="titulo-visualizacion">{{data_informacion_atencion.titulo}}</h5>
+                </div>
+              </template>
+              <template slot="pie" >
+                <div class="pie"> 
+                  <div class="nomenclatura" v-if="data_informacion_atencion.variables.length>1">
+                    <div class="nombre-categoria" v-for="(variable) in data_informacion_atencion.variables" :key="variable.id">
+                      <span class="color" v-bind:style="{background: variable.color}"></span>
+                      <span class="nombre">{{variable.nombre_subcategoria}}</span>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </BarrasApiladas>
             </div>
           </div>
           <div class="step step-3" data-step="3">
@@ -166,13 +216,36 @@
               parto.
             </p>
             <div class="contenedor-iframe" v-if="!pantalla_grande" >
-              <h3>Solicitaron consentimiento para los procedimientos practicados</h3>
-              <iframe
-                src="../graficas/consentimiento_parto.html"
-                frameborder="0"
-                width="100%"
-              ></iframe>
-              <p class="elaboracion-por">Elaborado por Datacrítica</p>
+             <BarrasApiladas
+              :barras_apiladas_id="'bar-data_consentimiento'" 
+              :datos="data_consentimiento.datos"
+              :nombre_barra="data_consentimiento.nombre_barra"
+              :nombre_color="data_consentimiento.nombre_color"
+              :variables='data_consentimiento.variables'
+              :margen="data_consentimiento.margen"
+              :alto_vis="data_consentimiento.alto_vis"
+              :ancho_tooltip="180"
+              :titulo_eje_x ="data_consentimiento.titulo_eje_x"
+              :titulo_eje_y ="data_consentimiento.titulo_eje_y"
+              ref='bar-apiladas'
+              class="contenedor-barras-apiladas-elaboradas"
+              >
+                <template slot="encabezado">
+                  <div class="encabezado">
+                    <h5 class="titulo-visualizacion">{{data_consentimiento.titulo}}</h5>
+                  </div>
+                </template>
+                <template slot="pie" >
+                  <div class="pie"> 
+                    <div class="nomenclatura" v-if="data_consentimiento.variables.length>1">
+                      <div class="nombre-categoria" v-for="(variable) in data_consentimiento.variables" :key="variable.id">
+                        <span class="color" v-bind:style="{background: variable.color}"></span>
+                        <span class="nombre">{{variable.nombre_subcategoria}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+              </BarrasApiladas>
             </div>
             <!--INSERTAR GRÁFICO DE CONSENTIMIENTO SEGÚN TIPO DE  PARTO
 					Podemos probar darle una visibilidad distinta al resto del texto, los fragmentos de los testimonios de las madres. Cambiar el formato, poner dentro de un recuadro, etc. lo dejo a su consideración
@@ -203,13 +276,36 @@
               sino también una de las más naturalizadas.
             </p>
             <div class="contenedor-iframe" v-if="!pantalla_grande" >
-              <h3>Encuestadas que negaron haber sufrido maltrato pero que después marcaron algún tipo</h3>
-              <iframe
-                src="../graficas/maltratos_naturalizados.html"
-                frameborder="0"
-                width="100%"
-              ></iframe>
-              <p class="elaboracion-por">Elaborado por Datacrítica</p>
+              <BarrasApiladas
+              :barras_apiladas_id="'bar-data_maltratos_count'" 
+              :datos="data_maltratos_count.datos"
+              :nombre_barra="data_maltratos_count.nombre_barra"
+              :nombre_color="data_maltratos_count.nombre_color"
+              :variables='data_maltratos_count.variables'
+              :margen="data_maltratos_count.margen"
+              :alto_vis="data_maltratos_count.alto_vis"
+              :ancho_tooltip="180"
+              :titulo_eje_x ="data_maltratos_count.titulo_eje_x"
+              :titulo_eje_y ="data_maltratos_count.titulo_eje_y"
+              ref='bar-apiladas'
+              class="contenedor-barras-apiladas-elaboradas"
+              >
+                <template slot="encabezado">
+                  <div class="encabezado">
+                    <h5 class="titulo-visualizacion">{{data_maltratos_count.titulo}}</h5>
+                  </div>
+                </template>
+                <template slot="pie" >
+                  <div class="pie"> 
+                    <div class="nomenclatura" v-if="data_maltratos_count.variables.length>1">
+                      <div class="nombre-categoria" v-for="(variable) in data_maltratos_count.variables" :key="variable.id">
+                        <span class="color" v-bind:style="{background: variable.color}"></span>
+                        <span class="nombre">{{variable.nombre_subcategoria}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+              </BarrasApiladas>
             </div>
             <!--AGREGAR GRÁFICA DE MALTRATOS NATURALIZADOS-->
           </div>
@@ -224,13 +320,36 @@
               modo grosero también son episodios frecuentes.
             </p>
             <div class="contenedor-iframe" v-if="!pantalla_grande" >
-              <h3>Cantidad total de tipo de maltratos físico y/o verbal que sufireron las mujeres</h3>
-              <iframe
-                src="../graficas/count_maltratos.html"
-                frameborder="0"
-                width="100%"
-              ></iframe>
-              <p class="elaboracion-por">Elaborado por Datacrítica</p>
+            <BarrasApiladas
+              :barras_apiladas_id="'bar-data_maltratos_naturalizados'" 
+              :datos="data_maltratos_naturalizados.datos"
+              :nombre_barra="data_maltratos_naturalizados.nombre_barra"
+              :nombre_color="data_maltratos_naturalizados.nombre_color"
+              :variables='data_maltratos_naturalizados.variables'
+              :margen="data_maltratos_naturalizados.margen"
+              :alto_vis="data_maltratos_naturalizados.alto_vis"
+              :ancho_tooltip="180"
+              :titulo_eje_x ="data_maltratos_naturalizados.titulo_eje_x"
+              :titulo_eje_y ="data_maltratos_naturalizados.titulo_eje_y"
+              ref='bar-apiladas'
+              class="contenedor-barras-apiladas-elaboradas"
+              >
+                <template slot="encabezado">
+                  <div class="encabezado">
+                    <h5 class="titulo-visualizacion">{{data_maltratos_naturalizados.titulo}}</h5>
+                  </div>
+                </template>
+                <template slot="pie" >
+                  <div class="pie"> 
+                    <div class="nomenclatura" v-if="data_maltratos_naturalizados.variables.length>1">
+                      <div class="nombre-categoria" v-for="(variable) in data_maltratos_naturalizados.variables" :key="variable.id">
+                        <span class="color" v-bind:style="{background: variable.color}"></span>
+                        <span class="nombre">{{variable.nombre_subcategoria}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+              </BarrasApiladas>
             </div>
             <!--Agregar gráfico de maltratos frecuentes .-->
           </div>
@@ -260,13 +379,36 @@
               cortarlas.
             </p>
             <div class="contenedor-iframe" v-if="!pantalla_grande">
-              <h3>Practicaron episiotomía</h3>
-              <iframe
-                src="../graficas/episiotomia_parto.html"
-                frameborder="0"
-                width="100%"
-              ></iframe>
-              <p class="elaboracion-por">Elaborado por Datacrítica</p>
+              <BarrasApiladas
+              :barras_apiladas_id="'bar-data_episiotomia'" 
+              :datos="data_episiotomia.datos"
+              :nombre_barra="data_episiotomia.nombre_barra"
+              :nombre_color="data_episiotomia.nombre_color"
+              :variables='data_episiotomia.variables'
+              :margen="data_episiotomia.margen"
+              :alto_vis="data_episiotomia.alto_vis"
+              :ancho_tooltip="180"
+              :titulo_eje_x ="data_episiotomia.titulo_eje_x"
+              :titulo_eje_y ="data_episiotomia.titulo_eje_y"
+              ref='bar-apiladas'
+              class="contenedor-barras-apiladas-elaboradas"
+              >
+                <template slot="encabezado">
+                  <div class="encabezado">
+                    <h5 class="titulo-visualizacion">{{data_episiotomia.titulo}}</h5>
+                  </div>
+                </template>
+                <template slot="pie" >
+                  <div class="pie"> 
+                    <div class="nomenclatura" v-if="data_episiotomia.variables.length>1">
+                      <div class="nombre-categoria" v-for="(variable) in data_episiotomia.variables" :key="variable.id">
+                        <span class="color" v-bind:style="{background: variable.color}"></span>
+                        <span class="nombre">{{variable.nombre_subcategoria}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+              </BarrasApiladas>
             </div>
             <!--Agregar gráfico de episiotomía pero solo en partos vaginales. No incluir cesáreas-->
           </div>
@@ -280,13 +422,36 @@
               practicando.
             </p>
             <div class="contenedor-iframe" v-if="!pantalla_grande" >
-              <h3>Practicaron la maniobra de Kristeller</h3>
-              <iframe
-                src="../graficas/kristeller_fecha.html"
-                frameborder="0"
-                width="100%"
-              ></iframe>
-              <p class="elaboracion-por">Elaborado por Datacrítica</p>
+              <BarrasApiladas
+              :barras_apiladas_id="'bar-data_kristeller'" 
+              :datos="data_kristeller.datos"
+              :nombre_barra="data_kristeller.nombre_barra"
+              :nombre_color="data_kristeller.nombre_color"
+              :variables='data_kristeller.variables'
+              :margen="data_kristeller.margen"
+              :alto_vis="data_kristeller.alto_vis"
+              :ancho_tooltip="180"
+              :titulo_eje_x ="data_kristeller.titulo_eje_x"
+              :titulo_eje_y ="data_kristeller.titulo_eje_y"
+              ref='bar-apiladas'
+              class="contenedor-barras-apiladas-elaboradas"
+              >
+                <template slot="encabezado">
+                  <div class="encabezado">
+                    <h5 class="titulo-visualizacion">{{data_kristeller.titulo}}</h5>
+                  </div>
+                </template>
+                <template slot="pie" >
+                  <div class="pie"> 
+                    <div class="nomenclatura" v-if="data_kristeller.variables.length>1">
+                      <div class="nombre-categoria" v-for="(variable) in data_kristeller.variables" :key="variable.id">
+                        <span class="color" v-bind:style="{background: variable.color}"></span>
+                        <span class="nombre">{{variable.nombre_subcategoria}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+              </BarrasApiladas>
             </div>
             <!--AGREGAR GRÁFICO-->
           </div>
@@ -306,13 +471,36 @@
               violencia obstétrica.
             </p>
             <div class="contenedor-iframe" v-if="!pantalla_grande" >
-              <h3>Cuantas mujeres estuvieron acompañadas por alguien durante el parto/cesárea</h3>
-              <iframe
-              src="../graficas/acompanadas_hospital2.html"
-              frameborder="0"
-              width="100%"
-            ></iframe>
-            <p class="elaboracion-por">Elaborado por Datacrítica</p>
+              <BarrasApiladas
+              :barras_apiladas_id="'bar-data_acompaniadas'" 
+              :datos="data_acompaniadas.datos"
+              :nombre_barra="data_acompaniadas.nombre_barra"
+              :nombre_color="data_acompaniadas.nombre_color"
+              :variables='data_acompaniadas.variables'
+              :margen="data_acompaniadas.margen"
+              :alto_vis="data_acompaniadas.alto_vis"
+              :ancho_tooltip="180"
+              :titulo_eje_x ="data_acompaniadas.titulo_eje_x"
+              :titulo_eje_y ="data_acompaniadas.titulo_eje_y"
+              ref='bar-apiladas'
+              class="contenedor-barras-apiladas-elaboradas"
+              >
+                <template slot="encabezado">
+                  <div class="encabezado">
+                    <h5 class="titulo-visualizacion">{{data_acompaniadas.titulo}}</h5>
+                  </div>
+                </template>
+                <template slot="pie" >
+                  <div class="pie"> 
+                    <div class="nomenclatura" v-if="data_acompaniadas.variables.length>1">
+                      <div class="nombre-categoria" v-for="(variable) in data_acompaniadas.variables" :key="variable.id">
+                        <span class="color" v-bind:style="{background: variable.color}"></span>
+                        <span class="nombre">{{variable.nombre_subcategoria}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+              </BarrasApiladas>
             </div>
             <!--AGREGAR gráfico por hospital de acompañamiento durante parto o cesárea-->
           </div>
@@ -352,7 +540,7 @@
             <h2>¿Por qué esta investigación?</h2>
             <p>
               Los medios de propaganda cubanos suelen resaltar la baja tasa de
-              mortalidad infantil y los logros del programa materno infantil
+              mortalidad infantil y los logros del Programa Materno Infantil
               (PAMI), pero no se publicitan otros indicadores de calidad de la
               atención y/o bienestar de las madres. Esta falta de información
               precisamente da pie a que se cuestione si existe o no el fenómeno
@@ -360,7 +548,8 @@
             </p>
             <p>
               Esto es relevante si contemplamos que la propia Revista Cubana de
-              Obstetricia y Ginecología reconoció en un artículo de 2018 que,
+              Obstetricia y Ginecología reconoció en <a href="https://www.medigraphic.com/pdfs/revcubobsgin/cog-2018/cog183b.pdf" target="_blank">
+              un artículo de 2018 </a> que,
               dada la poca información que existe, no podía asegurarse que no
               haya partos humanizados, ni crueldad durante el proceso. “La
               insuficiencia de estudios en Cuba respecto al tema imposibilita
@@ -429,12 +618,15 @@
 import scrollama from "scrollama";
 import StoryTellingMapa from "@/components/visualizaciones/StoryTellingMapa.vue";
 import * as d3 from "d3";
-import BarrasApiladas from "@/components/visualizaciones/GraficaBarras.vue"
+import BarrasApiladas from "@/components/visualizaciones/GraficaBarras.vue";
+import Dona from "@/components/visualizaciones/GraficaDona.vue"
+
 export default {
   name: "ScrollyTelling",
   components: {
     StoryTellingMapa,
-    BarrasApiladas
+    BarrasApiladas,
+    Dona
   },
   data() {
     return {
@@ -735,7 +927,7 @@ export default {
         nombre_color: "nombre_subcategoria",
         titulo_eje_x: "Hospital",
         titulo_eje_y: "Encuestadas",
-        titulo: "Recibió información por parte del personal médico sobre su estado de salud antes del parto"
+        titulo: "Cuantas mujeres estuvieron acompañadas por alguien durante el parto/cesárea"
       },
     };
   },
@@ -780,32 +972,32 @@ export default {
       });
       if (this.paso == 0) {
         d3.selectAll("div#fondo-portada > * ")
-			.style("z-index", "-1")
-			.transition()
-			.duration(199)
-			.style("opacity","0")
+          .style("z-index", "-1")
+          .transition()
+          .duration(199)
+          .style("opacity","0")
         d3.select("div#fondo-portada .contenedor-mapa ")
-			.transition()
-			.duration(200)
-			.style("opacity", "1")
-			.transition()
-			.delay(201)
-			.transition()
-			.duration(200)
-			.style("opacity", "1")
-			.transition()
-			.delay(201)
-			.style(
-			"z-index",
-			"1"
-			);
+          .transition()
+          .duration(200)
+          .style("opacity", "1")
+          .transition()
+          .delay(201)
+          .transition()
+          .duration(200)
+          .style("opacity", "1")
+          .transition()
+          .delay(201)
+          .style(
+          "z-index",
+          "1"
+          );
       } else if (this.paso == 1) {
         d3.selectAll("div#fondo-portada > * ")
 			.style("z-index", "-1")
 			.transition()
 			.duration(199)
 			.style("opacity","0")
-        d3.select("div#fondo-portada .contenedor-mapa ")
+        d3.select("div#fondo-portada #contenedor-dona")
 			.transition()
 			.duration(200)
 			.style("opacity", "1")

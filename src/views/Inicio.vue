@@ -3,7 +3,7 @@
 		<Portada/>
 		<GridSeccion
 			id="especiales"
-			titulo="Especiales"
+			titulo="Reportajes"
 			:data="especiales"
 		/>
 		<GridSeccion
@@ -13,7 +13,7 @@
 		/>
 		<GridSeccion
 			id="podcast-testimonios"
-			titulo="Te puede insteresar"
+			titulo="Te puede interesar"
 			:data="te_puede_interesar"
 		/>
 

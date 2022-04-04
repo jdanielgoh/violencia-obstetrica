@@ -20,5 +20,17 @@
         "resumen": "Escucha cada episodio a través de Anchor.",
         "texto_boton": "Consulta aquí"
 
+    },
+    {
+        "to": "https://www.cubanet.org/destacados/puja-y-pare-los-peligros-de-un-pais-sin-partos-humanizados/",
+        "img": "img/reportajes/puja_pare.png",
+        "titulo": "“Puja y pare tú sola”: los peligros de un país sin partos humanizados",
+        "autorxs": "Claudia Padrón Cueto",
+        "descripcion": "Del día de su parto hay una imagen que no logra olvidar: cuando por primera vez vio a su bebé y su cuerpo era de un tono grisáceo, como si yaciera inerte. ",
+        "clase":"third",
+        "resumen": "Del día de su parto hay una imagen que no logra olvidar: cuando por primera vez vio a su bebé y su cuerpo era de un tono grisáceo, como si yaciera inerte. ",
+        "texto_boton": "Consulta aquí",
+        "externo":true
+
     }
 ]

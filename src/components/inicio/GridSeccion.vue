@@ -7,7 +7,7 @@
         <div class="contenedor-escroleable">
             <div class="contenedor-secciones">
                 <div class="ficha" v-for="(datum, i) in data" :key="i" :class="datum.clase">
-                    <router-link :to="datum.to" >
+                    <router-link :to="datum.to" v-if="!datum.externo" >
 						<div
 							>
 							<ImagenPie 
@@ -30,6 +30,29 @@
 							</ImagenPie>
 						</div>
 					</router-link>
+					<a :href="datum.to" v-if="datum.externo" target="_blank">
+						<div
+							>
+							<ImagenPie 
+								:link='datum.img'
+							>
+								<template slot="pie-foto">
+									<div class="pie-foto-template">
+										<p class="titulo"><strong>{{datum.titulo}}</strong></p>
+										<p class="autorxs">{{datum.autorxs}}</p>
+										<p class="resumen">{{datum.resumen}}</p>
+										<router-link 
+											:to="datum.to" 
+											class="link-ficha" 
+											>
+											<img src="img/iconos/arrow--right.svg"/>
+											<span>{{datum.texto_boton}}</span>
+										</router-link>
+									</div>
+								</template>
+							</ImagenPie>
+						</div>
+					</a>
                 </div>
             </div>
         </div>
@@ -77,7 +100,7 @@ $margen-grid-secciones: 70px;
 					}
 				}
 				&.third{
-					width: calc(33% - 15px) ;
+					width: calc(33% - 16px) ;
 					@media screen and (max-width: map-get($media-queries-limit, "mobile")) {
 						width: 100%
 					}

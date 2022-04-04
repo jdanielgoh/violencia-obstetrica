@@ -45,22 +45,7 @@ div.visualizacion-mapa-testimonios{
   	background: #4A2582;
 	position: relative;
 	display: block;
-	.paginador{
-		width: 300px;
-		margin: 20px auto 100px auto;
-		color: #fff;
-		display: flex;
-		span{
-			font-size: 16px;
-			font-weight: 600;
-			margin: 10px;
-		}
-		button{
-			background: transparent;
-			border: none;
-
-		}
-	}
+	
 	.paso{
 		&:nth-child(1){
 			margin-top: 50px

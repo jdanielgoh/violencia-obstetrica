@@ -24,7 +24,7 @@
 			</div>
 			<div class="container main">
 				<h3 class="blanco">
-					Comics
+					Historietas
 					<hr/>
 				</h3>
 			</div>
@@ -56,13 +56,16 @@
 		>
 			<template slot="paginador">
 				<div class="paginador">
-					<button @click="disminuirIndice()">
-						<img src="img/iconos/anterior.svg" alt="anterior"/>
-					</button>
-					<span>Testimonio {{no_testimonio+1}}</span>
-					<button @click="aumentarIndice()">
-						<img src="img/iconos/siguiente.svg" alt="siguiente"/>
-					</button>
+					<div class="control">
+						<button @click="disminuirIndice()">
+							<img src="img/iconos/anterior.svg" alt="anterior"/>
+						</button>
+						<span>Testimonio {{no_testimonio+1}}</span>
+						<button @click="aumentarIndice()">
+							<img src="img/iconos/siguiente.svg" alt="siguiente"/>
+						</button>
+					</div>
+					
 				</div>
 			</template>
 		</TestimonioSeleccionado>
@@ -124,7 +127,7 @@ export default {
 		},
 		scrollArriba() {
 			setTimeout(()=>{
-				window.scrollTo({
+				document.querySelector(".testimonios-seleccionado").scrollTo({
 				top: 0,
 				behavior: 'smooth',
 			});
@@ -139,6 +142,7 @@ export default {
 		},
 		aumentarIndice(){
 			this.no_testimonio = (this.no_testimonio +1) % this.testimonios.length;
+
 		}
 
 
@@ -154,6 +158,8 @@ export default {
 		},
 		no_testimonio(nv){
 			this.testimonio_seleccionado = this.testimonios[nv];
+			this.scrollArriba()
+
 		}
 
 	}
@@ -184,21 +190,32 @@ h3{
 		margin-bottom: 50px;
 		
 	}
+	
 	.paginador{
-		width: 210px;
-		margin: 48px auto 48px auto;
+		width: 100%;
+		background: #4A2582;
 		color: #fff;
-		display: flex;
-		span{
-			font-size: 16px;
-			font-weight: 600;
-			margin: 10px;
-		}
-		button{
-			background: transparent;
-			border: none;
+		position: -webkit-sticky;
+		position: sticky;
+		top:0px;
+		z-index: 2;
+		.control{
+			display: flex;
+			width: 220px;
+			margin: 48px auto 48px auto;
 
+			span{
+				font-size: 16px;
+				font-weight: 600;
+				margin: 10px;
+			}
+			button{
+				background: transparent;
+				border: none;
+
+			}
 		}
+		
 	}
 	.paso{
 		&:nth-child(1){

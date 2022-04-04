@@ -141,26 +141,7 @@
             </a>
         </div>
     </div>
-    <div class="container main equipos">
-        <div class="equipo-titulo">
-            <h5>IWPR</h5>
-        </div>
-        <div class="equipo-integrantes">
-            <a href="https://twitter.com/IWPR_AL" target="_blank">
-                <ImagenPie 
-				:link='require("@/assets/img/creditos/wipr.jpg")'
-				:pie="'IWPR'"
-                class="ficha iwpr"
-                >
-                    <template slot="pie-foto">
-						<div class="pie-foto-template">
-                            <p class="autorxs">IWPR</p> 
-                        </div>
-                    </template>
-                </ImagenPie>
-            </a>
-        </div>
-    </div>
+    
     <div class="container main equipos">
         <div class="equipo-titulo">
             <h5>ILUSTRADORES</h5>
@@ -209,6 +190,26 @@
             
             
         </div>   
+    </div>
+    <div class="container main equipos">
+        <div class="equipo-titulo">
+            <h5>IWPR</h5>
+        </div>
+        <div class="equipo-integrantes">
+            <a href="https://twitter.com/IWPR_AL" target="_blank">
+                <ImagenPie 
+				:link='require("@/assets/img/creditos/wipr.jpg")'
+				:pie="'IWPR'"
+                class="ficha iwpr"
+                >
+                    <template slot="pie-foto">
+						<div class="pie-foto-template">
+                            <p class="autorxs">Este sitio se realizó gracias al apoyo del Institute for War & Peace Reporting</p> 
+                        </div>
+                    </template>
+                </ImagenPie>
+            </a>
+        </div>
     </div>
   </div>
 </template>

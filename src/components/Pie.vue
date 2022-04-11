@@ -66,7 +66,7 @@ export default {
             menu_activo: false,
             fondo_morado: true,
             es_inicio: true,
-            lista_morado:["Inicio","Creditos","Testimonios","TusDerechos","Podcasts"]
+            lista_morado:["Inicio","QuienesSomos","Testimonios","TusDerechos","Podcasts"]
         }
     },
     watch:{
@@ -136,7 +136,7 @@ footer{
                     margin-top: 0;
                     a{
                         color:#4A2582!important;
-                        text-decoration: none;
+                        text-decoration: underline;
                     }
                     p{
                         margin: 0 0 10px 0;
@@ -158,7 +158,7 @@ footer{
                 a{
                     color: #4A2582;
                     display: flex;
-                    text-decoration: none;
+                    text-decoration: underline;
                     img.img-youtube{
                         margin-right: 10px;
                         height: 20px
@@ -192,7 +192,7 @@ footer{
 
                 a{
                     color:#4A2582;
-                    text-decoration: none;
+                    text-decoration: underline;
                 }
                 color:#4A2582;
             }

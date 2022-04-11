@@ -1,7 +1,7 @@
 <template>
   <div class="reportaje container main">
     <h1>Parir en Cuba, un sistema también vertical</h1>
-    <p class="autorxs">CYNTHIA DE LA CANTERA TORANZO</p>
+    <p class="autorxs"></p>
     <p>
       El 12 de agosto de 2015, a las dos de la tarde, Paloma López llamó a la
       ambulancia que la trasladaría hasta el Ramón González Coro, un hospital

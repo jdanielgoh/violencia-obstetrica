@@ -1,5 +1,14 @@
 <template>
 	<div class="inicio">
+		<div class="container text introduccion">
+			<div class="centrado">
+				<h1 class="titulo-especial blanco">PARTOS ROTOS</h1>
+				<p>
+					En septiembre de 2020 publicamos una investigación sobre violencia obstétrica en Cuba que fue replicada por varios medios independientes. De inmediato, el reportaje generó en redes una avalancha de denuncias. Mujeres cubanas de diferentes edades y regiones aseguraron haber sufrido violencia al momento de dar a luz.
+				</p>
+			</div>
+			
+		</div>
 		<Portada/>
 		<GridSeccion
 			id="especiales"
@@ -75,6 +84,22 @@ export default {
 <style scoped lang="scss">
 $margen-especiales: 70px;
 .inicio{
+	div.container.text.introduccion{
+		.centrado{
+			max-width: 685px;
+			h1{
+				text-align: center;
+				font-size: 56px;
+				font-weight: 800;
+			}
+			p{
+				text-align: center;
+				color:#fff;
+			}
+			
+		}
+		
+	}
   	background: #4A2582;
 	#especiales{
 		padding-top: 40px;

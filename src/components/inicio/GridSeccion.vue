@@ -100,7 +100,7 @@ $margen-grid-secciones: 70px;
 					}
 				}
 				&.third{
-					width: calc(33% - 16px) ;
+					width: calc(33% - 18px) ;
 					@media screen and (max-width: map-get($media-queries-limit, "mobile")) {
 						width: 100%
 					}

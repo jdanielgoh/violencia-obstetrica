@@ -68,19 +68,6 @@
             </template>
           </ImagenPie>
         </a>
-        <a href="https://twitter.com/cantera89" target="_blank">
-          <ImagenPie
-            :link="require('@/assets/img/creditos/Cynthia.jpg')"
-            :pie="'Cynthia de la Cantera Toranzo'"
-            class="ficha"
-          >
-            <template slot="pie-foto">
-              <div class="pie-foto-template">
-                <p class="autorxs">Cynthia de la Cantera Toranzo</p>
-              </div>
-            </template>
-          </ImagenPie>
-        </a>
         <a href="https://twitter.com/Isamila28" target="_blank">
           <ImagenPie
             :link="require('@/assets/img/creditos/ISABEL.jpeg')"
@@ -94,19 +81,7 @@
             </template>
           </ImagenPie>
         </a>
-        <a href="https://www.facebook.com/tuniecmg" target="_blank">
-          <ImagenPie
-            :link="require('@/assets/img/creditos/María Antonieta.jpeg')"
-            :pie="'María Antonieta Colunga Olivera'"
-            class="ficha"
-          >
-            <template slot="pie-foto">
-              <div class="pie-foto-template">
-                <p class="autorxs">María Antonieta Colunga Olivera</p>
-              </div>
-            </template>
-          </ImagenPie>
-        </a>
+        
         <a href="https://twitter.com/cabezamestiza" target="_blank">
           <ImagenPie
             :link="require('@/assets/img/creditos/Darcy.jpeg')"

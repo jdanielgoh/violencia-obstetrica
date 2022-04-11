@@ -102,10 +102,11 @@ export default {
     top: 0;
     left: 0;
     z-index: 1002;
+    box-shadow: 0px 3px 6px #00000029;
+
     .container{
         &.encabezado{
             overflow: inherit;
-                box-shadow: 0px 3px 6px #00000029;
                 position: relative;
 
            

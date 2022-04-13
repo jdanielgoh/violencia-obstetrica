@@ -161,12 +161,13 @@
               procedimiento: sueros, medicamentos, dilatación manual,
               espéculos... Solo me decían : ‘Niña coopera’”, relata una madre
               que dio a luz en el Hospital Materno Infantil Manuel Piti Fajardo.
-              Otras dos mujeres que dieron a luz en Camagüey y La Habana
+              
+            </cite>
+            <p>Otras dos mujeres que dieron a luz en Camagüey y La Habana
               agregan: “En ocasiones preguntaba o llamaba a las enfermeras y no
               me contestaban. No levantaban ni la mirada para verte a los ojos”;
               “En el momento del parto le tomé la mano a un doctor y me la
-              rechazó con desdén y asco”.
-            </cite>
+              rechazó con desdén y asco”.</p>
             <p>
               Muchas madres encuestadas coinciden en que la falta de información
               y ser ignoradas fueron las muestras de violencia que más
@@ -458,7 +459,7 @@
           <div class="step step-8" data-step="8">
             <p>
               Además, la mayoría de embarazadas (el 86%) aseguró que se le
-              negaron analgésicos cuando los necesitó. Las madres cubanas deben
+              negaron analgésicos cuando los solicitó. Las madres cubanas deben
               atravesar la agonía que puede representar un parto sin que se les
               ayude a aliviar el dolor o reciban muestras de empatía. Incluso lo
               deben padecer solas. Un 83% de las mujeres que respondieron
@@ -567,34 +568,16 @@
               infantil, no tiene en cuenta a las mujeres, sus experiencias y sus
               necesidades.
             </p>
-            <p>
-              **Para explorar cuáles fueron las principales manifestaciones de
-              violencia sufridas por las madres, los invitamos a interactuar con
-              el mapa y explorar cada hospital. En la visualización también
-              pueden analizar las secuelas psicológicas que tuvieron estas
-              cubanas tras sus partos.
-            </p>
-            <p>
-              **Nota: Como parte de la aplicación de este cuestionario
-              procesamos las respuestas abiertas de las madres. Casi 200
-              relataron con más detalle sus experiencias durante el parto y el
-              embarazo. Algunos fragmentos fueron utilizados en esta
-              visualización. Si quieres leer los testimonios completos puedes
-              pinchar en este enlace.
-            </p>
-            <p>
-              ** Si has dado a luz Cuba y quieres compartirnos tu experiencia,
-              puedes acceder a nuestro cuestionario
-            </p>
+            
           </div>
         </article>
       </div>
       <div class="container main">
         <p>
               **Para explorar cuáles fueron las principales manifestaciones de
-              violencia sufridas por las madres, los invitamos a interactuar con
+              violencia sufridas por las madres, te invitamos a interactuar con
               el mapa y explorar cada hospital. En la visualización también
-              pueden analizar las secuelas psicológicas que tuvieron estas
+              puedes analizar las secuelas psicológicas que tuvieron estas
               cubanas tras sus partos.
             </p>
             <p>
@@ -602,13 +585,12 @@
               procesamos las respuestas abiertas de las madres. Casi 200
               relataron con más detalle sus experiencias durante el parto y el
               embarazo. Algunos fragmentos fueron utilizados en esta
-              visualización. Si quieres leer los testimonios completos puedes
-              pinchar en <router-link class="link-text" :to="{name: 'Testimonios'}" >este enlace</router-link> o en 
-              <router-link class="link-text" to="/visualizaciones/mapa-testimonios" >este </router-link> para consultar el mapa de testimonios
+              visualización. Si quieres leer los testimonios completos visita <router-link class="link-text" :to="{name: 'Testimonios'}" >este enlace</router-link> o 
+              <router-link class="link-text" to="/visualizaciones/mapa-testimonios" >este</router-link> para consultar el mapa de testimonios.
             </p>
             <p>
-              ** Si has dado a luz Cuba y quieres compartirnos tu experiencia,
-              puedes acceder a nuestro cuestionario
+              ** Si has dado a luz en Cuba y quieres compartirnos tu experiencia,
+              puedes acceder a nuestro <a class="link-text" href="https://capir.limequery.org/571399">cuestionario.</a>
             </p>
       </div>
     </section>
@@ -825,7 +807,7 @@ export default {
         nombre_color: "nombre_subcategoria",
         titulo_eje_x: "Tipo de parto",
         titulo_eje_y: "Encuestadas",
-        titulo: "Practicaron episiotomía"
+        titulo: "Mujeres a las que les practicaron episiotomía"
       },
       data_kristeller: {
         margen: {arriba:20,abajo:40,izquierda:30,derecha:20},
@@ -908,7 +890,7 @@ export default {
         nombre_color: "nombre_subcategoria",
         titulo_eje_x: "Año del parto",
         titulo_eje_y: "Encuestadas",
-        titulo: "Practicaron la maniobra de Kristeller"
+        titulo: "Mujeres a las que les practicaron la maniobra de Kristeller"
       },
       data_acompaniadas: {
         margen: {arriba:20,abajo:0,izquierda:30,derecha:20},
@@ -927,7 +909,7 @@ export default {
         nombre_color: "nombre_subcategoria",
         titulo_eje_x: "Hospital",
         titulo_eje_y: "Encuestadas",
-        titulo: "Cuantas mujeres estuvieron acompañadas por alguien durante el parto/cesárea"
+        titulo: "¿Cuántas mujeres estuvieron acompañadas por alguien durante el parto?"
       },
     };
   },

@@ -43,8 +43,8 @@
                     </div>
                 </div>
                 <p class="footer-titulo">Encuestas</p>
-                <p><a href="https://capir.limequery.org/571399">Parto propio</a></p>
-                <p><a href="https://capir.limequery.org/145636">Muerte materna</a></p>
+                <p><a href="https://capir.limequery.org/571399">Cuéntanos tu parto</a></p>
+                <p><a href="https://capir.limequery.org/145636">Encuesta de muerte materna</a></p>
             </div>
             <div class="contacto">
                 <p class="footer-titulo">Contacto</p>

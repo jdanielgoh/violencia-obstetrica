@@ -8,12 +8,13 @@
                 </router-link>
             </div>
             <div class="botones">
-                <BotonAudio />
+                
+                <!--<BotonAudio />
                 <DropDown 
                     :config="config"
-                ></DropDown>
+                ></DropDown>-->
                 <button @click="menu_activo = !menu_activo" class="open"> 
-                    
+                    <span v-if="!menu_activo">MENÚ</span>
                     <img v-if="!menu_activo" class="menu-morado" src="@/assets/img/iconos/menu.svg"/>
                     <img v-if="!menu_activo" class="menu-blanco" src="@/assets/img/iconos/menu-morado.svg"/>
                     <img v-if="menu_activo"  src="@/assets/img/iconos/close--filled.svg"/>
@@ -31,6 +32,8 @@
                     <router-link :to="{name: 'TusDerechos'}" @click.native="menu_activo = !menu_activo">TUS DERECHOS</router-link>
                     <router-link :to="{name: 'Metodologia'}" @click.native="menu_activo = !menu_activo">METODOLOGÍA</router-link>
                     <router-link :to="{name:'QuienesSomos'}" @click.native="menu_activo = !menu_activo">¿QUIÉNES SOMOS?</router-link>
+                    <a href="https://capir.limequery.org/571399" target="_blank">ENCUESTA DE PARTO PROPIO</a>
+                    <a href="https://capir.limequery.org/145636" target="_blank">ENCUESTA DE MUERTE MATERNA</a>
                     <!--<router-link to="/contacto" @click.native="menu_activo = !menu_activo">CONTACTO</router-link>-->
                 </div>
             </div>
@@ -39,15 +42,15 @@
     </header>
 </template>
 <script>
-import DropDown from "@/components/utils/drop-down/DropDown.vue";
+//import DropDown from "@/components/utils/drop-down/DropDown.vue";
 
-import BotonAudio from "@/components/utils/BotonAudio.vue";
+//import BotonAudio from "@/components/utils/BotonAudio.vue";
 
 export default {
     name: "Encabezado",
     components:{
-        BotonAudio,
-        DropDown
+        //BotonAudio,
+        //DropDown
     },
     data(){
         return{
@@ -162,6 +165,7 @@ export default {
             }
             margin: auto 0 auto auto;
             button.open{
+                
                 background: none;
                 border: none;
                 margin: auto;
@@ -182,7 +186,7 @@ export default {
         &.activo{
             width: 100%;
             display: flex;
-            height: 100vh;
+            height: calc( 100vh - 79px);
             min-height: 500px;
         }
         .opciones{
@@ -193,7 +197,7 @@ export default {
                 text-decoration: none;
                 color:#FFFFFF;
                 display: block;
-                margin-top: 16px;
+                margin-top: 12px;
             }
             @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
                 font-size: 24px;
@@ -234,6 +238,12 @@ export default {
                     }
                 }
                 button{
+                    display: flex;
+                    span{
+                        margin: auto 16px;
+                        color: #fff;
+                        font-size: 14px;
+                    }
                     img.menu-blanco{
                         display: none;
                     }

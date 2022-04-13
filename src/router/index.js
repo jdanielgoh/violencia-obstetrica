@@ -87,7 +87,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes: routes,
   scrollBehavior(to) {
-    console.log(to.hash)
+    
     if(to.hash ){
       return{
         y: 0,
@@ -99,6 +99,8 @@ const router = new VueRouter({
     else{
       return { x: 0, y: 0 };
     }
+
+    
       
   },
 

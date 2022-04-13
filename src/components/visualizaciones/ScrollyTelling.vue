@@ -34,7 +34,7 @@
                   :titulo="'Por centaje de partos naturales y por cesárea'"
               ></Dona>
           </div>
-          <div class="contenedor-iframe" v-if="pantalla_grande" id="iframe_informacion_atencion">
+          <div class="contenedor-iframe barras" v-if="pantalla_grande" id="iframe_informacion_atencion">
             <BarrasApiladas
               :barras_apiladas_id="'bar-apiladas'" 
               :datos="datos_barras.datos"
@@ -548,7 +548,7 @@
             </p>
             <p>
               Esto es relevante si contemplamos que la propia Revista Cubana de
-              Obstetricia y Ginecología reconoció en <a href="https://www.medigraphic.com/pdfs/revcubobsgin/cog-2018/cog183b.pdf" target="_blank">
+              Obstetricia y Ginecología reconoció en <a class="link-text" href="https://www.medigraphic.com/pdfs/revcubobsgin/cog-2018/cog183b.pdf" target="_blank">
               un artículo de 2018 </a> que,
               dada la poca información que existe, no podía asegurarse que no
               haya partos humanizados, ni crueldad durante el proceso. “La
@@ -1133,6 +1133,13 @@ p.elaboracion-por{
         top: 0;
       }
       div.contenedor-iframe{
+        &.barras{
+          height: calc(100vh - 80px);
+          display: flex;
+          #bar-apiladas{
+            margin: auto 0;
+          }
+        }
         width: 100%;
         opacity: 0;
         p{

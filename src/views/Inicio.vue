@@ -1,11 +1,18 @@
 <template>
 	<div class="inicio">
+		<div class="container main">
+			<BotonAudio />
+		</div>
 		<div class="container text introduccion">
+			
 			<div class="centrado">
 				<h1 class="titulo-especial blanco">PARTOS ROTOS</h1>
 				<p>
 					En septiembre de 2020 publicamos una investigación sobre violencia obstétrica en Cuba que fue replicada por varios medios independientes. De inmediato, el reportaje generó en redes una avalancha de denuncias. Mujeres cubanas de diferentes edades y regiones aseguraron haber sufrido violencia al momento de dar a luz.
 				</p>
+				<div>
+					<span class="flecha"></span>
+				</div>
 			</div>
 			
 		</div>
@@ -37,6 +44,7 @@ import Portada from '@/components/inicio/Portada.vue'
 import ImagenPie from "@/components/utils/ImagenPie.vue"
 import GridSeccion from "@/components/inicio/GridSeccion.vue"
 
+import BotonAudio from "@/components/utils/BotonAudio.vue";
 
 import visualizaciones from "@/assets/data/visualizaciones.json"
 
@@ -55,7 +63,8 @@ export default {
 	components: {
 		Portada,
 		ImagenPie,
-		GridSeccion
+		GridSeccion,
+		BotonAudio
 	},
 	beforeMount(){
 		this.te_puede_interesar.forEach(d => {
@@ -95,6 +104,19 @@ $margen-especiales: 70px;
 			p{
 				text-align: center;
 				color:#fff;
+			}
+			div{
+				text-align: center;
+
+				span.flecha{
+					position: relative;
+					display: inline-block;
+					width: 35px;
+					height: 35px;
+					border-left: solid 3px #FDA1C9;
+					border-bottom: solid 3px #FDA1C9;
+					transform: rotate(-45deg);
+				}
 			}
 			
 		}

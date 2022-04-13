@@ -96,6 +96,11 @@ export default {
 		ImagenPie,
 		TestimonioSeleccionado,
 	},
+	destroyed(){
+		this.$store.commit("ocultarTestimonio");
+		document.body.style.overflow = "scroll" 
+
+	},
 	data(){
 		return {
 			testimonios:[],
@@ -120,6 +125,8 @@ export default {
 		this.testimonios.forEach((d) => {
 			d.imagen = require(`@/assets/img/testimonios/${d.imagen}`)
 		})
+
+
 	},
 	methods: {
 		clickTestimonio(i){
@@ -223,7 +230,7 @@ h3{
 		margin-bottom: 24px;
 		min-height: 90vh;
 		display: flex;
-		gap: 30px 30px; 
+		gap: 30px 10px; 
 		flex-wrap: wrap;
 		justify-content: space-between;
 		.imagen{

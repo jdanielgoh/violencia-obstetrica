@@ -35,10 +35,10 @@
       </p>
     </div>
     <div class="container text">
-      <h1 class="blanco">
+      <h2 class="blanco">
         Créditos
         <hr />
-      </h1>
+      </h2>
       <p>
         Partos Rotos es una investigación sobre la violencia obstétrica en Cuba.
         El proyecto, desde una visión integral, ha seguido una metodología en la
@@ -248,8 +248,13 @@ export default {
 
 .creditos {
   background: #4a2582;
-  h1.blanco {
+  h1.blanco, h2.blanco {
+    font-size: 48px;
+    color: #fff;
     line-height: 0.3;
+    @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+      line-height: 1;
+    }
   }
   p {
     color: #fff;

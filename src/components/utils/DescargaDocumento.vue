@@ -1,8 +1,8 @@
 <template>
     <div class="descarga-documento">
         <h5>{{titulo}}</h5>
-        <p>{{autorxs}}</p>
-        <a :href="ruta" ><img :src='require("@/assets/img/iconos/descargar.svg")'/><span>Descarga</span></a>
+        <p>{{autorxs}} </p>
+        <a :href="ruta" target="_blank"><img :src='require("@/assets/img/iconos/descargar.svg")'/><span>Descarga {{formato}}</span></a>
         
     </div>
 </template>
@@ -13,7 +13,8 @@ export default {
     props:{
         titulo: String,
         autorxs: String,
-        ruta: String
+        ruta: String,
+        formato: String
     }
 }
 </script>
@@ -31,7 +32,7 @@ export default {
         letter-spacing: 0.8px;
         color: #FFFFFF;
         text-transform: uppercase;
-        font-size: 14;
+        font-size: 14px;
     }
     a{
         letter-spacing: 0.7px;

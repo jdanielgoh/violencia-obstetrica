@@ -5,7 +5,6 @@ import Testimonios from '../views/Testimonios.vue'
 import TusDerechos from '../views/TusDerechos.vue'
 import QuienesSomos from '../views/QuienesSomos.vue'
 import Metodologia from '../views/Metodologia.vue'
-import Creditos from '../views/Creditos.vue'
 import Contacto from '../views/Contacto.vue'
 import Podcasts from "../views/Podcasts.vue"
 import ParirenCuba from "../views/reportajes/ParirenCuba.vue"
@@ -43,11 +42,7 @@ const routes = [
     name: 'Metodologia',
     component: Metodologia
   },
-  {
-    path: '/creditos',
-    name: 'Creditos',
-    component: Creditos
-  },
+  
   {
     path: '/contacto',
     name: 'Contacto',
@@ -92,7 +87,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes: routes,
   scrollBehavior(to) {
-    console.log(to.hash)
+    
     if(to.hash ){
       return{
         y: 0,
@@ -104,6 +99,8 @@ const router = new VueRouter({
     else{
       return { x: 0, y: 0 };
     }
+
+    
       
   },
 

@@ -3,6 +3,10 @@
 		<div class="testimonios-lista" >
 			
 			<div class="container main">
+				<h3 class="blanco">
+					Testimonios
+					<hr/>
+				</h3>
 				<div class="paso">
 					<button class="imagen" @click="clickTestimonio(i)" 
 					v-for="(testimonio, i) in testimonios" 
@@ -21,33 +25,26 @@
 						
 					</div>
 				</div>
+				<p><i>Algunos de los testimonios que aparecen en esta sección son el  reflejo exacto de las palabras de las madres, y hemos decidido respetar su oralidad dentro del relato. </i></p>
 			</div>
-			<div class="container main">
+			<div class="container main" id="historietas">
 				<h3 class="blanco">
-					Comics
+					Historietas
 					<hr/>
 				</h3>
-			</div>
-			<div class="container main ilustraciones">
+				<div class="paso" v-viewer="opciones_viewer"
+					>
 				
-				<img
-				class="ilustracion"
-				:src="require('@/assets/img/testimonios/COMIC-NANCY.jpg')"
-				/>
-				<img
-				class="ilustracion"
-				:src="require('@/assets/img/testimonios/COMIC-YARI.jpg')"
-				/>
-
-				<img
-				class="ilustracion"
-				:src="require('@/assets/img/testimonios/COMIC-LISANDRA.jpg')"
-				/>
-				<img
-				class="ilustracion"
-				:src="require('@/assets/img/testimonios/COMIC-MAYLI.jpg')"
-				/>
+					<img
+					v-for="(src, i) in historietas"
+					:key="i"
+					class="imagen"
+					:src="src"
+					/>
+					
+				</div>
 			</div>
+			
 		</div>
 		<TestimonioSeleccionado
 			v-if="visibilidad_testimonio"
@@ -56,13 +53,16 @@
 		>
 			<template slot="paginador">
 				<div class="paginador">
-					<button @click="disminuirIndice()">
-						<img src="img/iconos/anterior.svg" alt="anterior"/>
-					</button>
-					<span>Testimonio {{no_testimonio+1}}</span>
-					<button @click="aumentarIndice()">
-						<img src="img/iconos/siguiente.svg" alt="siguiente"/>
-					</button>
+					<div class="control">
+						<button @click="disminuirIndice()">
+							<img src="img/iconos/anterior.svg" alt="anterior"/>
+						</button>
+						<span>Testimonio {{no_testimonio+1}}</span>
+						<button @click="aumentarIndice()">
+							<img src="img/iconos/siguiente.svg" alt="siguiente"/>
+						</button>
+					</div>
+					
 				</div>
 			</template>
 		</TestimonioSeleccionado>
@@ -76,10 +76,13 @@ import ImagenPie from "@/components/utils/ImagenPie.vue"
 import TestimonioSeleccionado from "@/components/testimonios/TestimonioSeleccionado.vue"
 
 import {mapState} from "vuex"
-
-//Vue.use(VueRellax);
-
+import VueViewer from 'v-viewer'
+import Vue from 'vue'
 import testimonios from "@/assets/data/testimonios.json"
+
+Vue.use(VueViewer)
+
+
 
 export default {
 	name: 'Testimonios',
@@ -93,19 +96,26 @@ export default {
 		ImagenPie,
 		TestimonioSeleccionado,
 	},
+	destroyed(){
+		this.$store.commit("ocultarTestimonio");
+		document.body.style.overflow = "scroll" 
+
+	},
 	data(){
 		return {
 			testimonios:[],
 			testimonio_seleccionado: {},
-			rellax: {
-				center: false,
-				horizontal: false,
-				round: true,
-				vertical: true,
-				wrapper: false,
-				speed: 5
+			historietas: [
+				require('@/assets/img/testimonios/COMIC-NANCY.jpeg'),
+				require('@/assets/img/testimonios/COMIC-YARI.jpeg'),
+				require('@/assets/img/testimonios/COMIC-LISANDRA.jpeg'),
+				require('@/assets/img/testimonios/COMIC-MAYLI.jpeg')
 
-			},
+			],
+			opciones_viewer:{ "inline": false, "button": true, "navbar": false, 
+			"title": false, "toolbar": false, "tooltip": true, "movable": true, 
+			"zoomable": true, "rotatable": false, "scalable": false, "transition": true, 
+			"fullscreen": true, "keyboard": false },
 			visibilidad_testimonio: false,
 			no_testimonio:0
 		}
@@ -115,6 +125,8 @@ export default {
 		this.testimonios.forEach((d) => {
 			d.imagen = require(`@/assets/img/testimonios/${d.imagen}`)
 		})
+
+
 	},
 	methods: {
 		clickTestimonio(i){
@@ -124,7 +136,7 @@ export default {
 		},
 		scrollArriba() {
 			setTimeout(()=>{
-				window.scrollTo({
+				document.querySelector(".testimonios-seleccionado").scrollTo({
 				top: 0,
 				behavior: 'smooth',
 			});
@@ -139,6 +151,7 @@ export default {
 		},
 		aumentarIndice(){
 			this.no_testimonio = (this.no_testimonio +1) % this.testimonios.length;
+
 		}
 
 
@@ -154,6 +167,8 @@ export default {
 		},
 		no_testimonio(nv){
 			this.testimonio_seleccionado = this.testimonios[nv];
+			this.scrollArriba()
+
 		}
 
 	}
@@ -162,6 +177,7 @@ export default {
 </script>
 
 <style  lang="scss">
+@import '~viewerjs/dist/viewer.css';
 @import "../scss/_variables";
 
 h3{
@@ -179,40 +195,48 @@ h3{
   	background: #4A2582;
 	position: relative;
 	display: block;
-	img.ilustracion{
-		height: calc(100vh - 80px);
-		margin-bottom: 50px;
-		
-	}
+	
+	
 	.paginador{
-		width: 210px;
-		margin: 48px auto 48px auto;
+		width: 100%;
+		background: #4A2582;
 		color: #fff;
-		display: flex;
-		span{
-			font-size: 16px;
-			font-weight: 600;
-			margin: 10px;
-		}
-		button{
-			background: transparent;
-			border: none;
+		position: -webkit-sticky;
+		position: sticky;
+		top:0px;
+		z-index: 2;
+		.control{
+			display: flex;
+			width: 220px;
+			margin: 48px auto 48px auto;
 
+			span{
+				font-size: 16px;
+				font-weight: 600;
+				margin: 10px;
+			}
+			button{
+				background: transparent;
+				border: none;
+
+			}
 		}
+		
 	}
 	.paso{
 		&:nth-child(1){
 			margin-top: 50px
 		}
-		margin-bottom: 100px;
+		margin-bottom: 24px;
 		min-height: 90vh;
 		display: flex;
-		gap: 30px 30px; 
+		gap: 30px 10px; 
 		flex-wrap: wrap;
-		justify-content: space-around;
+		justify-content: space-between;
 		.imagen{
+			width:100%;
 			z-index: 0;
-			flex: 0 1 45%;
+			flex: 0 1 48%;
 			background: transparent;
 			border: none;
 			text-align: left;
@@ -247,6 +271,12 @@ h3{
 				text-transform: uppercase;
 				//opacity: 0;
 			}
+		}
+		
+	}
+	p{
+		i{
+			color:#fff;
 		}
 	}
 	article.testimonios-seleccionado.visible{

@@ -107,7 +107,7 @@ export default {
 				margin: auto;
 				position: -webkit-sticky;
 				position: sticky;
-				top: 50px;
+				top: 40px;
 				display:inline-block;
 				.cover{
 				background-color: transparent;

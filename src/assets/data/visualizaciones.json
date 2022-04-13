@@ -6,7 +6,7 @@
         "descripcion": "",
         "clase":"third",
         "resumen": "",
-        "texto_boton": "Historia con datos"
+        "texto_boton": "Consulta aquí"
     },
     {
         "to": "/visualizaciones/mapa-testimonios",

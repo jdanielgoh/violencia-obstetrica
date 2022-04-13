@@ -95,6 +95,7 @@ $margen-grid-secciones: 70px;
 
 			div.ficha{
 				a{
+					text-decoration: none;
 					&:hover, &:active{
 						text-decoration: none;
 					}

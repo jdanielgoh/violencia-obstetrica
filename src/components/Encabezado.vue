@@ -32,7 +32,7 @@
                     <router-link :to="{name: 'TusDerechos'}" @click.native="menu_activo = !menu_activo">TUS DERECHOS</router-link>
                     <router-link :to="{name: 'Metodologia'}" @click.native="menu_activo = !menu_activo">METODOLOGÍA</router-link>
                     <router-link :to="{name:'QuienesSomos'}" @click.native="menu_activo = !menu_activo">¿QUIÉNES SOMOS?</router-link>
-                    <a href="https://capir.limequery.org/571399" target="_blank">ENCUESTA DE PARTO PROPIO</a>
+                    <a href="https://capir.limequery.org/571399" target="_blank">CUÉNTANOS TU PARTO</a>
                     <a href="https://capir.limequery.org/145636" target="_blank">ENCUESTA DE MUERTE MATERNA</a>
                     <!--<router-link to="/contacto" @click.native="menu_activo = !menu_activo">CONTACTO</router-link>-->
                 </div>

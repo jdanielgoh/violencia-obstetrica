@@ -16,7 +16,7 @@
 			</div>
 		</div>
 
-		<div class="paso" data-step="5">
+		<!--<div class="paso" data-step="5">
 			<div class="imagen" v-rellax="rellax" 
 				data-rellax-speed="-5"
 				data-rellax-percentage="0."
@@ -30,6 +30,7 @@
 				<p class="cita">"Con tan solo 19 años estuve 12 horas en una inducción de parto.  Si no es por una amistad que encontró mi mamá, me muero. Mi niño se hizo caca en el vientre."" </p>
 			</div>
 		</div>
+		-->
 		
   	</div>
 </template>

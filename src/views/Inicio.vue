@@ -16,17 +16,20 @@
 			</div>
 			
 		</div>
-		<Portada/>
-		<GridSeccion
-			id="especiales"
-			titulo="Reportajes"
-			:data="especiales"
-		/>
+		
 		<GridSeccion
 			id="visualizaciones"
 			titulo="Visualizaciones"
 			:data="visualizaciones"
 		/>
+		
+		<GridSeccion
+			id="especiales"
+			titulo="Reportajes"
+			:data="especiales"
+		/>
+		
+		
 		<GridSeccion
 			id="podcast-testimonios"
 			titulo="Te puede interesar"

@@ -1,0 +1,43 @@
+[
+    {
+        "to": "/especiales/parir-en-cuba",
+        "img": "img/ilustraciones/01-ILUSTRACION-WEB.jpg",
+        "titulo": "CIENTOS DE MUJERES CONFIRMAN HABER VIVIDO VIOLENCIA OBSTÉTRICA EN CUBA",
+        "autorxs": "",
+        "descripcion": "",
+        "clase":"full",
+        "resumen":"Casi 500 mujeres de todo el país nos contaron con detalles cómo fue su parto o partos. Una mayoría confirmó que la violencia obstétrica existe. Muchas nos hablaron de un uso indiscriminado de la episiotomía, un corte en el perineo que facilita el parto. Entre otros datos alarmantes, un 41% de las mujeres afirmó haber sufrido algún episodio de violencia verbal o psicológica y casi un 80% dijo no haber sido informada sobre su estado de salud durante el alumbramiento.",
+        "texto_boton": "CONOCE TODOS LOS DATOS AQUÍ"
+    },
+    {
+        "to": "/especiales/parir-en-cuba",
+        "img": "img/ilustraciones/01-ILUSTRACION-WEB.jpg",
+        "titulo": "LAS CAUSAS DE LA VIOLENCIA OBSTÉTRICA EN CUBA",
+        "autorxs": "",
+        "descripcion": "",
+        "clase":"full",
+        "resumen":"La violencia obstétrica tiene sus raíces en los estereotipos de género que causan la deshumanización y violencia contra las mujeres, y en el modelo médico hegemónico, que privilegia las necesidades de los y las profesionales de la medicina sobre las de las pacientes. En Cuba, la violencia obstétrica se ve agravada por un sistema de salud muy jerarquizado y preocupado por mantener una tasa de mortalidad infantil baja que ignora el bienestar de las madres.",
+        "texto_boton": "LEE NUESTRO REPORTAJE AQUÍ"
+    },
+    {
+        "to": "/especiales/parir-en-cuba",
+        "img": "img/ilustraciones/01-ILUSTRACION-WEB.jpg",
+        "titulo": "YARI, NANCY, MAYLI Y LISANDRA",
+        "autorxs": "",
+        "descripcion": "",
+        "clase":"full",
+        "resumen":"Yari estuvo 22 horas de trabajo de parto sin dilatar lo suficiente para una parto natural, pero no dejaron que nadie la acompañase ni le quisieron hacer cesárea. Nancy quedó embarazada en prisión, donde le obligaban a cargar el agua para cocinar, limpiar y lavar. Mayli fue ingresada en el hospital por diabetes gestacional, donde fue maltratada verbalmente. A Lisandra daban golpes en las pantorrillas para que no cerrase las piernas, porque no conseguía dilatar.",
+        "texto_boton": "LEE SUS HISTORIAS EN CÓMIC AQUÍ"
+    },
+    {
+        "to": "/especiales/parir-en-cuba",
+        "img": "img/ilustraciones/01-ILUSTRACION-WEB.jpg",
+        "titulo": "TIENES DERECHO A UN PARTO HUMANIZADO",
+        "autorxs": "",
+        "descripcion": "",
+        "clase":"full",
+        "resumen":"Según la OMS, las mujeres tenemos derecho a nuestra dignidad y privacidad durante el parto, a parir en un ambiente agradable y seguro, y a recibir apoyo en el alivio y control del dolor. También a recibir información de nuestro estado de salud y opciones de manera comprensible, y a ser consultadas ante cada proceder médico que se nos quiera aplicar. Además, las intervenciones médicas tienen que estar limitadas a lo estrictamente necesario.",
+        "texto_boton": "MIRA EL VIDEO SOBRE TUS DERECHOS EN EL PARTO AQUÍ"
+    }
+
+]

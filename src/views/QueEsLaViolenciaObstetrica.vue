@@ -2,14 +2,14 @@
   <div class="tus-derechos">
     <div class="container text">
       <h1 class="blanco">
-        Conoce tus derechos
+        Qué es la violencia obstétrica
         <hr />
       </h1>
     </div>
       <div class="container text">
         <img
           class="ilustracion"
-          :src="require('@/assets/img/tus_derechos/INFIGRAFIA.jpg')"
+          :src="require('@/assets/img/que_es_la_violencia_obstetrica/INFIGRAFIA.jpg')"
         />
       </div>
       <div class="container text">
@@ -50,13 +50,13 @@
 import DescargaDocumento from "@/components/utils/DescargaDocumento.vue";
 
 export default {
-  name: "TusDerechos",
+  name: "QueEsLaViolenciaObstetrica",
   components: {
     DescargaDocumento,
   },
   metaInfo: {
       // if no subcomponents specify a metaInfo.title, this title will be used
-      title: 'Tus Derechos',
+      title: 'Qué es la violencia obstétrica',
       // all titles will be injected into this template
       titleTemplate: '%s | Partos Rotos'
     },

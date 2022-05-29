@@ -16,7 +16,7 @@
                         <p><router-link :to="{name: 'Podcasts'}">Podcast</router-link></p>
                     </div>
                     <div class="columna-enlaces segunda-columna">
-                        <p><router-link :to="{name: 'TusDerechos'}">Tus derechos</router-link></p>
+                        <p><router-link :to="{name: 'QueEsLaViolenciaObstetrica'}">Tus derechos</router-link></p>
                         <p><router-link :to="{name: 'QuienesSomos'}">¿Quiénes somos?</router-link></p>
                         <p><router-link :to="{name: 'Metodologia'}">Metodología</router-link></p>
                         <p><router-link :to="{name:'Creditos'}">Créditos</router-link></p>
@@ -66,7 +66,7 @@ export default {
             menu_activo: false,
             fondo_morado: true,
             es_inicio: true,
-            lista_morado:["Inicio","QuienesSomos","Testimonios","TusDerechos","Podcasts"]
+            lista_morado:["Inicio","QuienesSomos","Testimonios","QueEsLaViolenciaObstetrica","Podcasts","DatosViolencia","Historietas"]
         }
     },
     watch:{

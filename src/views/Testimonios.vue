@@ -27,23 +27,7 @@
 				</div>
 				<p><i>Algunos de los testimonios que aparecen en esta sección son el  reflejo exacto de las palabras de las madres, y hemos decidido respetar su oralidad dentro del relato. </i></p>
 			</div>
-			<div class="container main" id="historietas">
-				<h3 class="blanco">
-					Historietas
-					<hr/>
-				</h3>
-				<div class="paso" v-viewer="opciones_viewer"
-					>
-				
-					<img
-					v-for="(src, i) in historietas"
-					:key="i"
-					class="imagen"
-					:src="src"
-					/>
-					
-				</div>
-			</div>
+			
 			
 		</div>
 		<TestimonioSeleccionado
@@ -76,11 +60,8 @@ import ImagenPie from "@/components/utils/ImagenPie.vue"
 import TestimonioSeleccionado from "@/components/testimonios/TestimonioSeleccionado.vue"
 
 import {mapState} from "vuex"
-import VueViewer from 'v-viewer'
-import Vue from 'vue'
 import testimonios from "@/assets/data/testimonios.json"
 
-Vue.use(VueViewer)
 
 
 
@@ -105,17 +86,7 @@ export default {
 		return {
 			testimonios:[],
 			testimonio_seleccionado: {},
-			historietas: [
-				require('@/assets/img/testimonios/COMIC-NANCY.jpeg'),
-				require('@/assets/img/testimonios/COMIC-YARI.jpeg'),
-				require('@/assets/img/testimonios/COMIC-LISANDRA.jpeg'),
-				require('@/assets/img/testimonios/COMIC-MAYLI.jpeg')
 
-			],
-			opciones_viewer:{ "inline": false, "button": true, "navbar": false, 
-			"title": false, "toolbar": false, "tooltip": true, "movable": true, 
-			"zoomable": true, "rotatable": false, "scalable": false, "transition": true, 
-			"fullscreen": true, "keyboard": false },
 			visibilidad_testimonio: false,
 			no_testimonio:0
 		}

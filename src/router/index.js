@@ -2,7 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Inicio from '../views/Inicio.vue'
 import Testimonios from '../views/Testimonios.vue'
-import TusDerechos from '../views/TusDerechos.vue'
+import Historietas from '../views/Historietas.vue'
+import QueEsLaViolenciaObstetrica from '../views/QueEsLaViolenciaObstetrica.vue'
 import QuienesSomos from '../views/QuienesSomos.vue'
 import Metodologia from '../views/Metodologia.vue'
 import Contacto from '../views/Contacto.vue'
@@ -10,7 +11,7 @@ import Podcasts from "../views/Podcasts.vue"
 import ParirenCuba from "../views/reportajes/ParirenCuba.vue"
 import VisualizacionViolencias from "../views/visualizaciones/VisualizacionViolencias.vue"
 import VisualizacionMapaTestimonios from "../views/visualizaciones/VisualizacionMapaTestimonios.vue"
-
+import DatosViolencia from "../views/DatosViolencia.vue"
 
 import Meta from 'vue-meta'
 Vue.use(VueRouter)
@@ -28,9 +29,14 @@ const routes = [
     component: Testimonios
   },
   {
-    path: '/tus_derechos',
-    name: 'TusDerechos',
-    component: TusDerechos
+    path: '/historietas',
+    name: 'Historietas',
+    component: Historietas
+  },
+  {
+    path: '/que_es_la_violencia_obstetrica',
+    name: 'QueEsLaViolenciaObstetrica',
+    component: QueEsLaViolenciaObstetrica
   },
   {
     path: '/quienes_somos',
@@ -72,6 +78,11 @@ const routes = [
     path: "/visualizaciones/mapa-testimonios",
     name: "VisualizacionMapaTestimonios",
     component: VisualizacionMapaTestimonios
+  },
+  {
+    path: "/datos_violencia",
+    name: "DatosViolencia",
+    component: DatosViolencia
   },
   {
     path: '**',

@@ -1,6 +1,6 @@
 <template>
     <section class="container main grid-secciones">
-        <h3 class="blanco">
+        <h3 v-if="titulo" class="blanco">
             {{titulo}}
             <hr/>
         </h3>

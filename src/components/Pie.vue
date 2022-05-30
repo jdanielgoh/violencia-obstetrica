@@ -19,7 +19,6 @@
                         <p><router-link :to="{name: 'QueEsLaViolenciaObstetrica'}">Tus derechos</router-link></p>
                         <p><router-link :to="{name: 'QuienesSomos'}">¿Quiénes somos?</router-link></p>
                         <p><router-link :to="{name: 'Metodologia'}">Metodología</router-link></p>
-                        <p><router-link :to="{name:'Creditos'}">Créditos</router-link></p>
                     </div>
                 </div>
                 
@@ -66,7 +65,7 @@ export default {
             menu_activo: false,
             fondo_morado: true,
             es_inicio: true,
-            lista_morado:["Inicio","QuienesSomos","Testimonios","QueEsLaViolenciaObstetrica","Podcasts","DatosViolencia","Historietas"]
+            lista_morado:["Inicio","QuienesSomos","Testimonios","QueEsLaViolenciaObstetrica","Podcasts","DatosViolencia","Historietas","HistoriasVideos","TusDerechosParto","Cuestionarios"]
         }
     },
     watch:{

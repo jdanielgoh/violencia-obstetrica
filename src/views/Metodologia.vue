@@ -1,7 +1,7 @@
 <template>
   <div class="metodologia container main">
     <div class="container text">
-      <h1>Metodología</h1>
+      <h1>Cómo se hizo</h1>
       <p>
         Partos Rotos es una investigación sobre la violencia obstétrica en Cuba.
         El proyecto, desde una visión integral, ha seguido una metodología en la
@@ -104,7 +104,7 @@ export default {
   name: "Metodologia",
   metaInfo: {
       // if no subcomponents specify a metaInfo.title, this title will be used
-      title: 'Metodología',
+      title: 'Cómo se hizo',
       // all titles will be injected into this template
       titleTemplate: '%s | Partos Rotos'
     },

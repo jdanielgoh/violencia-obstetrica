@@ -29,12 +29,12 @@
                     <router-link :to="{name:'ParirenCuba'}" @click.native="menu_activo = !menu_activo">CAUSAS DE LA VIOLENCIA</router-link>
                     <router-link :to="{name: 'Testimonios'}" @click.native="menu_activo = !menu_activo">VOCES DE LAS MADRES</router-link>
                     <router-link :to="{name: 'Historietas'}" @click.native="menu_activo = !menu_activo">HISTORIAS ILUSTRADAS</router-link>
-
-                    <router-link :to="{name: 'Podcasts'}" @click.native="menu_activo = !menu_activo">PODCASTS</router-link>
-                    <router-link :to="{name: 'Metodologia'}" @click.native="menu_activo = !menu_activo">METODOLOGÍA</router-link>
-                    <router-link :to="{name:'QuienesSomos'}" @click.native="menu_activo = !menu_activo">¿QUIÉNES SOMOS?</router-link>
-                    <a href="https://capir.limequery.org/571399" target="_blank">CUÉNTANOS TU PARTO</a>
-                    <a href="https://capir.limequery.org/145636" target="_blank">ENCUESTA DE MUERTE MATERNA</a>
+                    <router-link :to="{name: 'HistoriasVideos'}" @click.native="menu_activo = !menu_activo">HISTORIAS EN VIDEO</router-link>
+                    <router-link :to="{name: 'Podcasts'}" @click.native="menu_activo = !menu_activo">PODCAST ISLA VIOLETA</router-link>
+                    <router-link :to="{name: 'TusDerechosParto'}" @click.native="menu_activo = !menu_activo">TUS DERECHOS EN EL PARTO</router-link>
+                    <router-link :to="{name:'QuienesSomos'}" @click.native="menu_activo = !menu_activo">QUIÉNES SOMOS</router-link>
+                    <router-link :to="{name: 'Metodologia'}" @click.native="menu_activo = !menu_activo">CÓMO SE HIZO</router-link>
+                     <router-link :to="{name: 'Cuestionarios'}" @click.native="menu_activo = !menu_activo">CUESTIONARIOS</router-link>
                     <!--<router-link to="/contacto" @click.native="menu_activo = !menu_activo">CONTACTO</router-link>-->
                 </div>
             </div>
@@ -72,7 +72,7 @@ export default {
             menu_activo: false,
             fondo_morado: true,
             es_inicio: true,
-            lista_morado:["Inicio","QuienesSomos","Testimonios","QueEsLaViolenciaObstetrica", "Podcasts","DatosViolencia","Historietas"]
+            lista_morado:["Inicio","QuienesSomos","Testimonios","QueEsLaViolenciaObstetrica", "Podcasts","DatosViolencia","Historietas","HistoriasVideos","TusDerechosParto","Cuestionarios"]
         }
     },
     watch:{
@@ -201,7 +201,7 @@ export default {
                 margin-top: 12px;
             }
             @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
-                font-size: 24px;
+                font-size: 16px;
                 margin: 50px 100px auto auto;
                 a{  
 

@@ -1,0 +1,41 @@
+<template>
+  <div class="cuestionarios">
+    <div class="container text">
+      <h1 class="blanco">
+        Cuestionarios
+        <hr/>
+      </h1>
+      <a href="https://capir.limequery.org/571399" target="_blank">CUÉNTANOS TU PARTO</a>
+    <a href="https://capir.limequery.org/145636" target="_blank">ENCUESTA DE MUERTE MATERNA</a>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Cuestionarios",
+  metaInfo: {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    title: "Historias en video",
+    // all titles will be injected into this template
+    titleTemplate: "%s | Partos Rotos",
+  },
+};
+</script>
+
+<style scoped lang="scss">
+.cuestionarios {
+  background: #4a2582;
+  .container.text {
+    
+    a{
+        display: block;
+        color: #B987FF;
+        &:visited, &:hover{
+            opacity: .7;
+          color:  #B987FF;
+        }
+    }
+  }
+}
+</style>

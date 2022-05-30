@@ -6,48 +6,15 @@
         <hr />
       </h1>
       <p>
-        En septiembre de 2020 publicamos una investigación sobre violencia
-        obstétrica en Cuba que fue replicada por varios medios independientes.
-        De inmediato, el reportaje generó en redes una avalancha de denuncias.
-        Mujeres cubanas de diferentes edades y regiones aseguraron haber sufrido
-        violencia al momento de dar a luz.
+        El equipo de Partos Rotos cuenta con mujeres periodistas que viven en
+        Cuba y que han realizado un trabajo fundamental para este proyecto. Sin
+        embargo, en este momento no pueden revelar su identidad por haber
+        recibido amenazas por parte del Gobierno por su labor periodística.
       </p>
       <p>
-        Las cientos de denuncias que contabilizamos entonces nos sugirieron que
-        la violencia obstétrica no se reducía a las experiencias aisladas que
-        habíamos expuesto, sino que era una práctica recurrente en nuestro país.
-        Una práctica que no es medida en las estadísticas oficiales y de la que
-        apenas se habla.
-      </p>
-      <p>
-        Por la importancia de visibilizar estas historias y denunciar la
-        violencia que padecen las mujeres y sus hijos e hijas durante la
-        gestación y el alumbramiento, hemos continuado reportando sobre el tema
-        durante el último año. El resultado es este especial que ahora
-        presentamos y que parte de una veintena de entrevistas en profundidad y
-        514 encuestas realizadas a madres cubanas entre 20 y 60 años.
-      </p>
-      <p>
-        Periodistas de Cuba, México y Estados Unidos investigamos cómo viven las
-        mujeres de la isla su maternidad y partos, en qué condiciones lo hacen y
-        cómo recuerdan esa experiencia. Estas son sus historias, sus rostros y
-        sus voces.
-      </p>
-    </div>
-    <div class="container text">
-      <h2 class="blanco">
-        Créditos
-        <hr />
-      </h2>
-      <p>
-        Partos Rotos es una investigación sobre la violencia obstétrica en Cuba.
-        El proyecto, desde una visión integral, ha seguido una metodología en la
-        que se emplearon métodos y técnicas de la investigación periodística
-        combinadas con algunos procedimientos de la investigación social como
-        cuestionarios y entrevistas en profundidad. Uno de los principales
-        aportes de esta investigación es la implementación de dos cuestionarios:
-        una destinada a recopilar información sobre las experiencias de partos y
-        la otra enfocada en los casos de muerte materna durante el parto.
+        Además, queremos agradecer su trabajo a encuestadoras y otras
+        colaboradoras que también han participado de manera anónima desde dentro
+        de Cuba.
       </p>
     </div>
     <div class="container main equipos">
@@ -81,7 +48,7 @@
             </template>
           </ImagenPie>
         </a>
-        
+
         <a href="https://twitter.com/cabezamestiza" target="_blank">
           <ImagenPie
             :link="require('@/assets/img/creditos/Darcy.jpeg')"
@@ -99,7 +66,7 @@
     </div>
     <div class="container main equipos">
       <div class="equipo-titulo">
-        <h5>ANÁLISIS Y VISUALIZACIÓN DE DATOS</h5>
+        <h5>ANÁLISIS DE DATOS</h5>
       </div>
       <div class="equipo-integrantes">
         <a href="https://datacritica.org/" target="_blank">
@@ -231,7 +198,7 @@
 import ImagenPie from "@/components/utils/ImagenPie.vue";
 
 export default {
-  name: "Creditos",
+  name: "QuienesSomos",
   components: {
     ImagenPie,
   },
@@ -248,7 +215,8 @@ export default {
 
 .creditos {
   background: #4a2582;
-  h1.blanco, h2.blanco {
+  h1.blanco,
+  h2.blanco {
     font-size: 48px;
     color: #fff;
     line-height: 0.3;

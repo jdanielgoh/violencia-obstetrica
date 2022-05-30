@@ -6,8 +6,12 @@ import Historietas from '../views/Historietas.vue'
 import QueEsLaViolenciaObstetrica from '../views/QueEsLaViolenciaObstetrica.vue'
 import QuienesSomos from '../views/QuienesSomos.vue'
 import Metodologia from '../views/Metodologia.vue'
-import Contacto from '../views/Contacto.vue'
 import Podcasts from "../views/Podcasts.vue"
+import HistoriasVideos from "../views/HistoriasVideos.vue"
+import TusDerechosParto from "../views/TusDerechosParto.vue"
+import Cuestionarios from "../views/Cuestionarios.vue"
+
+
 import ParirenCuba from "../views/reportajes/ParirenCuba.vue"
 import VisualizacionViolencias from "../views/visualizaciones/VisualizacionViolencias.vue"
 import VisualizacionMapaTestimonios from "../views/visualizaciones/VisualizacionMapaTestimonios.vue"
@@ -48,12 +52,6 @@ const routes = [
     name: 'Metodologia',
     component: Metodologia
   },
-  
-  {
-    path: '/contacto',
-    name: 'Contacto',
-    component: Contacto
-  },
   {
     path: "/especiales/parir-en-cuba",
     name: "ParirenCuba",
@@ -65,12 +63,17 @@ const routes = [
     component: Podcasts
   },
   {
-    path: "/violencia-cuba",
-    name: "VisualizacionViolencias",
-    component: VisualizacionViolencias
+    path: "/historias_videos",
+    name: "HistoriasVideos",
+    component: HistoriasVideos
   },
   {
-    path: "/visualizaciones/violencia-cuba",
+    path: "/derechos_parto",
+    name: "TusDerechosParto",
+    component: TusDerechosParto
+  },
+  {
+    path: "/violencia-cuba",
     name: "VisualizacionViolencias",
     component: VisualizacionViolencias
   },
@@ -83,6 +86,11 @@ const routes = [
     path: "/datos_violencia",
     name: "DatosViolencia",
     component: DatosViolencia
+  },
+  {
+    path: "/cuestionarios",
+    name: "Cuestionarios",
+    component: Cuestionarios
   },
   {
     path: '**',

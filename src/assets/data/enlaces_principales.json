@@ -1,6 +1,6 @@
 [
     {
-        "to": "/especiales/parir-en-cuba",
+        "to": "/datos_violencia/",
         "img": "img/ilustraciones/01-ILUSTRACION-WEB.jpg",
         "titulo": "CIENTOS DE MUJERES CONFIRMAN HABER VIVIDO VIOLENCIA OBSTÉTRICA EN CUBA",
         "autorxs": "",
@@ -20,8 +20,18 @@
         "texto_boton": "LEE NUESTRO REPORTAJE AQUÍ"
     },
     {
-        "to": "/especiales/parir-en-cuba",
-        "img": "img/ilustraciones/01-ILUSTRACION-WEB.jpg",
+        "to": "/testimonios",
+        "img": "img/ilustraciones/rainys.png",
+        "titulo": "TESTIMONIO DE RAINYS MARÍA",
+        "autorxs": "",
+        "descripcion": "",
+        "clase":"full",
+        "resumen":"“Yo llevaba más de 12 horas sin comer nada, con un cansancio inmenso, sin dormir toda la madrugada y con aquel calor. Entonces, el médico ese me dijo: ‘dale para el caballo’, y comenzó a hacerme maniobras de dilatación. Yo, instintivamente, me corría hacia arriba y me contraía porque era muy doloroso y aquel hombre, con tremenda mala forma, comenzó a gritarme: ‘señora, le dije ya que se esté tranquila, que se relaje y se ponga suavecita, y no se eche para atrás’”.",
+        "texto_boton": "LEE LOS TESTIMONIOS DE LAS MADRES AQUÍ"
+    },
+    {
+        "to": "/historietas",
+        "img": "img/ilustraciones/yari.png",
         "titulo": "YARI, NANCY, MAYLI Y LISANDRA",
         "autorxs": "",
         "descripcion": "",
@@ -30,8 +40,8 @@
         "texto_boton": "LEE SUS HISTORIAS EN CÓMIC AQUÍ"
     },
     {
-        "to": "/especiales/parir-en-cuba",
-        "img": "img/ilustraciones/01-ILUSTRACION-WEB.jpg",
+        "to": "/derechos_parto",
+        "img": "img/ilustraciones/video.png",
         "titulo": "TIENES DERECHO A UN PARTO HUMANIZADO",
         "autorxs": "",
         "descripcion": "",

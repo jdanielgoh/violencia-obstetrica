@@ -10,15 +10,19 @@
                 <div class="lista-enlaces">
                     <div class="columna-enlaces">
                         
-                        <p><router-link :to="{name:'Inicio', hash:'#especiales'}">Reportajes</router-link></p>
-                        <p><router-link :to="{name:'Inicio', hash:'#visualizaciones'}">Visualizaciones</router-link></p>
-                        <p><router-link :to="{name: 'Testimonios'}">Testimonios</router-link></p>
-                        <p><router-link :to="{name: 'Podcasts'}">Podcast</router-link></p>
+                        <p><router-link :to="{name: 'QueEsLaViolenciaObstetrica'}" @click.native="menu_activo = !menu_activo">Qué es la violencia obstétrica</router-link></p>
+                        <p><router-link :to="{name:'DatosViolencia'}" @click.native="menu_activo = !menu_activo">Datos de la violencia</router-link></p>
+                        <p><router-link :to="{name:'ParirenCuba'}" @click.native="menu_activo = !menu_activo">Causas de la violencia</router-link></p>
+                        <p><router-link :to="{name: 'Testimonios'}" @click.native="menu_activo = !menu_activo">Voces de las madres</router-link></p>
+                        <p><router-link :to="{name: 'Historietas'}" @click.native="menu_activo = !menu_activo">Historias ilustradas</router-link></p>
+                        <p><router-link :to="{name: 'HistoriasVideos'}" @click.native="menu_activo = !menu_activo">Historias en video</router-link></p>
                     </div>
                     <div class="columna-enlaces segunda-columna">
-                        <p><router-link :to="{name: 'QueEsLaViolenciaObstetrica'}">Tus derechos</router-link></p>
-                        <p><router-link :to="{name: 'QuienesSomos'}">¿Quiénes somos?</router-link></p>
-                        <p><router-link :to="{name: 'Metodologia'}">Metodología</router-link></p>
+                        <p><router-link :to="{name: 'Podcasts'}" @click.native="menu_activo = !menu_activo">Podcast Isla violeta</router-link></p>
+                        <p><router-link :to="{name: 'TusDerechosParto'}" @click.native="menu_activo = !menu_activo">Tus derechos en el parto</router-link></p>
+                        <p><router-link :to="{name:'QuienesSomos'}" @click.native="menu_activo = !menu_activo">Quiénes somos</router-link></p>
+                        <p><router-link :to="{name: 'Metodologia'}" @click.native="menu_activo = !menu_activo">Cómo se hizo</router-link></p>
+                        <p><router-link :to="{name: 'Cuestionarios'}" @click.native="menu_activo = !menu_activo">Cuestionarios</router-link></p>
                     </div>
                 </div>
                 
@@ -65,7 +69,7 @@ export default {
             menu_activo: false,
             fondo_morado: true,
             es_inicio: true,
-            lista_morado:["Inicio","QuienesSomos","Testimonios","QueEsLaViolenciaObstetrica","Podcasts","DatosViolencia","Historietas","HistoriasVideos","TusDerechosParto","Cuestionarios"]
+            lista_morado:["Inicio","QuienesSomos","Testimonios","QueEsLaViolenciaObstetrica", "Podcasts","DatosViolencia","Historietas","HistoriasVideos","TusDerechosParto","Cuestionarios","VisualizacionViolencias","VisualizacionMapaTestimonios"]
         }
     },
     watch:{
@@ -131,7 +135,7 @@ footer{
                 div.columna-enlaces{
                     display: block;
                     margin: 5px 0 0 0px;
-                    width:150px;
+                    width:240px;
                     margin-top: 0;
                     a{
                         color:#4A2582!important;

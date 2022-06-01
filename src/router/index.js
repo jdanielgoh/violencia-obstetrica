@@ -73,12 +73,12 @@ const routes = [
     component: TusDerechosParto
   },
   {
-    path: "/violencia-cuba",
+    path: "/datos_violencia/violencia_cuba",
     name: "VisualizacionViolencias",
     component: VisualizacionViolencias
   },
   {
-    path: "/visualizaciones/mapa-testimonios",
+    path: "/datos_violencia/mapa-testimonios",
     name: "VisualizacionMapaTestimonios",
     component: VisualizacionMapaTestimonios
   },

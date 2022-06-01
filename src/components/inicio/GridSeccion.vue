@@ -22,7 +22,7 @@
 											:to="datum.to" 
 											class="link-ficha" 
 											>
-											<img src="img/iconos/arrow--right.svg"/>
+											<img src="@/assets/img/iconos/arrow--right.svg"/>
 											<span>{{datum.texto_boton}}</span>
 										</router-link>
 									</div>
@@ -45,7 +45,7 @@
 											:to="datum.to" 
 											class="link-ficha" 
 											>
-											<img src="img/iconos/arrow--right.svg"/>
+											<img src="@/assets/img/iconos/arrow--right.svg"/>
 											<span>{{datum.texto_boton}}</span>
 										</router-link>
 									</div>

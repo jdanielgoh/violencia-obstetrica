@@ -30,13 +30,7 @@
 
    
 
-    <GridSeccion id="especiales" titulo="Reportajes" :data="especiales" />
-
-    <GridSeccion
-      id="podcast-testimonios"
-      titulo="Te puede interesar"
-      :data="te_puede_interesar"
-    />
+    
   </div>
 </template>
 
@@ -50,9 +44,7 @@ import GridSeccion from "@/components/inicio/GridSeccion.vue";
 import BotonAudio from "@/components/utils/BotonAudio.vue";
 
 
-import especiales from "@/assets/data/especiales.json";
 
-import te_puede_interesar from "@/assets/data/te_puede_interesar.json";
 import enlaces_principales from "@/assets/data/enlaces_principales.json";
 
 export default {
@@ -76,9 +68,7 @@ export default {
   },
   data() {
     return {
-      especiales: especiales,
-      te_puede_interesar: te_puede_interesar,
-	  enlaces_principales: enlaces_principales
+	    enlaces_principales: enlaces_principales
     };
   },
   mounted() {},

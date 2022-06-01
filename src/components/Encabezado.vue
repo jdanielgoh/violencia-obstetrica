@@ -72,7 +72,7 @@ export default {
             menu_activo: false,
             fondo_morado: true,
             es_inicio: true,
-            lista_morado:["Inicio","QuienesSomos","Testimonios","QueEsLaViolenciaObstetrica", "Podcasts","DatosViolencia","Historietas","HistoriasVideos","TusDerechosParto","Cuestionarios"]
+            lista_morado:["Inicio","QuienesSomos","Testimonios","QueEsLaViolenciaObstetrica", "Podcasts","DatosViolencia","Historietas","HistoriasVideos","TusDerechosParto","Cuestionarios","VisualizacionViolencias","VisualizacionMapaTestimonios"]
         }
     },
     watch:{

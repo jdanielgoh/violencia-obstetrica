@@ -47,22 +47,25 @@ export default {
 <style scoped lang="scss">
 .podcasts {
   background: #4a2582;
+  color: #fff;
+
   .container.text {
     .ficha-podcast {
       color: #fff;
       .titulo-texto {
         font-size: 24px;
       }
-      p {
+      
+    }
+    iframe {
+      width: 100%;
+    }
+    p {
         color: #fff;
         a {
           color: #fda1c9;
         }
       }
-    }
-    iframe {
-      width: 100%;
-    }
   }
 }
 </style>

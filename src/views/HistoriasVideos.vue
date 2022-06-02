@@ -29,10 +29,9 @@ export default {
 .videos {
   background: #4a2582;
   .container.text {
-    iframe {
-      width: 100%;
-
-      height: 400px;
+    color: #fff;
+    p {
+      color: #fff;
     }
   }
 }

@@ -2,7 +2,7 @@
     <header class="header" :class="{'fondo-morado': fondo_morado,'menu-activo': menu_activo}">
         <div class="container main encabezado">
             <div class="logo">
-                <router-link to="/" >
+                <router-link to="/" @click.native="menu_activo = false">
                     <img class="menu-morado" src="@/assets/img/iconos/PARTOS ROTOS_01.svg"/>
                     <img class="menu-blanco" src="@/assets/img/iconos/PARTOS ROTOS_01-morado.svg"/>
                 </router-link>
@@ -164,9 +164,15 @@ export default {
                 line-height: 0;
                 margin-right: 15px;
             }
+            
             margin: auto 0 auto auto;
             button.open{
-                
+                display: flex;
+                    span{
+                        margin: auto 16px;
+                        color: #4A2582;
+                        font-size: 14px;
+                    }
                 background: none;
                 border: none;
                 margin: auto;
@@ -193,7 +199,7 @@ export default {
         .opciones{
             font-size: 32px;
             font-weight: 700;
-            margin:auto 100px auto auto;
+            margin:auto auto auto auto;
             a{  
                 text-decoration: none;
                 color:#FFFFFF;
@@ -201,7 +207,7 @@ export default {
                 margin-top: 12px;
             }
             @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
-                font-size: 16px;
+                font-size: 20px;
                 margin: 50px 100px auto auto;
                 a{  
 

@@ -6,7 +6,7 @@
         <hr/>
       </h1>
       <a href="https://capir.limequery.org/571399" target="_blank">CUÉNTANOS TU PARTO</a>
-    <a href="https://capir.limequery.org/145636" target="_blank">ENCUESTA DE MUERTE MATERNA</a>
+      <a href="https://capir.limequery.org/145636" target="_blank">ENCUESTA DE MUERTE MATERNA</a>
     </div>
   </div>
 </template>
@@ -29,11 +29,13 @@ export default {
   .container.text {
     
     a{
+      margin: 15px 0 ;
         display: block;
-        color: #B987FF;
+        color: #fda1c9;
+
         &:visited, &:hover{
             opacity: .7;
-          color:  #B987FF;
+          color:  #fda1c9;
         }
     }
   }

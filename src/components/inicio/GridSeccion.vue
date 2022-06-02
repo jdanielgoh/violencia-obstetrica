@@ -192,7 +192,7 @@ $margen-grid-secciones: 70px;
 							a.link-ficha{
 								display: inline-block;
 
-								margin-top: 48px;
+								margin: 15px 0 30px 0;
 								text-decoration: none;
 								color: #FDA1C9;
 								border: 1px solid #FDA1C9;
@@ -255,7 +255,8 @@ $margen-grid-secciones: 70px;
 								a.link-ficha{
 									display: inline-block;
 
-									margin-top:48px;
+									margin: 5px 0 40px 0;
+
 									text-decoration: none;
 									color: #FDA1C9;
 									border: 1px solid #FDA1C9;

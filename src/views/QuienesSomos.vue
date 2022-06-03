@@ -16,6 +16,11 @@
         colaboradoras que también han participado de manera anónima desde dentro
         de Cuba.
       </p>
+      <p>
+        También le agradecemos a la periodista Carla Gloria Colomé Santiago su
+        apoyo en una de las entrevistas centrales del reporte Parir en Cuba:
+        cómo un sistema autoritario permite la violencia obstétrica.
+      </p>
     </div>
     <div class="container main equipos">
       <div class="equipo-titulo">
@@ -208,12 +213,15 @@ export default {
     // all titles will be injected into this template
     titleTemplate: "%s | Partos Rotos",
     htmlAttrs: {
-			lang: 'es'
-			},
-		meta: [
-			{ charset: 'utf-8' },
-			{ name: 'description', content: 'Acerca del equipo que realizó la investigación' },
-		]
+      lang: "es",
+    },
+    meta: [
+      { charset: "utf-8" },
+      {
+        name: "description",
+        content: "Acerca del equipo que realizó la investigación",
+      },
+    ],
   },
 };
 </script>

@@ -204,7 +204,7 @@ export default {
                 text-decoration: none;
                 color:#FFFFFF;
                 display: block;
-                margin-top: 12px;
+                margin-top: 5px;
             }
             @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
                 font-size: 20px;

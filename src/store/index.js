@@ -6,7 +6,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
 	state: {
 		reproduciendo_audios: false,
-		contador_reproducciones: 0
+		contador_reproducciones: 0,
+		contador_testimonio: 0,
+		testimonio_activo: false,
 	},
 	mutations: {
 		encenderApagarReproduccionAudios(state){
@@ -21,6 +23,15 @@ export default new Vuex.Store({
 		aumentarContadorReproducciones(state){
 			state.contador_reproducciones += 1;
 		},
+		setContadorTestimonio(state, val){
+			state.contador_testimonio = val;
+		},
+		ocultarTestimonio(state){
+			state.testimonio_activo = false;
+		},
+		mostrarTestimonio(state){
+			state.testimonio_activo = true;
+		}
 	},
 
 	getters: {

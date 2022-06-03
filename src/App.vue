@@ -3,20 +3,35 @@
 		<Encabezado/>
 		
 		<router-view class="vista"/>
+        <Pie/>
 	</div>
 </template>
 <script>
 import Encabezado from '@/components/Encabezado.vue'
-import { mapMutations,mapState } from 'vuex'
+import Pie from '@/components/Pie.vue'
 
 export default {
+    name:"App",
+    metaInfo: {
+
+        htmlAttrs: {
+            lang: 'es'
+        },
+        meta: [
+            { charset: 'utf-8' },
+            { property: 'og:title', content: "Partos Rotos"},
+            { property: 'og:title', content: "Especial de violencia obstétrica en Cuba"},
+            {property: 'og:type', content: 'website'},    
+            {name: 'robots', content: 'index,follow'} 
+        ]
+    },
 	components:{
-		Encabezado
+		Encabezado,
+        Pie,
 	},
 	
 	watch:{
         $route (to, from){
-            console.log(to.name)
             if(to.name == "Inicio"){
                 this.$store.commit("encenderReproduccionAudios");
             }

@@ -3,6 +3,10 @@ p{
     font-size: 16px;
     font-weight: 400;
     line-height: 1.75;
+    opacity: .8;
+    &.blanco{
+        color: #FFFFFF;
+    }
 }
 h1{
     color: #4A2582;
@@ -10,12 +14,20 @@ h1{
     &.blanco{
         color: #FFFFFF;
     }
+    @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+        font-size: 48px;
+    }
 }
 .cita{
     color:#FDA1C9;
-    line-height: 1;
-    font-size: 56px;
+    line-height: 1.1;
+    font-size: 48px;
+    opacity: 1;
     font-weight: 800;
+    //text-transform: uppercase;
+    @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+        font-size: 24px;
+    }
 }
 hr{
     border-top: 3px solid #FFFFFF;

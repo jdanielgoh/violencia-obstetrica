@@ -1,85 +1,193 @@
 <template>
-  <div class="quienessomos container main">
-    <div class="row">
-      <div class="imagen">
-        <ImagenPie
-          :link="'portada-rellax/0004.png'"
-          :pie="'nombre de persona'"
-          :altura="'500px'"
-        />
+  <div class="creditos">
+    <div class="container text">
+      <h1 class="blanco">
+        ¿Quiénes somos?
+        <hr />
+      </h1>
+      <p>
+        El equipo de Partos Rotos cuenta con mujeres periodistas que viven en
+        Cuba y que han realizado un trabajo fundamental para este proyecto. Sin
+        embargo, en este momento no pueden revelar su identidad por haber
+        recibido amenazas por parte del Gobierno por su labor periodística.
+      </p>
+      <p>
+        Además, queremos agradecer su trabajo a encuestadoras y otras
+        colaboradoras que también han participado de manera anónima desde dentro
+        de Cuba.
+      </p>
+    </div>
+    <div class="container main equipos">
+      <div class="equipo-titulo">
+        <h5>PERIODISTAS</h5>
       </div>
-      <div class="texto">
-        <h1>¿Quiénes somos?</h1>
-        <p>
-          En septiembre de 2020 publicamos una investigación sobre violencia
-          obstétrica en Cuba que fue replicada por varios medios independientes.
-          De inmediato, el reportaje generó en redes una avalancha de denuncias.
-          Mujeres cubanas de diferentes edades y regiones aseguraron haber
-          sufrido violencia al momento de dar a luz.
-        </p>
+      <div class="equipo-integrantes">
+        <a href="https://twitter.com/padroncueto" target="_blank">
+          <ImagenPie
+            :link="require('@/assets/img/creditos/CLAUDIA.jpeg')"
+            :pie="'Claudia Padrón Cueto'"
+            class="ficha"
+          >
+            <template slot="pie-foto">
+              <div class="pie-foto-template">
+                <p class="autorxs">Claudia Padrón Cueto</p>
+              </div>
+            </template>
+          </ImagenPie>
+        </a>
+        <a href="https://twitter.com/Isamila28" target="_blank">
+          <ImagenPie
+            :link="require('@/assets/img/creditos/ISABEL.jpeg')"
+            :pie="'Isabel Milagro Echemendía Pérez'"
+            class="ficha"
+          >
+            <template slot="pie-foto">
+              <div class="pie-foto-template">
+                <p class="autorxs">Isabel Milagro Echemendía Pérez</p>
+              </div>
+            </template>
+          </ImagenPie>
+        </a>
+
+        <a href="https://twitter.com/cabezamestiza" target="_blank">
+          <ImagenPie
+            :link="require('@/assets/img/creditos/Darcy.jpeg')"
+            :pie="'Darcy Borrero Batista'"
+            class="ficha"
+          >
+            <template slot="pie-foto">
+              <div class="pie-foto-template">
+                <p class="autorxs">Darcy Borrero Batista</p>
+              </div>
+            </template>
+          </ImagenPie>
+        </a>
       </div>
     </div>
-    <div class="row">
-      <div class="texto">
-        <p>
-          Las cientos de denuncias que contabilizamos entonces nos sugirieron
-          que la violencia obstétrica no se reducía a las experiencias aisladas
-          que habíamos expuesto, sino que era una práctica recurrente en nuestro
-          país. Una práctica que no es medida en las estadísticas oficiales y de
-          la que apenas se habla.
-        </p>
-        <p>
-          Por la importancia de visibilizar estas historias y denunciar la
-          violencia que padecen las mujeres y sus hijos e hijas durante la
-          gestación y el alumbramiento, hemos continuado reportando sobre el
-          tema durante el último año. El resultado es este especial que ahora
-          presentamos y que parte de una veintena de entrevistas en profundidad
-          y 514 encuestas realizadas a madres cubanas entre 20 y 60 años.
-        </p>
-        <p>
-          Periodistas desde Cuba, México y Estados Unidos investigamos cómo
-          viven las mujeres de la isla su maternidad y partos, en qué
-          condiciones lo hacen y cómo recuerdan esa experiencia. Estas son sus
-          historias, sus rostros y sus voces.
-        </p>
-        <p>
-          El resultado es este especial que ahora presentamos y que parte de una
-          veintena de entrevistas en profundidad y 514 encuestas realizadas a
-          madres cubanas entre 20 y 60 años.
-        </p>
+    <div class="container main equipos">
+      <div class="equipo-titulo">
+        <h5>ANÁLISIS DE DATOS</h5>
       </div>
-      <div class="imagen">
-        <ImagenPie
-          :link="'portada-rellax/0008.png'"
-          :pie="'nombre de persona'"
-          :altura="'500px'"
-        />
+      <div class="equipo-integrantes">
+        <a href="https://datacritica.org/" target="_blank">
+          <ImagenPie
+            :link="require('@/assets/img/creditos/datacritica.jpg')"
+            :pie="'Proyecto Data Crítica'"
+            class="ficha"
+          >
+            <template slot="pie-foto">
+              <div class="pie-foto-template">
+                <p class="autorxs">Proyecto Data Crítica</p>
+              </div>
+            </template>
+          </ImagenPie>
+        </a>
       </div>
     </div>
-    <div class="row">
-      <div class="imagen">
-        <ImagenPie
-          :link="'portada-rellax/0010.png'"
-          :pie="'nombre de persona'"
-          :altura="'500px'"
-        />
-        <p>
-          Periodistas desde Cuba, México y Estados Unidos investigamos cómo
-          viven las mujeres de la isla su maternidad y partos, en qué
-          condiciones lo hacen y cómo recuerdan esa experiencia.
-        </p>
-        <p class="cita">ESTAS SON SUS HISTORIAS, SUS ROSTROS Y SUS VOCES.</p>
+    <div class="container main equipos">
+      <div class="equipo-titulo">
+        <h5>DISEÑO, DESARROLLO Y VISUALIZACIÓN DE DATOS</h5>
       </div>
-      <div class="texto">
-        <p class="cita">
-          UNA VEINTENA DE ENTREVISTAS EN PROFUNDIDAD Y 514 ENCUESTAS REALIZADAS
-          A MADRES CUBANAS ENTRE 20 Y 60 AÑOS.
-        </p>
-        <ImagenPie
-          :link="'portada-rellax/0006.png'"
-          :pie="'nombre de persona'"
-          :altura="'500px'"
-        />
+      <div class="equipo-integrantes">
+        <a href="https://marianalopezo.myportfolio.com" target="_blank">
+          <ImagenPie
+            :link="require('@/assets/img/creditos/mars_marian.jpeg')"
+            :pie="'Mariana López Ortiz'"
+            class="ficha"
+          >
+            <template slot="pie-foto">
+              <div class="pie-foto-template">
+                <p class="autorxs">Mariana López Ortiz</p>
+              </div>
+            </template>
+          </ImagenPie>
+        </a>
+        <a href="https://twitter.com/jdanielgoh" target="_blank">
+          <ImagenPie
+            :link="require('@/assets/img/creditos/dangoh.jpeg')"
+            :pie="'Daniel Gómez Hernández'"
+            class="ficha"
+          >
+            <template slot="pie-foto">
+              <div class="pie-foto-template">
+                <p class="autorxs">Daniel Gómez Hernández</p>
+              </div>
+            </template>
+          </ImagenPie>
+        </a>
+      </div>
+    </div>
+
+    <div class="container main equipos">
+      <div class="equipo-titulo">
+        <h5>ILUSTRADORES</h5>
+      </div>
+      <div class="equipo-integrantes">
+        <a href="https://www.facebook.com/helman.avelle" target="_blank">
+          <ImagenPie
+            :link="require('@/assets/img/creditos/Hellman .jpeg')"
+            :pie="'Hellman'"
+            class="ficha"
+          >
+            <template slot="pie-foto">
+              <div class="pie-foto-template">
+                <p class="autorxs">Hellman</p>
+              </div>
+            </template>
+          </ImagenPie>
+        </a>
+        <a
+          href="https://www.facebook.com/profile.php?id=100006172846620"
+          target="_blank"
+        >
+          <ImagenPie
+            :link="require('@/assets/img/creditos/Mary Esther.jpg')"
+            :pie="'Andy Ruiz'"
+            class="ficha"
+          >
+            <template slot="pie-foto">
+              <div class="pie-foto-template">
+                <p class="autorxs">Mary Esther Lemus</p>
+              </div>
+            </template>
+          </ImagenPie>
+        </a>
+        <a href="https://www.facebook.com/hackndy" target="_blank">
+          <ImagenPie
+            :link="require('@/assets/img/creditos/Andy.jpeg')"
+            :pie="'Mary Esther Lemus'"
+            class="ficha"
+          >
+            <template slot="pie-foto">
+              <div class="pie-foto-template">
+                <p class="autorxs">Andy Ruiz</p>
+              </div>
+            </template>
+          </ImagenPie>
+        </a>
+      </div>
+    </div>
+    <div class="container main equipos">
+      <div class="equipo-titulo">
+        <h5>IWPR</h5>
+      </div>
+      <div class="equipo-integrantes">
+        <a href="https://twitter.com/IWPR_AL" target="_blank">
+          <ImagenPie
+            :link="require('@/assets/img/creditos/wipr.jpg')"
+            :pie="'IWPR'"
+            class="ficha iwpr"
+          >
+            <template slot="pie-foto">
+              <div class="pie-foto-template">
+                <p class="autorxs">
+                  Este sitio se realizó gracias al apoyo del Institute for War &
+                  Peace Reporting
+                </p>
+              </div>
+            </template>
+          </ImagenPie>
+        </a>
       </div>
     </div>
   </div>
@@ -87,23 +195,107 @@
 
 <script>
 // @ is an alias to /src
-import ImagenPie from "@/components/ImagenPie.vue";
+import ImagenPie from "@/components/utils/ImagenPie.vue";
 
 export default {
-    name: "QuienesSomos",
-    components: {
-        ImagenPie,
-    },
+  name: "QuienesSomos",
+  components: {
+    ImagenPie,
+  },
+  metaInfo: {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    title: "Créditos",
+    // all titles will be injected into this template
+    titleTemplate: "%s | Partos Rotos",
+    htmlAttrs: {
+			lang: 'es'
+			},
+		meta: [
+			{ charset: 'utf-8' },
+			{ name: 'description', content: 'Acerca del equipo que realizó la investigación' },
+		]
+  },
 };
 </script>
-<style scoped lang="scss">
-.row {
-    display: flex;
-    flex-wrap: nowrap;
-        div {
-            padding: 15px;
-            flex: 0 1 50%;
-        }
-    
+<style  lang="scss">
+@import "../scss/_variables";
+
+.creditos {
+  background: #4a2582;
+  h1.blanco,
+  h2.blanco {
+    font-size: 48px;
+    color: #fff;
+    line-height: 0.3;
+    @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+      line-height: 1;
     }
+  }
+  p {
+    color: #fff;
+  }
+  div.equipos {
+    display: flex;
+    margin-top: 100px;
+    gap: 0px 30px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    .equipo-titulo {
+      flex: 0 1 25%;
+      h5 {
+        margin-top: 0;
+        font-size: 24px;
+        font-weight: 800;
+
+        letter-spacing: 1.2px;
+        color: #fda1c9;
+      }
+    }
+    .equipo-integrantes {
+      flex: 0 1 75%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px 30px;
+      a {
+        flex: 0 1 30%;
+        text-decoration: none;
+        .ficha.iwpr {
+          .cover {
+            background-color: transparent;
+          }
+        }
+        .cover {
+          height: 350px !important;
+          min-height: 350px !important;
+        }
+      }
+    }
+    @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+      display: block;
+      margin-top: 100px;
+      //gap: 0px 30px;
+      //flex-wrap: nowrap;
+      //justify-content: space-between;
+      .equipo-integrantes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px 30px;
+        a {
+          flex: 0 1 calc(50% - 15px);
+          text-decoration: none;
+          .ficha.iwpr {
+            .cover {
+              background-color: transparent;
+            }
+          }
+          .cover {
+            height: 200px !important;
+            min-height: 200px !important;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

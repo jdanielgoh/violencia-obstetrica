@@ -1,14 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueMeta from 'vue-meta'
+
 import Inicio from '../views/Inicio.vue'
 import Testimonios from '../views/Testimonios.vue'
-import TusDerechos from '../views/TusDerechos.vue'
+import Historietas from '../views/Historietas.vue'
+import QueEsLaViolenciaObstetrica from '../views/QueEsLaViolenciaObstetrica.vue'
 import QuienesSomos from '../views/QuienesSomos.vue'
 import Metodologia from '../views/Metodologia.vue'
-import Creditos from '../views/Creditos.vue'
-import Contacto from '../views/Contacto.vue'
+import Podcasts from "../views/Podcasts.vue"
+import HistoriasVideos from "../views/HistoriasVideos.vue"
+import TusDerechosParto from "../views/TusDerechosParto.vue"
+import Cuestionarios from "../views/Cuestionarios.vue"
+
+
+import ParirenCuba from "../views/reportajes/ParirenCuba.vue"
+import VisualizacionViolencias from "../views/visualizaciones/VisualizacionViolencias.vue"
+import VisualizacionMapaTestimonios from "../views/visualizaciones/VisualizacionMapaTestimonios.vue"
+import DatosViolencia from "../views/DatosViolencia.vue"
 
 Vue.use(VueRouter)
+Vue.use(VueMeta)
 
 const routes = [
   {
@@ -22,9 +34,14 @@ const routes = [
     component: Testimonios
   },
   {
-    path: '/tus_derechos',
-    name: 'TusDerechos',
-    component: TusDerechos
+    path: '/historietas',
+    name: 'Historietas',
+    component: Historietas
+  },
+  {
+    path: '/que_es_la_violencia_obstetrica',
+    name: 'QueEsLaViolenciaObstetrica',
+    component: QueEsLaViolenciaObstetrica
   },
   {
     path: '/quienes_somos',
@@ -37,29 +54,76 @@ const routes = [
     component: Metodologia
   },
   {
-    path: '/creditos',
-    name: 'Creditos',
-    component: Creditos
+    path: "/especiales/parir-en-cuba",
+    name: "ParirenCuba",
+    component: ParirenCuba
   },
   {
-    path: '/contacto',
-    name: 'Contacto',
-    component: Contacto
+    path: "/podcasts",
+    name: "Podcasts",
+    component: Podcasts
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    path: "/historias_videos",
+    name: "HistoriasVideos",
+    component: HistoriasVideos
+  },
+  {
+    path: "/derechos_parto",
+    name: "TusDerechosParto",
+    component: TusDerechosParto
+  },
+  {
+    path: "/datos_violencia/violencia_cuba",
+    name: "VisualizacionViolencias",
+    component: VisualizacionViolencias
+  },
+  {
+    path: "/datos_violencia/mapa-testimonios",
+    name: "VisualizacionMapaTestimonios",
+    component: VisualizacionMapaTestimonios
+  },
+  {
+    path: "/datos_violencia",
+    name: "DatosViolencia",
+    component: DatosViolencia
+  },
+  {
+    path: "/cuestionarios",
+    name: "Cuestionarios",
+    component: Cuestionarios
+  },
+  {
+    path: '**',
+    name: 'Página no encontrada',
+    component: () => import('@/views/404.vue'),
+  },
+
+  
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes: routes,
+  scrollBehavior(to) {
+    
+    if(to.hash ){
+      return{
+        y: 0,
+        x: 0,
+        selector: to.hash,
+        behavior: 'smooth' 
+      }
+    }
+    else{
+      return { x: 0, y: 0 };
+    }
+
+    
+      
+  },
+
 })
 
 export default router

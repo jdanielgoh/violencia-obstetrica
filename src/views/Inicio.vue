@@ -87,13 +87,14 @@ export default {
 $margen-especiales: 70px;
 .inicio {
   div.container.text.introduccion {
+    margin-bottom:100px;
     .centrado {
       max-width: 685px;
       h1 {
         text-align: center;
         font-size: 56px;
         font-weight: 800;
-		margin-bottom:10px;
+		    margin-bottom:10px;
       }
 	  h2{
 		text-transform: uppercase;

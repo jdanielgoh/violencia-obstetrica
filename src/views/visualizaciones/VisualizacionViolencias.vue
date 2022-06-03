@@ -20,7 +20,7 @@ export default {
     },
     metaInfo: {
       // if no subcomponents specify a metaInfo.title, this title will be used
-      title: 'DataViz',
+      title: 'Datos - Cientos de mujeres confirman haber vivido violencia obstétrica en Cuba',
       // all titles will be injected into this template
       titleTemplate: '%s | Partos Rotos'
     },

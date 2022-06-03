@@ -1,6 +1,6 @@
 <template>
     <section class="container main grid-secciones">
-        <h3 class="blanco">
+        <h3 v-if="titulo" class="blanco">
             {{titulo}}
             <hr/>
         </h3>
@@ -22,7 +22,7 @@
 											:to="datum.to" 
 											class="link-ficha" 
 											>
-											<img src="img/iconos/arrow--right.svg"/>
+											<img src="@/assets/img/iconos/arrow--right.svg"/>
 											<span>{{datum.texto_boton}}</span>
 										</router-link>
 									</div>
@@ -45,7 +45,7 @@
 											:to="datum.to" 
 											class="link-ficha" 
 											>
-											<img src="img/iconos/arrow--right.svg"/>
+											<img src="@/assets/img/iconos/arrow--right.svg"/>
 											<span>{{datum.texto_boton}}</span>
 										</router-link>
 									</div>
@@ -192,7 +192,7 @@ $margen-grid-secciones: 70px;
 							a.link-ficha{
 								display: inline-block;
 
-								margin-top: 48px;
+								margin: 15px 0 30px 0;
 								text-decoration: none;
 								color: #FDA1C9;
 								border: 1px solid #FDA1C9;
@@ -255,7 +255,8 @@ $margen-grid-secciones: 70px;
 								a.link-ficha{
 									display: inline-block;
 
-									margin-top:48px;
+									margin: 5px 0 40px 0;
+
 									text-decoration: none;
 									color: #FDA1C9;
 									border: 1px solid #FDA1C9;

@@ -2,7 +2,7 @@
     <header class="header" :class="{'fondo-morado': fondo_morado,'menu-activo': menu_activo}">
         <div class="container main encabezado">
             <div class="logo">
-                <router-link to="/" >
+                <router-link to="/" @click.native="menu_activo = false">
                     <img class="menu-morado" src="@/assets/img/iconos/PARTOS ROTOS_01.svg"/>
                     <img class="menu-blanco" src="@/assets/img/iconos/PARTOS ROTOS_01-morado.svg"/>
                 </router-link>
@@ -24,16 +24,17 @@
         <nav :class="{'activo': menu_activo}" >
             <div class="container main">
                 <div class="opciones">
-                    <router-link :to="{name:'Inicio', hash:'#especiales'}" @click.native="menu_activo = !menu_activo">REPORTAJES</router-link>
-                    <router-link :to="{name:'Inicio', hash:'#visualizaciones'}" @click.native="menu_activo = !menu_activo">VISUALIZACIONES</router-link>
-                    <router-link :to="{name: 'Testimonios'}" @click.native="menu_activo = !menu_activo">TESTIMONIOS</router-link>
-                    <router-link :to="{name: 'Testimonios', hash:'#historietas'}" @click.native="menu_activo = !menu_activo">HISTORIETAS</router-link>
-                    <router-link :to="{name: 'Podcasts'}" @click.native="menu_activo = !menu_activo">PODCASTS</router-link>
-                    <router-link :to="{name: 'TusDerechos'}" @click.native="menu_activo = !menu_activo">TUS DERECHOS</router-link>
-                    <router-link :to="{name: 'Metodologia'}" @click.native="menu_activo = !menu_activo">METODOLOGÍA</router-link>
-                    <router-link :to="{name:'QuienesSomos'}" @click.native="menu_activo = !menu_activo">¿QUIÉNES SOMOS?</router-link>
-                    <a href="https://capir.limequery.org/571399" target="_blank">CUÉNTANOS TU PARTO</a>
-                    <a href="https://capir.limequery.org/145636" target="_blank">ENCUESTA DE MUERTE MATERNA</a>
+                    <router-link :to="{name: 'QueEsLaViolenciaObstetrica'}" @click.native="menu_activo = !menu_activo">QUÉ ES LA VIOLENCIA OBSTÉTRICA</router-link>
+                    <router-link :to="{name:'DatosViolencia'}" @click.native="menu_activo = !menu_activo">DATOS DE LA VIOLENCIA</router-link>
+                    <router-link :to="{name:'ParirenCuba'}" @click.native="menu_activo = !menu_activo">CAUSAS DE LA VIOLENCIA</router-link>
+                    <router-link :to="{name: 'Testimonios'}" @click.native="menu_activo = !menu_activo">VOCES DE LAS MADRES</router-link>
+                    <router-link :to="{name: 'Historietas'}" @click.native="menu_activo = !menu_activo">HISTORIAS ILUSTRADAS</router-link>
+                    <router-link :to="{name: 'HistoriasVideos'}" @click.native="menu_activo = !menu_activo">HISTORIAS EN VIDEO</router-link>
+                    <router-link :to="{name: 'Podcasts'}" @click.native="menu_activo = !menu_activo">PODCAST ISLA VIOLETA</router-link>
+                    <router-link :to="{name: 'TusDerechosParto'}" @click.native="menu_activo = !menu_activo">TUS DERECHOS EN EL PARTO</router-link>
+                    <router-link :to="{name:'QuienesSomos'}" @click.native="menu_activo = !menu_activo">QUIÉNES SOMOS</router-link>
+                    <router-link :to="{name: 'Metodologia'}" @click.native="menu_activo = !menu_activo">CÓMO SE HIZO</router-link>
+                     <router-link :to="{name: 'Cuestionarios'}" @click.native="menu_activo = !menu_activo">CUESTIONARIOS</router-link>
                     <!--<router-link to="/contacto" @click.native="menu_activo = !menu_activo">CONTACTO</router-link>-->
                 </div>
             </div>
@@ -71,7 +72,7 @@ export default {
             menu_activo: false,
             fondo_morado: true,
             es_inicio: true,
-            lista_morado:["Inicio","QuienesSomos","Testimonios","TusDerechos", "Podcasts"]
+            lista_morado:["Inicio","QuienesSomos","Testimonios","QueEsLaViolenciaObstetrica", "Podcasts","DatosViolencia","Historietas","HistoriasVideos","TusDerechosParto","Cuestionarios","VisualizacionViolencias","VisualizacionMapaTestimonios"]
         }
     },
     watch:{
@@ -163,9 +164,15 @@ export default {
                 line-height: 0;
                 margin-right: 15px;
             }
+            
             margin: auto 0 auto auto;
             button.open{
-                
+                display: flex;
+                    span{
+                        margin: auto 16px;
+                        color: #4A2582;
+                        font-size: 14px;
+                    }
                 background: none;
                 border: none;
                 margin: auto;
@@ -192,7 +199,7 @@ export default {
         .opciones{
             font-size: 32px;
             font-weight: 700;
-            margin:auto 100px auto auto;
+            margin:auto auto auto auto;
             a{  
                 text-decoration: none;
                 color:#FFFFFF;
@@ -200,7 +207,7 @@ export default {
                 margin-top: 12px;
             }
             @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
-                font-size: 24px;
+                font-size: 20px;
                 margin: 50px 100px auto auto;
                 a{  
 

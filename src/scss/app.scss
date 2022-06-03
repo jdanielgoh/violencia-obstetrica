@@ -12,6 +12,9 @@
     &.text {
         max-width: map-get($width, "max-text");
     }
+    &.reportaje-text {
+        max-width: map-get($width, "max-reportaje-text");
+    }
     &.vis {
         max-width: map-get($width, "max-vis");
     }

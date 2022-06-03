@@ -33,7 +33,14 @@ export default {
       // if no subcomponents specify a metaInfo.title, this title will be used
       title: 'Datos de la violencia',
       // all titles will be injected into this template
-      titleTemplate: '%s | Partos Rotos'
+      titleTemplate: '%s | Partos Rotos',
+        htmlAttrs: {
+        lang: 'es'
+        },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'description', content: 'Visualizaciones, mapas de testimonios por provincias y otros recursos basados en datos de violencia obstétrica en Cuba' },
+      ]
     },
 };
 </script>

@@ -14,10 +14,15 @@
 export default {
   name: "TusDerechosParto",
   metaInfo: {
-    // if no subcomponents specify a metaInfo.title, this title will be used
     title: "Tus derechos en el parto",
-    // all titles will be injected into this template
     titleTemplate: "%s | Partos Rotos",
+    htmlAttrs: {
+      lang: 'es'
+    },
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'description', content: 'Video que explica los derechos en el parto, creado por el equipo de Parto Rotos' },
+    ]
   },
 };
 </script>

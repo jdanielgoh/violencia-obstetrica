@@ -49,7 +49,14 @@ export default {
       // if no subcomponents specify a metaInfo.title, this title will be used
       title: 'Cómo se hizo',
       // all titles will be injected into this template
-      titleTemplate: '%s | Partos Rotos'
+      titleTemplate: '%s | Partos Rotos',
+      htmlAttrs: {
+        lang: 'es'
+        },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'description', content: 'Metodología de trabajo para realizar la investigación de Partos Rotos' },
+      ]
     },
 }
 </script>

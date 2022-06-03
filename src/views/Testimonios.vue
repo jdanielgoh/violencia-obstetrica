@@ -68,10 +68,18 @@ import testimonios from "@/assets/data/testimonios.json"
 export default {
 	name: 'Testimonios',
 	metaInfo: {
-      // if no subcomponents specify a metaInfo.title, this title will be used
-      title: 'Testimonios',
-      // all titles will be injected into this template
-      titleTemplate: '%s | Partos Rotos'
+		// if no subcomponents specify a metaInfo.title, this title will be used
+		title: 'Testimonios',
+		// all titles will be injected into this template
+		titleTemplate: '%s | Partos Rotos',
+		htmlAttrs: {
+			lang: 'es'
+			},
+		meta: [
+			{ charset: 'utf-8' },
+			{ name: 'description', content: 'Testimonios de distintas madres cubanas víctimas de violencia obstétrica en Cuba' },
+		]
+	  
     },
 	components: {
 		ImagenPie,

@@ -21,6 +21,13 @@ export default {
     title: "Historias en video",
     // all titles will be injected into this template
     titleTemplate: "%s | Partos Rotos",
+    htmlAttrs: {
+			lang: 'es'
+			},
+		meta: [
+			{ charset: 'utf-8' },
+			{ name: 'description', content: 'Videos testimoniales de víctimas de violencia obstétrica en Cuba' },
+		]
   },
 };
 </script>

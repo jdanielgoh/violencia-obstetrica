@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueMeta from 'vue-meta'
+
 import Inicio from '../views/Inicio.vue'
 import Testimonios from '../views/Testimonios.vue'
 import Historietas from '../views/Historietas.vue'
@@ -17,9 +19,8 @@ import VisualizacionViolencias from "../views/visualizaciones/VisualizacionViole
 import VisualizacionMapaTestimonios from "../views/visualizaciones/VisualizacionMapaTestimonios.vue"
 import DatosViolencia from "../views/DatosViolencia.vue"
 
-import Meta from 'vue-meta'
 Vue.use(VueRouter)
-Vue.use(Meta)
+Vue.use(VueMeta)
 
 const routes = [
   {

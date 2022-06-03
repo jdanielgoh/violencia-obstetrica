@@ -40,6 +40,13 @@ export default {
     title: "Podcasts",
     // all titles will be injected into this template
     titleTemplate: "%s | Partos Rotos",
+    htmlAttrs: {
+			lang: 'es'
+			},
+		meta: [
+			{ charset: 'utf-8' },
+			{ name: 'description', content: 'Escucha el podcast de Isla Violeta sobre violencia obstétrica, partos y maternidad en Cuba' },
+		]
   },
 };
 </script>

@@ -58,7 +58,14 @@ export default {
       // if no subcomponents specify a metaInfo.title, this title will be used
       title: 'Qué es la violencia obstétrica',
       // all titles will be injected into this template
-      titleTemplate: '%s | Partos Rotos'
+      titleTemplate: '%s | Partos Rotos',
+      htmlAttrs: {
+        lang: 'es'
+        },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'description', content: 'Información, infografía y material bibliográfico sobre la violencia obstétrica' },
+      ]
     },
 };
 </script>

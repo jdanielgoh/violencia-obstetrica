@@ -54,6 +54,13 @@ export default {
     title: "Inicio",
     // all titles will be injected into this template
     titleTemplate: "%s | Partos Rotos",
+    htmlAttrs: {
+			lang: 'es'
+			},
+		meta: [
+			{ charset: 'utf-8' },
+			{ name: 'description', content: 'Investigación especial sobre violencia obstétrica sistemática en Cuba. ' },
+		]
   },
   components: {
     Portada,

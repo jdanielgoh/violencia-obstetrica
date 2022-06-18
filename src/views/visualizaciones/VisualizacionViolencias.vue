@@ -1,11 +1,11 @@
 <template>
 <div class="contendor-vis">
     <ScrollyTelling/>
-		<section class="contenedor-mapa-consulta">
+		<!--<section class="contenedor-mapa-consulta">
 			<MapaConsulta
 				:id="'mapa-consulta'"
 			/>
-		</section>
+		</section>-->
 </div>
 </template>
 <script>
@@ -27,9 +27,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.contendor-vis{
-    background: #4A2582;;;
-}
+
 .contenedor-mapa-consulta{
     padding: 15px;
 }

@@ -336,14 +336,14 @@
         top:0;
     }
 	svg.svg-barras-apiladas::v-deep text{
-        color:#fff;
+        color:#000;
         font-family: "Raleway";
         font-size: 12px;
 	}
 	div.contenedor-tooltip-svg{
 		position: relative;
         .rotation-wrapper-outer {
-            color:#fff;
+            color:#000;
             display: table;
             .rotation-wrapper-inner {
                 padding: 50% 0;
@@ -418,7 +418,7 @@
 }
 div.contenedor-grafica, div.contenedor-barras-apiladas-elaboradas {
 	width: 100%;
-    p{color:#fff;}
+    p{color:#000;}
     div.encabezado{
       
       .titulo-visualizacion {

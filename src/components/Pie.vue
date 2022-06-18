@@ -45,9 +45,9 @@
                         </a>
                     </div>
                 </div>
-                <p class="footer-titulo">Encuestas</p>
+                <!--<p class="footer-titulo">Encuestas</p>
                 <p><a href="https://capir.limequery.org/571399">Cuéntanos tu parto</a></p>
-                <p><a href="https://capir.limequery.org/145636">Encuesta de muerte materna</a></p>
+                <p><a href="https://capir.limequery.org/145636">Encuesta de muerte materna</a></p>-->
             </div>
             <div class="contacto">
                 <p class="footer-titulo">Contacto</p>
@@ -69,7 +69,7 @@ export default {
             menu_activo: false,
             fondo_morado: true,
             es_inicio: true,
-            lista_morado:["Inicio","QuienesSomos","Testimonios","QueEsLaViolenciaObstetrica", "Podcasts","DatosViolencia","Historietas","HistoriasVideos","TusDerechosParto","Cuestionarios","VisualizacionViolencias","VisualizacionMapaTestimonios"]
+            lista_morado:["Inicio","QuienesSomos","Testimonios","QueEsLaViolenciaObstetrica", "Podcasts","DatosViolencia","Historietas","HistoriasVideos","TusDerechosParto","Cuestionarios","VisualizacionMapaTestimonios"]
         }
     },
     watch:{

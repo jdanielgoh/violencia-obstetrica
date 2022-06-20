@@ -34,11 +34,12 @@ export default {
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        background-color: #4A2582;
+        
         background-blend-mode: luminosity;
         transition: background-color .5s;
+        background-color: transparent;
         &:hover{
-            background-color: transparent;
+            background-color: #4A2582;
         }
     }
     .pie-foto{

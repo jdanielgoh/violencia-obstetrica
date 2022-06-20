@@ -11,7 +11,7 @@
     </div>
     <div class="container text">
       <p>
-        Se formó un equipo de 13 encuestadoras para aplicar los cuestionarios.  Antes de iniciar el proceso de recolección de datos, se realizó una prueba piloto de los mismos para saber cómo funcionaban. 
+        Se formó un equipo de 13 mujeres para aplicar los cuestionarios.  Antes de iniciar el proceso de recolección de datos, se realizó una prueba piloto de los mismos para saber cómo funcionaban. 
       </p>
       <p>
         Con un total de 74 preguntas, la primera versión del cuestionario Parto Propio se propuso recoger la mayor cantidad de datos referidos a las experiencias de parto en Cuba.  Se realizaron 514 cuestionarios, en un total de 14 provincias y el municipio especial: Artemisa, Camagüey, Ciego de Ávila, Cienfuegos, Guantánamo, Holguín, Isla de la Juventud, La Habana, Las Tunas, Matanzas, Mayabeque, Pinar del Río, Sancti Spíritus, Santiago de Cuba y Villa Clara. Las mujeres que participaron en este ejercicio lo hicieron de forma voluntaria. En ningún momento los cuestionarios representan una muestra estadística del problema en Cuba.
@@ -20,7 +20,7 @@
         De los 514 cuestionarios,  en 11 respuestas se omitieron las fechas de partos u otros datos referidos a los hospitales. Si bien se tomaron en cuenta sus respuestas, dejamos claro que este fue uno de los inconvenientes a los que nos enfrentamos durante la aplicación del cuestionario. Las mujeres con varios partos rellenaron un cuestionario distinto por parto. Por tanto, el total de cuestionarios no es igual que el total de mujeres que participaron.
       </p>
       <p>
-        En cuanto a las estrategias de aplicación de los cuestionarios se recurrió a diversas técnicas. Las encuestadoras confeccionaron una amplia red de contactos de madres cubanas, dentro y fuera del país. Todas las mujeres tuvieron al menos una experiencia de parto en Cuba.  Teniendo en cuenta el contexto digital cubano, decidimos que la plataforma online más adecuada para programar los cuestionarios era Limesurvey; no obstante, creamos una versión offline, en formato Word, para quienes no pudieran conectarse tanto tiempo a la versión online. Por cuestiones derivadas de la pandemia de Covid-19, se accedió a la mayoría de las mujeres y redes de contactos de manera remota, vía aplicaciones de mensajería o por correo electrónico.
+        En cuanto a las estrategias de aplicación de los cuestionarios se recurrió a diversas técnicas. Las mujeres encargadas de aplicar los cuestionarios confeccionaron una amplia red de contactos de madres cubanas, dentro y fuera del país. Todas las mujeres tuvieron al menos una experiencia de parto en Cuba.  Teniendo en cuenta el contexto digital cubano, decidimos que la plataforma online más adecuada para programar los cuestionarios era Limesurvey; no obstante, creamos una versión offline, en formato Word, para quienes no pudieran conectarse tanto tiempo a la versión online. Por cuestiones derivadas de la pandemia de Covid-19, se accedió a la mayoría de las mujeres y redes de contactos de manera remota, vía aplicaciones de mensajería o por correo electrónico.
       </p>
     </div>
     <div class="container text-cita">

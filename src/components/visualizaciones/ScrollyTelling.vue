@@ -22,7 +22,7 @@
         de las respuestas son de los últimos 21 años). Los formularios fueron
         respondidos por madres cubanas (algunas, con varias experiencias de
         parto, llenaron más de un formulario) de todo el país que dieron a luz
-        en la isla. El 80% de las encuestadas se concentraron en tres
+        en la isla. El 80% de las mujeres preguntadas se concentraron en tres
         provincias: La Habana, Camagüey y Pinar del Río.
       </p>
       <!--.( Ampliar el mapa y que se enfoque primero en La Habana, haga Zoom y luego lo mismo en Camaguey y Pinar). -->
@@ -60,11 +60,11 @@
         Sin embargo, aclaramos que la muestra es aleatoria. No se seleccionaron
         mujeres que expresamente hubiesen tenido un parto traumático, sino
         madres que dieron a luz en Cuba y que tuvieran la disposición de
-        responder. Partos Rotos trabajó con 13 encuestadoras que compartieron el
+        responder. Partos Rotos trabajó con 13 mujeres que compartieron el
         cuestionario entre sus redes de contactos, y estas con otras mujeres
         hasta sobrepasar los 500 cuestionarios. Aunque puede existir una
         predisposición de las embarazadas que vivieron violencia a responder el
-        cuestionario, tanto periodistas como encuestadoras eligieron libremente
+        cuestionario, tanto periodistas como mujeres que aplicaron cuestionarios eligieron libremente
         a quién preguntar.
       </p>
       <p>
@@ -106,7 +106,7 @@
         rechazó con desdén y asco”.
       </cite>
       <p>
-        Muchas madres encuestadas coinciden en que la falta de información y ser
+        Muchas madres coinciden en que la falta de información y ser
         ignoradas fueron las muestras de violencia que más padecieron. Un 69%
         dijo que no recibió psicoprofilaxis, o sea, que no les explicaron cómo
         sería el proceso de embarazo, parto y la etapa posterior al
@@ -354,7 +354,7 @@
         Universitario Ginecobstétrico Eusebio Hernández Pérez
       </cite>
       <p>
-        Un 76% de las encuestadas que tuvieron un parto vaginal afirmó que se
+        Un 76% de las madres que tuvieron un parto vaginal afirmó que se
         les practicó una episiotomía. De ellas a solo el 21 % le pidieron
         consentimiento y al 73% no le aplicaron anestesia para cortarlas.
       </p>

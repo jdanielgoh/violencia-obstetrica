@@ -12,7 +12,7 @@
         recibido amenazas por parte del Gobierno por su labor periodística.
       </p>
       <p>
-        Además, queremos agradecer su trabajo a encuestadoras y otras
+        Además, queremos agradecer su trabajo a las mujeres que aplicaron los cuestionarios y otras
         colaboradoras que también han participado de manera anónima desde dentro
         de Cuba.
       </p>

@@ -295,7 +295,7 @@
       de políticas diseñadas por burócratas que no conocen la realidad en la que
       trabajan.
     </p>
-    <p class="destacadi-doc">
+    <p class="destacado-doc">
       “No puede ser que un programa donde interviene la gestión humana esté
       basado en índices y parámetros a cumplir. El médico no puede estar
       pensando en números, ni en cifras, ni en emulaciones porque es la vida de
@@ -488,6 +488,8 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+@import "../../scss/_variables";
+
 div.reportaje {
   //h1{}
   p.autorxs {
@@ -513,7 +515,17 @@ div.reportaje {
   h2{
     color: #4a2582
   }
-
+  .destacado-doc {
+    color: #fda1c9;
+    line-height: 1.1;
+    font-size: 24px;
+    opacity: 1;
+    font-weight: 800;
+    //text-transform: uppercase;
+    @media screen and (max-width: map-get($media-queries-limit, "mobile")) {
+      font-size: 18px;
+    }
+  }
   img {
     width: 100%;
   }

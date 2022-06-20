@@ -329,12 +329,13 @@
 	$margen: 10px;
 	$radio: 10px;
 	.contenedor-dona {
+		margin: auto;
 		background: var(--color-fondo);
 		border: solid var(--color-bordes) 1px;
 		border-radius: $radio;
 		color: var(--color-texto);
         font-family: "Raleway";
-		max-width: 800px;
+		max-width: 700px;
 		width: calc(100% - 20px);
 	}
 	.titulo-proyecto {
@@ -346,6 +347,8 @@
 		font-size: 16px;
 		font-weight: 700;
 		margin: $margen;
+				text-align: center;
+
 	}
 	.actualizacion {
 		font-size: 12px;
@@ -403,7 +406,7 @@
 
 	// svg
 	svg.svg-dona ::v-deep foreignObject {
-		color: #fff;
+		color: #000;
 		font-size: 12px;
 	}
 	svg.svg-dona ::v-deep div.contenedor-boton-cerrar {

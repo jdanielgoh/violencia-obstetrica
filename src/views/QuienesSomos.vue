@@ -136,7 +136,7 @@
           >
             <template slot="pie-foto">
               <div class="pie-foto-template">
-                <p class="autorxs">Hellman</p>
+                <p class="autorxs">Helman Avelle</p>
               </div>
             </template>
           </ImagenPie>

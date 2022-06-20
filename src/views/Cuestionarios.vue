@@ -6,7 +6,7 @@
         <hr/>
       </h1>
       <a href="https://capir.limequery.org/571399" target="_blank">CUÉNTANOS TU PARTO</a>
-      <a href="https://capir.limequery.org/145636" target="_blank">ENCUESTA DE MUERTE MATERNA</a>
+      <a href="https://capir.limequery.org/145636" target="_blank">MUERTE MATERNA</a>
     </div>
   </div>
 </template>

@@ -1,12 +1,12 @@
 [
     {
-        "to": "/datos_violencia/",
-        "img": "img/ilustraciones/collage.png",
+        "to": "/datos_violencia/violencia_cuba",
+        "img": "img/ilustraciones/Collage Home.png",
         "titulo": "CIENTOS DE MUJERES CONFIRMAN HABER VIVIDO VIOLENCIA OBSTÉTRICA EN CUBA",
         "autorxs": "",
         "descripcion": "",
         "clase":"full",
-        "resumen":"Casi 500 mujeres de todo el país nos contaron con detalles cómo fue su parto o partos. Una mayoría confirmó que la violencia obstétrica existe. Muchas nos hablaron de un uso indiscriminado de la episiotomía, un corte en el perineo que facilita el parto. Entre otros datos alarmantes, un 41% de las mujeres afirmó haber sufrido algún episodio de violencia verbal o psicológica y casi un 80% dijo no haber sido informada sobre su estado de salud durante el alumbramiento.",
+        "resumen":"Casi 500 mujeres de todo el país nos contaron con detalles cómo fueron sus partos. Una mayoría confirmó que, a pesar de la ausencia de datos oficiales, la violencia obstétrica existe en Cuba. Muchas nos hablaron de un uso indiscriminado de la episiotomía, un corte en el perineo que facilita el parto. Un 41% de las mujeres afirmó haber sufrido algún episodio de violencia verbal o psicológica y casi un 80% dijo no haber sido informada sobre su estado de salud durante el alumbramiento.",
         "texto_boton": "CONOCE TODOS LOS DATOS AQUÍ"
     },
     {
@@ -18,6 +18,16 @@
         "clase":"full",
         "resumen":"La violencia obstétrica tiene sus raíces en los estereotipos de género que causan la deshumanización y violencia contra las mujeres, y en el modelo médico hegemónico, que privilegia las necesidades de los y las profesionales de la medicina sobre las de las pacientes. En Cuba, la violencia obstétrica se ve agravada por un sistema de salud muy jerarquizado y preocupado por mantener una tasa de mortalidad infantil baja que ignora el bienestar de las madres.",
         "texto_boton": "LEE NUESTRO REPORTAJE AQUÍ"
+    },
+    {
+        "to": "datos_violencia/mapa-testimonios",
+        "img": "img/portada_testimonios_mapa.png",
+        "titulo": "MAPA DE TESTIMONIOS",
+        "autorxs": "",
+        "descripcion": "",
+        "clase":"full",
+        "resumen":"Además de responder a nuestro cuestionario, muchas de las mujeres nos compartieron por escrito más detalles sobre sus partos. Muchas de ellas describieron cómo su experiencia de dar a luz se vio afectada por las formas más comunes de violencia obstétrica. En este mapa están recopilados casi 200 de estos testimonios, ordenados por la provincia en la que se produjo el parto.",
+        "texto_boton": "DESCUBRE LOS TESTIMONIOS EN EL MAPA"
     },
     {
         "to": "/testimonios",
@@ -41,7 +51,7 @@
     },
     {
         "to": "/derechos_parto",
-        "img": "img/ilustraciones/video.png",
+        "img": "img/ilustraciones/Tus Derechos.png",
         "titulo": "TIENES DERECHO A UN PARTO HUMANIZADO",
         "autorxs": "",
         "descripcion": "",

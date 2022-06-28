@@ -12,14 +12,15 @@
         recibido amenazas por parte del Gobierno por su labor periodística.
       </p>
       <p>
-        Además, queremos agradecer su trabajo a las mujeres que aplicaron los cuestionarios y otras
-        colaboradoras que también han participado de manera anónima desde dentro
-        de Cuba.
+        Además, queremos agradecer su trabajo a las mujeres que aplicaron los
+        cuestionarios y otras colaboradoras que también han participado de
+        manera anónima desde dentro de Cuba.
       </p>
       <p>
-        También le agradecemos a la periodista Carla Gloria Colomé Santiago su
-        apoyo en una de las entrevistas centrales del reporte Parir en Cuba:
-        cómo un sistema autoritario permite la violencia obstétrica.
+        También le agradecemos a la periodista Carla Colomé su trabajo en una de
+        las entrevistas centrales del reportaje Parir en Cuba: cómo un sistema
+        autoritario permite la violencia obstétrica, y a Proyecto Inventario su
+        apoyo con la confección de los cuestionarios.
       </p>
     </div>
     <div class="container main equipos">
@@ -172,34 +173,10 @@
         </a>
       </div>
     </div>
-    <div class="container main equipos">
-      <div class="equipo-titulo">
-        <h5>IWPR</h5>
-      </div>
-      <div class="equipo-integrantes">
-        <a href="https://twitter.com/IWPR_AL" target="_blank">
-          <ImagenPie
-            :link="require('@/assets/img/creditos/wipr.jpg')"
-            :pie="'IWPR'"
-            class="ficha iwpr"
-          >
-            <template slot="pie-foto">
-              <div class="pie-foto-template">
-                <p class="autorxs">
-                  Este sitio se realizó gracias al apoyo del Institute for War &
-                  Peace Reporting
-                </p>
-              </div>
-            </template>
-          </ImagenPie>
-        </a>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import ImagenPie from "@/components/utils/ImagenPie.vue";
 
 export default {

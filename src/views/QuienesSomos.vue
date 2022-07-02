@@ -83,7 +83,7 @@
           >
             <template slot="pie-foto">
               <div class="pie-foto-template">
-                <p class="autorxs">Proyecto Data Crítica</p>
+                <p class="autorxs">Data Crítica</p>
               </div>
             </template>
           </ImagenPie>

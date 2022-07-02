@@ -765,7 +765,6 @@ export default {
     this.pantalla_grande = parseInt(window.innerWidth) > 769
   },
   mounted() {
-    this.informados= "graficas/informacion_atencion.html"
     this.inizializandoScrollama();
 
   },

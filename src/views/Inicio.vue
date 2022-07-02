@@ -69,9 +69,7 @@ export default {
     BotonAudio,
   },
   beforeMount() {
-    this.te_puede_interesar.forEach((d) => {
-      d.img = require(`@/assets/${d.img}`);
-    });
+    
   },
   data() {
     return {
